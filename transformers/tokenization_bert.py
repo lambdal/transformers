@@ -21,6 +21,7 @@ import logging
 import os
 import unicodedata
 from io import open
+from tokenizers import Tokenizer, models, pre_tokenizers, decoders
 
 from .tokenization_utils import PreTrainedTokenizer
 
@@ -264,6 +265,48 @@ class BertTokenizer(PreTrainedTokenizer):
                 writer.write(token + u'\n')
                 index += 1
         return (vocab_file,)
+
+class BertTokenizerFast(BertTokenizer):
+    vocab_files_names = VOCAB_FILES_NAMES
+    pretrained_vocab_files_map = PRETRAINED_VOCAB_FILES_MAP
+    pretrained_init_configuration = PRETRAINED_INIT_CONFIGURATION
+    max_model_input_sizes = PRETRAINED_POSITIONAL_EMBEDDINGS_SIZES
+
+    def __init__(self, vocab_file, do_lower_case=True, do_basic_tokenize=True, never_split=None,
+                 unk_token="[UNK]", sep_token="[SEP]", pad_token="[PAD]", cls_token="[CLS]",
+                 mask_token="[MASK]", tokenize_chinese_chars=True, **kwargs):
+        super(BertTokenizerFast, self).__init__(vocab_file, unk_token=unk_token, sep_token=sep_token,
+                                                pad_token=pad_token, cls_token=cls_token,
+                                                mask_token=mask_token, **kwargs)
+        self.max_len_single_sentence = self.max_len - 2  # take into account special tokens
+        self.max_len_sentences_pair = self.max_len - 3  # take into account special tokens
+
+        if not os.path.isfile(vocab_file):
+            raise ValueError(
+                "Can't find a vocabulary file at path '{}'. To load the vocabulary from a Google pretrained "
+                "model use `tokenizer = BertTokenizer.from_pretrained(PRETRAINED_MODEL_NAME)`".format(vocab_file))
+
+        self.tokenizer = Tokenizer(models.WordPiece.from_files(vocab_file))
+        self.tokenizer.with_pre_tokenizer(pre_tokenizers.BasicPreTokenizer.new())
+        self.tokenizer.with_decoder(decoders.WordPiece.new())
+
+        self.decoder = decoders.WordPiece.new()
+
+    @property
+    def vocab_size(self):
+        return self.tokenizer.vocab_size
+
+    def _tokenize(self, text):
+        return self.tokenizer.encode(text).tokens
+
+    def _convert_token_to_id(self, token):
+        return self.tokenizer.token_to_id(token)
+
+    def _convert_id_to_token(self, index):
+        return self.tokenizer.id_to_token(int(index))
+
+    def convert_tokens_to_string(self, tokens):
+        return self.decoder.decode(tokens)
 
 
 class BasicTokenizer(object):
