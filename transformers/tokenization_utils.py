@@ -1234,3 +1234,83 @@ class PreTrainedTokenizer(object):
                         ).replace(" ' ", "'").replace(" n't", "n't").replace(" 'm", "'m").replace(" do not", " don't"
                         ).replace(" 's", "'s").replace(" 've", "'ve").replace(" 're", "'re")
         return out_string
+
+class FastPreTrainedTokenizer(PreTrainedTokenizer):
+    def __init__(self, **kwargs):
+        super(FastPreTrainedTokenizer, self).__init__(**kwargs)
+
+    @property
+    def vocab_size(self):
+        return self.tokenizer.vocab_size
+
+    def _convert_encoding(self,
+                          encoding,
+                          return_tensors=None,
+                          return_token_type_ids=True,
+                          return_attention_mask=True,
+                          return_overflowing_tokens=False,
+                          return_special_tokens_mask=False):
+        encoding_dict = {
+            "input_ids": encoding.ids,
+        }
+        if return_token_type_ids:
+            encoding_dict["token_type_ids"] = encoding.type_ids
+        if return_attention_mask:
+            encoding_dict["attention_mask"] = encoding.attention_mask
+        if return_overflowing_tokens:
+            encoding_dict["overflowing_tokens"] = encoding.overflowing
+        if return_special_tokens_mask:
+            encoding_dict["special_tokens_mask"] = encoding.special_tokens_mask
+        return encoding_dict
+
+    def encode_plus(self,
+                    text,
+                    text_pair=None,
+                    return_tensors=None,
+                    return_token_type_ids=True,
+                    return_attention_mask=True,
+                    return_overflowing_tokens=False,
+                    return_special_tokens_mask=False,
+                    **kwargs):
+        encoding = self.tokenizer.encode(text, text_pair)
+        return self._convert_encoding(encoding,
+                                      return_tensors=return_tensors,
+                                      return_token_type_ids=return_token_type_ids,
+                                      return_attention_mask=return_attention_mask,
+                                      return_overflowing_tokens=return_overflowing_tokens,
+                                      return_special_tokens_mask=return_special_tokens_mask)
+
+    def _tokenize(self, text):
+        return self.tokenizer.encode(text).tokens
+
+    def _convert_token_to_id(self, token):
+        return self.tokenizer.token_to_id(token)
+
+    def _convert_id_to_token(self, index):
+        return self.tokenizer.id_to_token(int(index))
+
+    def convert_tokens_to_string(self, tokens):
+        return self.decoder.decode(tokens)
+
+    def add_tokens(self, new_tokens):
+        self.tokenizer.add_tokens(new_tokens)
+
+    def encode_batch(self, texts,
+                     return_tensors=None,
+                     return_token_type_ids=True,
+                     return_attention_mask=True,
+                     return_overflowing_tokens=False,
+                     return_special_tokens_mask=False):
+        return [ self._convert_encoding(encoding,
+                                        return_tensors=return_tensors,
+                                        return_token_type_ids=return_token_type_ids,
+                                        return_attention_mask=return_attention_mask,
+                                        return_overflowing_tokens=return_overflowing_tokens,
+                                        return_special_tokens_mask=return_special_tokens_mask)
+            for encoding in self.tokenizer.encode_batch(texts)]
+
+    def decode(self, tokens):
+        return self.tokenizer.decode(tokens)
+
+    def decode_batch(self, ids_batch):
+        return self.tokenizer.decode_batch(ids_batch)

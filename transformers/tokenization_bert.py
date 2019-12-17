@@ -23,7 +23,7 @@ import unicodedata
 from io import open
 from tokenizers import Tokenizer, models, pre_tokenizers, decoders, processors
 
-from .tokenization_utils import PreTrainedTokenizer
+from .tokenization_utils import PreTrainedTokenizer, FastPreTrainedTokenizer
 
 logger = logging.getLogger(__name__)
 
@@ -266,7 +266,7 @@ class BertTokenizer(PreTrainedTokenizer):
                 index += 1
         return (vocab_file,)
 
-class BertTokenizerFast(BertTokenizer):
+class BertTokenizerFast(FastPreTrainedTokenizer):
     vocab_files_names = VOCAB_FILES_NAMES
     pretrained_vocab_files_map = PRETRAINED_VOCAB_FILES_MAP
     pretrained_init_configuration = PRETRAINED_INIT_CONFIGURATION
@@ -277,7 +277,7 @@ class BertTokenizerFast(BertTokenizer):
                  mask_token="[MASK]", tokenize_chinese_chars=True,
                  max_length=None, pad_to_max_length=False, stride=0,
                  truncation_strategy='longest_first', **kwargs):
-        super(BertTokenizerFast, self).__init__(vocab_file, unk_token=unk_token, sep_token=sep_token,
+        super(BertTokenizerFast, self).__init__(unk_token=unk_token, sep_token=sep_token,
                                                 pad_token=pad_token, cls_token=cls_token,
                                                 mask_token=mask_token, **kwargs)
 
@@ -306,72 +306,6 @@ class BertTokenizerFast(BertTokenizer):
             self.pad_token
         )
         self.decoder = decoders.WordPiece.new()
-
-    def encoding_to_dict(self,
-                         encoding,
-                         return_tensors=None,
-                         return_token_type_ids=True,
-                         return_attention_mask=True,
-                         return_overflowing_tokens=False,
-                         return_special_tokens_mask=False):
-        encoding_dict = {
-            "input_ids": encoding.ids,
-        }
-        if return_token_type_ids:
-            encoding_dict["token_type_ids"] = encoding.type_ids
-        if return_attention_mask:
-            encoding_dict["attention_mask"] = encoding.attention_mask
-        if return_overflowing_tokens:
-            encoding_dict["overflowing_tokens"] = encoding.overflowing
-        if return_special_tokens_mask:
-            encoding_dict["special_tokens_mask"] = encoding.special_tokens_mask
-        return encoding_dict
-
-
-    def encode_plus(self,
-                    text,
-                    text_pair=None,
-                    return_tensors=None,
-                    return_token_type_ids=True,
-                    return_attention_mask=True,
-                    return_overflowing_tokens=False,
-                    return_special_tokens_mask=False,
-                    **kwargs):
-        encoding = self.tokenizer.encode(text, text_pair)
-        return self.encoding_to_dict(encoding,
-                                     return_tensors=return_tensors,
-                                     return_token_type_ids=return_token_type_ids,
-                                     return_attention_mask=return_attention_mask,
-                                     return_overflowing_tokens=return_overflowing_tokens,
-                                     return_special_tokens_mask=return_special_tokens_mask)
-
-    def add_tokens(self, new_tokens):
-        self.tokenizer.add_tokens(new_tokens)
-
-    def decode(self, tokens):
-        return self.tokenizer.decode(tokens)
-
-    def encode_batch(self, texts):
-        return [ self.encoding_to_dict(encoding) for encoding in self.tokenizer.encode_batch(texts) ]
-
-    def decode_batch(self, ids_batch):
-        return self.tokenizer.decode_batch(ids_batch)
-
-    @property
-    def vocab_size(self):
-        return self.tokenizer.vocab_size
-
-    def _tokenize(self, text):
-        return self.tokenizer.encode(text).tokens
-
-    def _convert_token_to_id(self, token):
-        return self.tokenizer.token_to_id(token)
-
-    def _convert_id_to_token(self, index):
-        return self.tokenizer.id_to_token(int(index))
-
-    def convert_tokens_to_string(self, tokens):
-        return self.decoder.decode(tokens)
 
 
 class BasicTokenizer(object):

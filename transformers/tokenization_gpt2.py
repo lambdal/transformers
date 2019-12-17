@@ -32,7 +32,7 @@ except ImportError:
     def lru_cache():
         return lambda func: func
 
-from .tokenization_utils import PreTrainedTokenizer
+from .tokenization_utils import PreTrainedTokenizer, FastPreTrainedTokenizer
 
 logger = logging.getLogger(__name__)
 
@@ -239,29 +239,26 @@ class GPT2Tokenizer(PreTrainedTokenizer):
 
         return vocab_file, merge_file
 
-class GPT2TokenizerFast(PreTrainedTokenizer):
+class GPT2TokenizerFast(FastPreTrainedTokenizer):
     vocab_files_names = VOCAB_FILES_NAMES
     pretrained_vocab_files_map = PRETRAINED_VOCAB_FILES_MAP
     max_model_input_sizes = PRETRAINED_POSITIONAL_EMBEDDINGS_SIZES
 
-    def __init__(self, vocab_file, merges_file, errors='replace', unk_token="<|endoftext|>",
-                 bos_token="<|endoftext|>", eos_token="<|endoftext|>", **kwargs):
+    def __init__(self, vocab_file, merges_file, unk_token="<|endoftext|>", bos_token="<|endoftext|>",
+                 eos_token="<|endoftext|>", pad_to_max_length=False, add_prefix_space=True,
+                 max_length=None, stride=0, truncation_strategy='longest_first', **kwargs):
         super(GPT2TokenizerFast, self).__init__(bos_token=bos_token, eos_token=eos_token, unk_token=unk_token, **kwargs)
-        self.errors = errors
+
         self.tokenizer = Tokenizer(models.BPE.from_files(vocab_file, merges_file))
-        self.tokenizer.with_pre_tokenizer(pre_tokenizers.ByteLevel.new())
+        self.tokenizer.with_pre_tokenizer(pre_tokenizers.ByteLevel.new(add_prefix_space))
+        self.tokenizer.with_decoder(decoders.ByteLevel.new())
+        if max_length:
+            self.tokenizer.with_truncation(max_length, stride, truncation_strategy)
+        self.tokenizer.with_padding(
+            max_length if pad_to_max_length else None,
+            self.padding_side,
+            self.pad_token_id if self.pad_token_id is not None else 0,
+            self.pad_token_type_id,
+            self.pad_token if self.pad_token is not None else ""
+        )
         self.decoder = decoders.ByteLevel.new()
-
-    def _tokenize(self, text, add_prefix_space=False):
-        if add_prefix_space and not text.startswith(" "):
-            text = " " + text
-        return [ token.value for token in self.tokenizer.encode(text) ]
-
-    def _convert_token_to_id(self, token):
-        return self.tokenizer.token_to_id(token)
-
-    def _convert_id_to_token(self, index):
-        return self.tokenizer.id_to_token(int(index))
-
-    def convert_tokens_to_string(self, tokens):
-        return self.decoder.decode(tokens)
