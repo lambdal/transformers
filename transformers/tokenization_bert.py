@@ -275,8 +275,7 @@ class BertTokenizerFast(BertTokenizer):
     def __init__(self, vocab_file, do_lower_case=True, do_basic_tokenize=True, never_split=None,
                  unk_token="[UNK]", sep_token="[SEP]", pad_token="[PAD]", cls_token="[CLS]",
                  mask_token="[MASK]", tokenize_chinese_chars=True,
-                 max_length=None,
-                 stride=0,
+                 max_length=None, pad_to_max_length=False, stride=0,
                  truncation_strategy='longest_first', **kwargs):
         super(BertTokenizerFast, self).__init__(vocab_file, unk_token=unk_token, sep_token=sep_token,
                                                 pad_token=pad_token, cls_token=cls_token,
@@ -286,23 +285,52 @@ class BertTokenizerFast(BertTokenizer):
             vocab_file,
             unk_token=unk_token
         ))
-        self.tokenizer.with_pre_tokenizer(pre_tokenizers.BasicPreTokenizer.new(
+        self.tokenizer.with_pre_tokenizer(pre_tokenizers.BertPreTokenizer.new(
+            do_basic_tokenize=do_basic_tokenize,
             do_lower_case=do_lower_case,
+            tokenize_chinese_chars=tokenize_chinese_chars,
+            never_split=never_split if never_split is not None else [],
         ))
         self.tokenizer.with_decoder(decoders.WordPiece.new())
         self.tokenizer.with_post_processor(processors.BertProcessing.new(
             (sep_token, self.tokenizer.token_to_id(sep_token)),
             (cls_token, self.tokenizer.token_to_id(cls_token)),
-            max_len=max_length if max_length is not None else self.max_len,
-            trunc_stride=0,
-            trunc_strategy='longest_first',
         ))
+        if max_length is not None:
+            self.tokenizer.with_truncation(max_length, stride, truncation_strategy)
+        self.tokenizer.with_padding(
+            max_length if pad_to_max_length else None,
+            self.padding_side,
+            self.pad_token_id,
+            self.pad_token_type_id,
+            self.pad_token
+        )
         self.decoder = decoders.WordPiece.new()
+
+    def encoding_to_dict(self,
+                         encoding,
+                         return_tensors=None,
+                         return_token_type_ids=True,
+                         return_attention_mask=True,
+                         return_overflowing_tokens=False,
+                         return_special_tokens_mask=False):
+        encoding_dict = {
+            "input_ids": encoding.ids,
+        }
+        if return_token_type_ids:
+            encoding_dict["token_type_ids"] = encoding.type_ids
+        if return_attention_mask:
+            encoding_dict["attention_mask"] = encoding.attention_mask
+        if return_overflowing_tokens:
+            encoding_dict["overflowing_tokens"] = encoding.overflowing
+        if return_special_tokens_mask:
+            encoding_dict["special_tokens_mask"] = encoding.special_tokens_mask
+        return encoding_dict
+
 
     def encode_plus(self,
                     text,
                     text_pair=None,
-                    # pad_to_max_length=False,
                     return_tensors=None,
                     return_token_type_ids=True,
                     return_attention_mask=True,
@@ -310,23 +338,12 @@ class BertTokenizerFast(BertTokenizer):
                     return_special_tokens_mask=False,
                     **kwargs):
         encoding = self.tokenizer.encode(text, text_pair)
-        encoding_dict = {
-            "input_ids": encoding.ids,
-        }
-
-        if return_token_type_ids:
-            encoding_dict["token_type_ids"] = encoding.type_ids
-
-        if return_attention_mask:
-            encoding_dict["attention_mask"] = encoding.attention_mask
-
-        if return_overflowing_tokens:
-            encoding_dict["overflowing_tokens"] = encoding.overflowing
-
-        if return_special_tokens_mask:
-            encoding_dict["special_tokens_mask"] = encoding.special_tokens_mask
-
-        return encoding_dict
+        return self.encoding_to_dict(encoding,
+                                     return_tensors=return_tensors,
+                                     return_token_type_ids=return_token_type_ids,
+                                     return_attention_mask=return_attention_mask,
+                                     return_overflowing_tokens=return_overflowing_tokens,
+                                     return_special_tokens_mask=return_special_tokens_mask)
 
     def add_tokens(self, new_tokens):
         self.tokenizer.add_tokens(new_tokens)
@@ -335,7 +352,7 @@ class BertTokenizerFast(BertTokenizer):
         return self.tokenizer.decode(tokens)
 
     def encode_batch(self, texts):
-        return self.tokenizer.encode_batch(texts)
+        return [ self.encoding_to_dict(encoding) for encoding in self.tokenizer.encode_batch(texts) ]
 
     def decode_batch(self, ids_batch):
         return self.tokenizer.decode_batch(ids_batch)
