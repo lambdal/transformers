@@ -93,7 +93,7 @@ export LOG_DIR=~/transformers/logs/log_hyperplane16
 
 ### Results
 
-FP32 Training Time in Seconds (2 Epochs)
+FP32 Training Time in Seconds (Fine-tune SQUAD for 2 Epochs)
 
 |   | bert_base_uncased (bs_per_GPU=12) | bert_large_uncased_whole_word_masking (bs_per_GPU=3) | distilbert-base-uncased (bs_per_GPU=12) | 
 |---|---|---|---|
@@ -101,7 +101,7 @@ FP32 Training Time in Seconds (2 Epochs)
 | Lambda Hyperplane Basic 8 V100 32GB | 651.14 | 2706.56 | 335.09 |
 | Lambda Blade 8 Quadro 8000 | 773.80 | 5132.48 | 410.56 |
 
-FP32 Evaluation exact match/F1 Score
+FP32 Evaluation F1 Score (Fine-tune SQUAD for 2 Epochs)
 
 |   | bert_base_uncased (bs_per_GPU=12) | bert_large_uncased_whole_word_masking (bs_per_GPU=3) | distilbert-base-uncased (bs_per_GPU=12) |
 |---|---|---|---|
@@ -110,7 +110,7 @@ FP32 Evaluation exact match/F1 Score
 | Lambda Blade 8 Quadro 8000 | 86.77 | 93.07 | 82.80 |
 
 
-FP16 Training Time in Seconds (2 Epochs)
+FP16 Training Time in Seconds (Fine-tune SQUAD for 2 Epochs)
 
 |   | bert_base_uncased (bs_per_GPU=12) | bert_large_uncased_whole_word_masking (bs_per_GPU=3) | distilbert-base-uncased (bs_per_GPU=12) | 
 |---|---|---|---|
@@ -118,7 +118,7 @@ FP16 Training Time in Seconds (2 Epochs)
 | Lambda Hyperplane Basic 8 V100 32 GB | 345.64 | 1876.19 | 187.93 |
 | Lambda Blade 8 Quadro 8000 | 560.92 | 4474.57 | 304.42 |
 
-FP16 Evaluation exact match/F1 Score
+FP16 Evaluation F1 Score (Fine-tune SQUAD for 2 Epochs)
 
 |   | bert_base_uncased (bs_per_GPU=12) | bert_large_uncased_whole_word_masking (bs_per_GPU=3) | distilbert-base-uncased (bs_per_GPU=12) |
 |---|---|---|---|
