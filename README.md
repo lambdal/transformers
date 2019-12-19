@@ -22,6 +22,75 @@
 <p>State-of-the-art Natural Language Processing for TensorFlow 2.0 and PyTorch
 </h3>
 
+
+
+# Lambda Notes
+
+### Installation
+
+```
+git clone https://github.com/chuanli11/transformers
+cd transformers
+
+virtualenv -p /usr/bin/python3.6 venv
+. venv/bin/activate
+
+wget https://download.pytorch.org/whl/cu100/torch-1.2.0-cp36-cp36m-manylinux1_x86_64.whl
+wget https://download.pytorch.org/whl/cu100/torchvision-0.4.0-cp36-cp36m-manylinux1_x86_64.whl
+pip install torch-1.2.0-cp36-cp36m-manylinux1_x86_64.whl
+pip install torchvision-0.4.0-cp36-cp36m-manylinux1_x86_64.whl
+rm torch-1.2.0-cp36-cp36m-manylinux1_x86_64.whl
+rm torchvision-0.4.0-cp36-cp36m-manylinux1_x86_64.whl
+
+pip install tensorflow-gpu==2.0
+
+pip install -e .
+
+pip install -r ./examples/requirements.txt
+
+
+cd ..
+git clone https://github.com/NVIDIA/apex
+cd apex
+pip install -v --no-cache-dir --global-option="--cpp_ext" --global-option="--cuda_ext" ./
+
+# Verify installation
+cd transformers
+python -m unittest discover -s transformers/tests -p "*test.py" -t .
+
+```
+
+### Inference
+
+```
+export GPU_NAME=v100
+export PATH_PTXAS=/usr/local/cuda-10.0/bin/ptxas
+export PATH_LIBDEVICE=/usr/local/cuda-10.0/nvvm/libdevice/libdevice.10.bc
+
+./run_inference.sh $GPU_NAME $PATH_PTXAS $PATH_LIBDEVICE
+
+./run_inference.sh v100 /usr/local/cuda-10.0/bin/ptxas /usr/local/cuda-10.0/nvvm/libdevice/libdevice.10.bc
+```
+
+### Fine-tune SQUAD
+
+```
+mkdir data
+cd data
+wget https://rajpurkar.github.io/SQuAD-explorer/dataset/train-v1.1.json
+wget https://rajpurkar.github.io/SQuAD-explorer/dataset/dev-v1.1.json
+cd ..
+
+export NUM_GPU=8
+export SQUAD_DIR=~/transformers/data
+export LOG_DIR=~/transformers/logs/log_hyperplane16
+./run_squad.sh $NUM_GPU $SQUAD_DIR $LOG_DIR
+
+./run_squad.sh 8 ~/transformers/data ~/transformers/logs/hyperplanebasic
+./run_squad.sh 16 ~/transformers/data ~/transformers/logs/hyperplane16
+```
+
+
 🤗 Transformers (formerly known as `pytorch-transformers` and `pytorch-pretrained-bert`) provides state-of-the-art general-purpose architectures (BERT, GPT-2, RoBERTa, XLM, DistilBert, XLNet, CTRL...) for Natural Language Understanding (NLU) and Natural Language Generation (NLG) with over 32+ pretrained models in 100+ languages and deep interoperability between TensorFlow 2.0 and PyTorch.
 
 ### Features
