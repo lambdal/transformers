@@ -99,7 +99,7 @@ FP32 Training Time in Seconds (2 Epochs)
 |---|---|---|---|
 | Lambda Hyperplane 16 V100 32GB | 328.26 | 1350.84 | 170.47 |
 | Lambda Hyperplane Basic 8 V100 32GB | 651.14 | 2706.56 | 335.09 |
-| Lambda Blade 8 Quadro 8000 | 773.80 |  |  |
+| Lambda Blade 8 Quadro 8000 | 773.80 | 5132.48 | 410.56 |
 
 FP32 Evaluation exact match/F1 Score
 
@@ -107,7 +107,7 @@ FP32 Evaluation exact match/F1 Score
 |---|---|---|---|
 | Lambda Hyperplane 16 V100 32GB | 85.45 | 93.22 | 81.13 | 
 | Lambda Hyperplane Basic 8 V100 32GB | 86.9 | 93.04 | 82.59 |
-| Lambda Blade 8 Quadro 8000 | 86.77 |  |  |
+| Lambda Blade 8 Quadro 8000 | 86.77 | 93.07 | 82.80 |
 
 
 FP16 Training Time in Seconds (2 Epochs)
@@ -116,7 +116,7 @@ FP16 Training Time in Seconds (2 Epochs)
 |---|---|---|---|
 | Lambda Hyperplane 16 V100 32 GB | 180.68 | 973.77 | 101.6 |
 | Lambda Hyperplane Basic 8 V100 32 GB | 345.64 | 1876.19 | 187.93 |
-| Lambda Blade 8 Quadro 8000 |  |  |  |
+| Lambda Blade 8 Quadro 8000 | 560.92 | 4474.57 | 304.42 |
 
 FP16 Evaluation exact match/F1 Score
 
@@ -124,7 +124,7 @@ FP16 Evaluation exact match/F1 Score
 |---|---|---|---|
 | Lambda Hyperplane 16 V100 32 GB | 85.4 | 93.34 | 81.04 | 
 | Lambda Hyperplane Basic 8 V100 32 GB | 86.95 | 93.13 | 82.64 |
-| Lambda Blade 8 Quadro 8000 |  |  |  |
+| Lambda Blade 8 Quadro 8000 | 86.80 | 93.17 | 82.775 |
 
 
 🤗 Transformers (formerly known as `pytorch-transformers` and `pytorch-pretrained-bert`) provides state-of-the-art general-purpose architectures (BERT, GPT-2, RoBERTa, XLM, DistilBert, XLNet, CTRL...) for Natural Language Understanding (NLU) and Natural Language Generation (NLG) with over 32+ pretrained models in 100+ languages and deep interoperability between TensorFlow 2.0 and PyTorch.
