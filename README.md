@@ -93,7 +93,6 @@ export LOG_DIR=~/transformers/logs/log_hyperplane16
 
 ### Results
 
-```
 FP32 Training Time in Seconds (2 Epochs)
 
 |   | bert_base_uncased (bs_per_GPU=12) | bert_large_uncased_whole_word_masking (bs_per_GPU=3) | distilbert-base-uncased (bs_per_GPU=12) | 
@@ -126,7 +125,6 @@ FP16 Evaluation exact match/F1 Score
 | Lambda Hyperplane 16 V100 32 GB | 85.4 | 93.34 | 81.04 | 
 | Lambda Hyperplane Basic 8 V100 32 GB | 86.95 | 93.13 | 82.64 |
 | Lambda Blade 8 Quadro 8000 |  |  |  |
-```
 
 
 🤗 Transformers (formerly known as `pytorch-transformers` and `pytorch-pretrained-bert`) provides state-of-the-art general-purpose architectures (BERT, GPT-2, RoBERTa, XLM, DistilBert, XLNet, CTRL...) for Natural Language Understanding (NLU) and Natural Language Generation (NLG) with over 32+ pretrained models in 100+ languages and deep interoperability between TensorFlow 2.0 and PyTorch.
