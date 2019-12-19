@@ -1,0 +1,1116 @@
+12/16/2019 13:27:48 - WARNING - __main__ -   Process rank: 6, device: cuda:6, n_gpu: 1, distributed training: True, 16-bits training: False
+12/16/2019 13:27:48 - WARNING - __main__ -   Process rank: 10, device: cuda:10, n_gpu: 1, distributed training: True, 16-bits training: False
+12/16/2019 13:27:48 - WARNING - __main__ -   Process rank: 15, device: cuda:15, n_gpu: 1, distributed training: True, 16-bits training: False
+12/16/2019 13:27:48 - WARNING - __main__ -   Process rank: 3, device: cuda:3, n_gpu: 1, distributed training: True, 16-bits training: False
+12/16/2019 13:27:48 - WARNING - __main__ -   Process rank: 14, device: cuda:14, n_gpu: 1, distributed training: True, 16-bits training: False
+12/16/2019 13:27:48 - WARNING - __main__ -   Process rank: 13, device: cuda:13, n_gpu: 1, distributed training: True, 16-bits training: False
+12/16/2019 13:27:48 - WARNING - __main__ -   Process rank: 9, device: cuda:9, n_gpu: 1, distributed training: True, 16-bits training: False
+12/16/2019 13:27:48 - WARNING - __main__ -   Process rank: 11, device: cuda:11, n_gpu: 1, distributed training: True, 16-bits training: False
+12/16/2019 13:27:48 - WARNING - __main__ -   Process rank: 12, device: cuda:12, n_gpu: 1, distributed training: True, 16-bits training: False
+12/16/2019 13:27:48 - WARNING - __main__ -   Process rank: 8, device: cuda:8, n_gpu: 1, distributed training: True, 16-bits training: False
+12/16/2019 13:27:48 - WARNING - __main__ -   Process rank: 5, device: cuda:5, n_gpu: 1, distributed training: True, 16-bits training: False
+12/16/2019 13:27:49 - WARNING - __main__ -   Process rank: 4, device: cuda:4, n_gpu: 1, distributed training: True, 16-bits training: False
+12/16/2019 13:27:49 - WARNING - __main__ -   Process rank: 2, device: cuda:2, n_gpu: 1, distributed training: True, 16-bits training: False
+12/16/2019 13:27:49 - WARNING - __main__ -   Process rank: 1, device: cuda:1, n_gpu: 1, distributed training: True, 16-bits training: False
+12/16/2019 13:27:49 - WARNING - __main__ -   Process rank: 7, device: cuda:7, n_gpu: 1, distributed training: True, 16-bits training: False
+12/16/2019 13:27:49 - WARNING - __main__ -   Process rank: 0, device: cuda:0, n_gpu: 1, distributed training: True, 16-bits training: False
+12/16/2019 13:27:50 - INFO - transformers.configuration_utils -   loading configuration file https://s3.amazonaws.com/models.huggingface.co/bert/bert-base-uncased-config.json from cache at /home/ubuntu/.cache/torch/transformers/4dad0251492946e18ac39290fcfe91b89d370fee250efe9521476438fe8ca185.bf3b9ea126d8c0001ee8a1e8b92229871d06d36d8808208cc2449280da87785c
+12/16/2019 13:27:50 - INFO - transformers.configuration_utils -   Model config {
+  "attention_probs_dropout_prob": 0.1,
+  "finetuning_task": null,
+  "hidden_act": "gelu",
+  "hidden_dropout_prob": 0.1,
+  "hidden_size": 768,
+  "initializer_range": 0.02,
+  "intermediate_size": 3072,
+  "is_decoder": false,
+  "layer_norm_eps": 1e-12,
+  "max_position_embeddings": 512,
+  "num_attention_heads": 12,
+  "num_hidden_layers": 12,
+  "num_labels": 2,
+  "output_attentions": false,
+  "output_hidden_states": false,
+  "output_past": true,
+  "pruned_heads": {},
+  "torchscript": false,
+  "type_vocab_size": 2,
+  "use_bfloat16": false,
+  "vocab_size": 30522
+}
+
+12/16/2019 13:27:50 - INFO - transformers.tokenization_utils -   loading file https://s3.amazonaws.com/models.huggingface.co/bert/bert-base-uncased-vocab.txt from cache at /home/ubuntu/.cache/torch/transformers/26bc1ad6c0ac742e9b52263248f6d0f00068293b33709fae12320c0e35ccfbbb.542ce4285a40d23a559526243235df47c5f75c197f04f37d1a0c124c32c9a084
+12/16/2019 13:27:50 - INFO - transformers.modeling_utils -   loading weights file https://s3.amazonaws.com/models.huggingface.co/bert/bert-base-uncased-pytorch_model.bin from cache at /home/ubuntu/.cache/torch/transformers/aa1ef1aede4482d0dbcd4d52baad8ae300e60902e88fcb0bebdec09afd232066.36ca03ab34a1a5d5fa7bc3d03d55c4fa650fed07220e2eeebc06ce58d0e9a157
+12/16/2019 13:27:53 - INFO - transformers.modeling_utils -   Weights of BertForQuestionAnswering not initialized from pretrained model: ['qa_outputs.weight', 'qa_outputs.bias']
+12/16/2019 13:27:53 - INFO - transformers.modeling_utils -   Weights from pretrained model not used in BertForQuestionAnswering: ['cls.predictions.bias', 'cls.predictions.transform.dense.weight', 'cls.predictions.transform.dense.bias', 'cls.predictions.decoder.weight', 'cls.seq_relationship.weight', 'cls.seq_relationship.bias', 'cls.predictions.transform.LayerNorm.weight', 'cls.predictions.transform.LayerNorm.bias']
+12/16/2019 13:28:06 - INFO - __main__ -   Training/evaluation parameters Namespace(adam_epsilon=1e-08, cache_dir='', config_name='', data_dir=None, device=device(type='cuda', index=0), do_eval=True, do_lower_case=True, do_train=True, doc_stride=128, eval_all_checkpoints=False, evaluate_during_training=False, fp16=False, fp16_opt_level='O1', gradient_accumulation_steps=1, learning_rate=3e-05, local_rank=0, logging_steps=50, max_answer_length=30, max_grad_norm=1.0, max_query_length=64, max_seq_length=384, max_steps=-1, model_name_or_path='bert-base-uncased', model_type='bert', n_best_size=20, n_gpu=1, no_cuda=False, null_score_diff_threshold=0.0, num_train_epochs=2.0, output_dir='output/squad_bert_base_uncased/', overwrite_cache=False, overwrite_output_dir=False, per_gpu_eval_batch_size=8, per_gpu_train_batch_size=12, predict_file='/home/ubuntu/transformers/data/dev-v1.1.json', save_steps=50, seed=42, server_ip='', server_port='', tokenizer_name='', train_file='/home/ubuntu/transformers/data/train-v1.1.json', verbose_logging=False, version_2_with_negative=False, warmup_steps=0, weight_decay=0.0)
+12/16/2019 13:28:06 - INFO - __main__ -   Loading features from cached file ./cached_train_bert-base-uncased_384
+12/16/2019 13:28:18 - INFO - __main__ -   ***** Running training *****
+12/16/2019 13:28:18 - INFO - __main__ -     Num examples = 88641
+12/16/2019 13:28:18 - INFO - __main__ -     Num Epochs = 2
+12/16/2019 13:28:18 - INFO - __main__ -     Instantaneous batch size per GPU = 12
+12/16/2019 13:28:18 - INFO - __main__ -     Total train batch size (w. parallel, distributed & accumulation) = 192
+12/16/2019 13:28:18 - INFO - __main__ -     Gradient Accumulation steps = 1
+12/16/2019 13:28:18 - INFO - __main__ -     Total optimization steps = 924
+Epoch:   0%|          | 0/2 [00:00<?, ?it/s]
+Iteration:   0%|          | 0/462 [00:00<?, ?it/s][A
+Iteration:   0%|          | 1/462 [00:16<2:06:01, 16.40s/it][A
+Iteration:   0%|          | 2/462 [00:17<1:29:36, 11.69s/it][A
+Iteration:   1%|          | 3/462 [00:17<1:03:20,  8.28s/it][A
+Iteration:   1%|          | 4/462 [00:17<44:59,  5.90s/it]  [A
+Iteration:   1%|          | 5/462 [00:18<32:11,  4.23s/it][A
+Iteration:   1%|▏         | 6/462 [00:18<23:14,  3.06s/it][A
+Iteration:   2%|▏         | 7/462 [00:18<16:59,  2.24s/it][A
+Iteration:   2%|▏         | 8/462 [00:19<12:37,  1.67s/it][A
+Iteration:   2%|▏         | 9/462 [00:19<09:34,  1.27s/it][A
+Iteration:   2%|▏         | 10/462 [00:19<07:26,  1.01it/s][A
+Iteration:   2%|▏         | 11/462 [00:20<05:57,  1.26it/s][A
+Iteration:   3%|▎         | 12/462 [00:20<04:54,  1.53it/s][A
+Iteration:   3%|▎         | 13/462 [00:20<04:09,  1.80it/s][A
+Iteration:   3%|▎         | 14/462 [00:21<03:38,  2.05it/s][A
+Iteration:   3%|▎         | 15/462 [00:21<03:16,  2.28it/s][A
+Iteration:   3%|▎         | 16/462 [00:21<03:01,  2.45it/s][A
+Iteration:   4%|▎         | 17/462 [00:22<02:50,  2.61it/s][A
+Iteration:   4%|▍         | 18/462 [00:22<02:42,  2.73it/s][A
+Iteration:   4%|▍         | 19/462 [00:22<02:36,  2.82it/s][A
+Iteration:   4%|▍         | 20/462 [00:23<02:32,  2.89it/s][A
+Iteration:   5%|▍         | 21/462 [00:23<02:30,  2.93it/s][A
+Iteration:   5%|▍         | 22/462 [00:23<02:27,  2.98it/s][A
+Iteration:   5%|▍         | 23/462 [00:24<02:26,  3.00it/s][A
+Iteration:   5%|▌         | 24/462 [00:24<02:25,  3.02it/s][A
+Iteration:   5%|▌         | 25/462 [00:24<02:23,  3.04it/s][A
+Iteration:   6%|▌         | 26/462 [00:24<02:23,  3.04it/s][A
+Iteration:   6%|▌         | 27/462 [00:25<02:23,  3.04it/s][A
+Iteration:   6%|▌         | 28/462 [00:25<02:22,  3.05it/s][A
+Iteration:   6%|▋         | 29/462 [00:25<02:22,  3.04it/s][A
+Iteration:   6%|▋         | 30/462 [00:26<02:21,  3.05it/s][A
+Iteration:   7%|▋         | 31/462 [00:26<02:20,  3.06it/s][A
+Iteration:   7%|▋         | 32/462 [00:26<02:20,  3.05it/s][A
+Iteration:   7%|▋         | 33/462 [00:27<02:19,  3.07it/s][A
+Iteration:   7%|▋         | 34/462 [00:27<02:19,  3.08it/s][A
+Iteration:   8%|▊         | 35/462 [00:27<02:19,  3.06it/s][A
+Iteration:   8%|▊         | 36/462 [00:28<02:18,  3.08it/s][A
+Iteration:   8%|▊         | 37/462 [00:28<02:17,  3.09it/s][A
+Iteration:   8%|▊         | 38/462 [00:28<02:17,  3.08it/s][A
+Iteration:   8%|▊         | 39/462 [00:29<02:17,  3.07it/s][A
+Iteration:   9%|▊         | 40/462 [00:29<02:16,  3.09it/s][A
+Iteration:   9%|▉         | 41/462 [00:29<02:16,  3.08it/s][A
+Iteration:   9%|▉         | 42/462 [00:30<02:16,  3.07it/s][A
+Iteration:   9%|▉         | 43/462 [00:30<02:15,  3.09it/s][A
+Iteration:  10%|▉         | 44/462 [00:30<02:15,  3.08it/s][A
+Iteration:  10%|▉         | 45/462 [00:31<02:15,  3.08it/s][A
+Iteration:  10%|▉         | 46/462 [00:31<02:14,  3.09it/s][A
+Iteration:  10%|█         | 47/462 [00:31<02:14,  3.08it/s][A
+Iteration:  10%|█         | 48/462 [00:32<02:14,  3.08it/s][A12/16/2019 13:28:50 - INFO - transformers.configuration_utils -   Configuration saved in output/squad_bert_base_uncased/checkpoint-50/config.json
+12/16/2019 13:28:51 - INFO - transformers.modeling_utils -   Model weights saved in output/squad_bert_base_uncased/checkpoint-50/pytorch_model.bin
+12/16/2019 13:28:51 - INFO - __main__ -   Saving model checkpoint to output/squad_bert_base_uncased/checkpoint-50
+
+Iteration:  11%|█         | 49/462 [00:32<03:12,  2.15it/s][A
+Iteration:  11%|█         | 50/462 [00:33<02:53,  2.37it/s][A
+Iteration:  11%|█         | 51/462 [00:33<02:41,  2.54it/s][A
+Iteration:  11%|█▏        | 52/462 [00:33<02:32,  2.68it/s][A
+Iteration:  11%|█▏        | 53/462 [00:34<02:26,  2.79it/s][A
+Iteration:  12%|█▏        | 54/462 [00:34<02:22,  2.87it/s][A
+Iteration:  12%|█▏        | 55/462 [00:34<02:19,  2.93it/s][A
+Iteration:  12%|█▏        | 56/462 [00:35<02:16,  2.97it/s][A
+Iteration:  12%|█▏        | 57/462 [00:35<02:14,  3.00it/s][A
+Iteration:  13%|█▎        | 58/462 [00:35<02:13,  3.02it/s][A
+Iteration:  13%|█▎        | 59/462 [00:36<02:12,  3.04it/s][A
+Iteration:  13%|█▎        | 60/462 [00:36<02:11,  3.05it/s][A
+Iteration:  13%|█▎        | 61/462 [00:36<02:11,  3.05it/s][A
+Iteration:  13%|█▎        | 62/462 [00:37<02:11,  3.05it/s][A
+Iteration:  14%|█▎        | 63/462 [00:37<02:10,  3.06it/s][A
+Iteration:  14%|█▍        | 64/462 [00:37<02:09,  3.06it/s][A
+Iteration:  14%|█▍        | 65/462 [00:38<02:09,  3.06it/s][A
+Iteration:  14%|█▍        | 66/462 [00:38<02:09,  3.05it/s][A
+Iteration:  15%|█▍        | 67/462 [00:38<02:09,  3.04it/s][A
+Iteration:  15%|█▍        | 68/462 [00:39<02:09,  3.04it/s][A
+Iteration:  15%|█▍        | 69/462 [00:39<02:09,  3.03it/s][A
+Iteration:  15%|█▌        | 70/462 [00:39<02:09,  3.02it/s][A
+Iteration:  15%|█▌        | 71/462 [00:40<02:09,  3.03it/s][A
+Iteration:  16%|█▌        | 72/462 [00:40<02:09,  3.02it/s][A
+Iteration:  16%|█▌        | 73/462 [00:40<02:08,  3.02it/s][A
+Iteration:  16%|█▌        | 74/462 [00:41<02:08,  3.02it/s][A
+Iteration:  16%|█▌        | 75/462 [00:41<02:08,  3.02it/s][A
+Iteration:  16%|█▋        | 76/462 [00:41<02:07,  3.02it/s][A
+Iteration:  17%|█▋        | 77/462 [00:42<02:07,  3.02it/s][A
+Iteration:  17%|█▋        | 78/462 [00:42<02:07,  3.01it/s][A
+Iteration:  17%|█▋        | 79/462 [00:42<02:06,  3.02it/s][A
+Iteration:  17%|█▋        | 80/462 [00:43<02:06,  3.01it/s][A
+Iteration:  18%|█▊        | 81/462 [00:43<02:06,  3.01it/s][A
+Iteration:  18%|█▊        | 82/462 [00:43<02:06,  3.01it/s][A
+Iteration:  18%|█▊        | 83/462 [00:44<02:05,  3.02it/s][A
+Iteration:  18%|█▊        | 84/462 [00:44<02:05,  3.01it/s][A
+Iteration:  18%|█▊        | 85/462 [00:44<02:05,  3.01it/s][A
+Iteration:  19%|█▊        | 86/462 [00:45<02:04,  3.01it/s][A
+Iteration:  19%|█▉        | 87/462 [00:45<02:04,  3.01it/s][A
+Iteration:  19%|█▉        | 88/462 [00:45<02:04,  3.01it/s][A
+Iteration:  19%|█▉        | 89/462 [00:46<02:03,  3.01it/s][A
+Iteration:  19%|█▉        | 90/462 [00:46<02:03,  3.02it/s][A
+Iteration:  20%|█▉        | 91/462 [00:46<02:02,  3.03it/s][A
+Iteration:  20%|█▉        | 92/462 [00:47<02:02,  3.03it/s][A
+Iteration:  20%|██        | 93/462 [00:47<02:01,  3.03it/s][A
+Iteration:  20%|██        | 94/462 [00:47<02:01,  3.03it/s][A
+Iteration:  21%|██        | 95/462 [00:48<02:00,  3.04it/s][A
+Iteration:  21%|██        | 96/462 [00:48<02:00,  3.04it/s][A
+Iteration:  21%|██        | 97/462 [00:48<02:00,  3.04it/s][A
+Iteration:  21%|██        | 98/462 [00:49<01:59,  3.03it/s][A12/16/2019 13:29:07 - INFO - transformers.configuration_utils -   Configuration saved in output/squad_bert_base_uncased/checkpoint-100/config.json
+12/16/2019 13:29:07 - INFO - transformers.modeling_utils -   Model weights saved in output/squad_bert_base_uncased/checkpoint-100/pytorch_model.bin
+12/16/2019 13:29:07 - INFO - __main__ -   Saving model checkpoint to output/squad_bert_base_uncased/checkpoint-100
+
+Iteration:  21%|██▏       | 99/462 [00:49<02:46,  2.19it/s][A
+Iteration:  22%|██▏       | 100/462 [00:50<02:30,  2.41it/s][A
+Iteration:  22%|██▏       | 101/462 [00:50<02:19,  2.58it/s][A
+Iteration:  22%|██▏       | 102/462 [00:50<02:13,  2.70it/s][A
+Iteration:  22%|██▏       | 103/462 [00:51<02:08,  2.78it/s][A
+Iteration:  23%|██▎       | 104/462 [00:51<02:06,  2.83it/s][A
+Iteration:  23%|██▎       | 105/462 [00:51<02:05,  2.86it/s][A
+Iteration:  23%|██▎       | 106/462 [00:52<02:03,  2.88it/s][A
+Iteration:  23%|██▎       | 107/462 [00:52<02:01,  2.93it/s][A
+Iteration:  23%|██▎       | 108/462 [00:52<01:59,  2.96it/s][A
+Iteration:  24%|██▎       | 109/462 [00:53<01:58,  2.98it/s][A
+Iteration:  24%|██▍       | 110/462 [00:53<01:57,  3.00it/s][A
+Iteration:  24%|██▍       | 111/462 [00:53<01:56,  3.01it/s][A
+Iteration:  24%|██▍       | 112/462 [00:54<01:56,  3.01it/s][A
+Iteration:  24%|██▍       | 113/462 [00:54<01:55,  3.02it/s][A
+Iteration:  25%|██▍       | 114/462 [00:54<01:55,  3.02it/s][A
+Iteration:  25%|██▍       | 115/462 [00:55<01:54,  3.02it/s][A
+Iteration:  25%|██▌       | 116/462 [00:55<01:54,  3.03it/s][A
+Iteration:  25%|██▌       | 117/462 [00:55<01:54,  3.02it/s][A
+Iteration:  26%|██▌       | 118/462 [00:56<01:53,  3.03it/s][A
+Iteration:  26%|██▌       | 119/462 [00:56<01:53,  3.03it/s][A
+Iteration:  26%|██▌       | 120/462 [00:56<01:52,  3.03it/s][A
+Iteration:  26%|██▌       | 121/462 [00:57<01:52,  3.03it/s][A
+Iteration:  26%|██▋       | 122/462 [00:57<01:52,  3.03it/s][A
+Iteration:  27%|██▋       | 123/462 [00:57<01:51,  3.04it/s][A
+Iteration:  27%|██▋       | 124/462 [00:58<01:51,  3.04it/s][A
+Iteration:  27%|██▋       | 125/462 [00:58<01:50,  3.04it/s][A
+Iteration:  27%|██▋       | 126/462 [00:58<01:50,  3.04it/s][A
+Iteration:  27%|██▋       | 127/462 [00:59<01:50,  3.02it/s][A
+Iteration:  28%|██▊       | 128/462 [00:59<01:50,  3.03it/s][A
+Iteration:  28%|██▊       | 129/462 [00:59<01:49,  3.04it/s][A
+Iteration:  28%|██▊       | 130/462 [01:00<01:49,  3.04it/s][A
+Iteration:  28%|██▊       | 131/462 [01:00<01:48,  3.05it/s][A
+Iteration:  29%|██▊       | 132/462 [01:00<01:48,  3.05it/s][A
+Iteration:  29%|██▉       | 133/462 [01:01<01:47,  3.05it/s][A
+Iteration:  29%|██▉       | 134/462 [01:01<01:47,  3.05it/s][A
+Iteration:  29%|██▉       | 135/462 [01:01<01:47,  3.04it/s][A
+Iteration:  29%|██▉       | 136/462 [01:02<01:46,  3.05it/s][A
+Iteration:  30%|██▉       | 137/462 [01:02<01:46,  3.05it/s][A
+Iteration:  30%|██▉       | 138/462 [01:02<01:46,  3.05it/s][A
+Iteration:  30%|███       | 139/462 [01:03<01:46,  3.04it/s][A
+Iteration:  30%|███       | 140/462 [01:03<01:45,  3.05it/s][A
+Iteration:  31%|███       | 141/462 [01:03<01:45,  3.05it/s][A
+Iteration:  31%|███       | 142/462 [01:04<01:44,  3.05it/s][A
+Iteration:  31%|███       | 143/462 [01:04<01:44,  3.06it/s][A
+Iteration:  31%|███       | 144/462 [01:04<01:43,  3.07it/s][A
+Iteration:  31%|███▏      | 145/462 [01:04<01:43,  3.05it/s][A
+Iteration:  32%|███▏      | 146/462 [01:05<01:43,  3.05it/s][A
+Iteration:  32%|███▏      | 147/462 [01:05<01:43,  3.05it/s][A
+Iteration:  32%|███▏      | 148/462 [01:05<01:42,  3.05it/s][A12/16/2019 13:29:24 - INFO - transformers.configuration_utils -   Configuration saved in output/squad_bert_base_uncased/checkpoint-150/config.json
+12/16/2019 13:29:24 - INFO - transformers.modeling_utils -   Model weights saved in output/squad_bert_base_uncased/checkpoint-150/pytorch_model.bin
+12/16/2019 13:29:24 - INFO - __main__ -   Saving model checkpoint to output/squad_bert_base_uncased/checkpoint-150
+
+Iteration:  32%|███▏      | 149/462 [01:06<02:21,  2.21it/s][A
+Iteration:  32%|███▏      | 150/462 [01:07<02:08,  2.42it/s][A
+Iteration:  33%|███▎      | 151/462 [01:07<02:00,  2.59it/s][A
+Iteration:  33%|███▎      | 152/462 [01:07<01:53,  2.72it/s][A
+Iteration:  33%|███▎      | 153/462 [01:08<01:49,  2.83it/s][A
+Iteration:  33%|███▎      | 154/462 [01:08<01:46,  2.89it/s][A
+Iteration:  34%|███▎      | 155/462 [01:08<01:44,  2.94it/s][A
+Iteration:  34%|███▍      | 156/462 [01:08<01:42,  2.98it/s][A
+Iteration:  34%|███▍      | 157/462 [01:09<01:41,  2.99it/s][A
+Iteration:  34%|███▍      | 158/462 [01:09<01:40,  3.02it/s][A
+Iteration:  34%|███▍      | 159/462 [01:09<01:40,  3.02it/s][A
+Iteration:  35%|███▍      | 160/462 [01:10<01:40,  3.01it/s][A
+Iteration:  35%|███▍      | 161/462 [01:10<01:39,  3.01it/s][A
+Iteration:  35%|███▌      | 162/462 [01:10<01:39,  3.02it/s][A
+Iteration:  35%|███▌      | 163/462 [01:11<01:38,  3.02it/s][A
+Iteration:  35%|███▌      | 164/462 [01:11<01:38,  3.02it/s][A
+Iteration:  36%|███▌      | 165/462 [01:11<01:38,  3.02it/s][A
+Iteration:  36%|███▌      | 166/462 [01:12<01:38,  3.00it/s][A
+Iteration:  36%|███▌      | 167/462 [01:12<01:38,  2.99it/s][A
+Iteration:  36%|███▋      | 168/462 [01:12<01:38,  2.99it/s][A
+Iteration:  37%|███▋      | 169/462 [01:13<01:37,  2.99it/s][A
+Iteration:  37%|███▋      | 170/462 [01:13<01:38,  2.98it/s][A
+Iteration:  37%|███▋      | 171/462 [01:13<01:37,  2.98it/s][A
+Iteration:  37%|███▋      | 172/462 [01:14<01:37,  2.98it/s][A
+Iteration:  37%|███▋      | 173/462 [01:14<01:37,  2.98it/s][A
+Iteration:  38%|███▊      | 174/462 [01:14<01:36,  2.98it/s][A
+Iteration:  38%|███▊      | 175/462 [01:15<01:36,  2.98it/s][A
+Iteration:  38%|███▊      | 176/462 [01:15<01:36,  2.98it/s][A
+Iteration:  38%|███▊      | 177/462 [01:15<01:35,  2.98it/s][A
+Iteration:  39%|███▊      | 178/462 [01:16<01:35,  2.98it/s][A
+Iteration:  39%|███▊      | 179/462 [01:16<01:34,  2.98it/s][A
+Iteration:  39%|███▉      | 180/462 [01:16<01:34,  2.99it/s][A
+Iteration:  39%|███▉      | 181/462 [01:17<01:34,  2.98it/s][A
+Iteration:  39%|███▉      | 182/462 [01:17<01:33,  2.99it/s][A
+Iteration:  40%|███▉      | 183/462 [01:18<01:33,  2.98it/s][A
+Iteration:  40%|███▉      | 184/462 [01:18<01:33,  2.97it/s][A
+Iteration:  40%|████      | 185/462 [01:18<01:33,  2.97it/s][A
+Iteration:  40%|████      | 186/462 [01:19<01:32,  2.99it/s][A
+Iteration:  40%|████      | 187/462 [01:19<01:32,  2.97it/s][A
+Iteration:  41%|████      | 188/462 [01:19<01:31,  2.99it/s][A
+Iteration:  41%|████      | 189/462 [01:20<01:31,  2.98it/s][A
+Iteration:  41%|████      | 190/462 [01:20<01:31,  2.98it/s][A
+Iteration:  41%|████▏     | 191/462 [01:20<01:30,  3.00it/s][A
+Iteration:  42%|████▏     | 192/462 [01:21<01:29,  3.00it/s][A
+Iteration:  42%|████▏     | 193/462 [01:21<01:30,  2.99it/s][A
+Iteration:  42%|████▏     | 194/462 [01:21<01:29,  2.98it/s][A
+Iteration:  42%|████▏     | 195/462 [01:22<01:29,  3.00it/s][A
+Iteration:  42%|████▏     | 196/462 [01:22<01:29,  2.99it/s][A
+Iteration:  43%|████▎     | 197/462 [01:22<01:28,  3.00it/s][A
+Iteration:  43%|████▎     | 198/462 [01:23<01:28,  2.99it/s][A12/16/2019 13:29:41 - INFO - transformers.configuration_utils -   Configuration saved in output/squad_bert_base_uncased/checkpoint-200/config.json
+12/16/2019 13:29:41 - INFO - transformers.modeling_utils -   Model weights saved in output/squad_bert_base_uncased/checkpoint-200/pytorch_model.bin
+12/16/2019 13:29:41 - INFO - __main__ -   Saving model checkpoint to output/squad_bert_base_uncased/checkpoint-200
+
+Iteration:  43%|████▎     | 199/462 [01:23<01:59,  2.20it/s][A
+Iteration:  43%|████▎     | 200/462 [01:24<01:48,  2.42it/s][A
+Iteration:  44%|████▎     | 201/462 [01:24<01:41,  2.58it/s][A
+Iteration:  44%|████▎     | 202/462 [01:24<01:35,  2.71it/s][A
+Iteration:  44%|████▍     | 203/462 [01:25<01:32,  2.79it/s][A
+Iteration:  44%|████▍     | 204/462 [01:25<01:30,  2.87it/s][A
+Iteration:  44%|████▍     | 205/462 [01:25<01:28,  2.91it/s][A
+Iteration:  45%|████▍     | 206/462 [01:26<01:26,  2.95it/s][A
+Iteration:  45%|████▍     | 207/462 [01:26<01:25,  2.98it/s][A
+Iteration:  45%|████▌     | 208/462 [01:26<01:24,  2.99it/s][A
+Iteration:  45%|████▌     | 209/462 [01:27<01:25,  2.98it/s][A
+Iteration:  45%|████▌     | 210/462 [01:27<01:24,  2.98it/s][A
+Iteration:  46%|████▌     | 211/462 [01:27<01:23,  3.00it/s][A
+Iteration:  46%|████▌     | 212/462 [01:28<01:23,  2.98it/s][A
+Iteration:  46%|████▌     | 213/462 [01:28<01:23,  2.99it/s][A
+Iteration:  46%|████▋     | 214/462 [01:28<01:23,  2.98it/s][A
+Iteration:  47%|████▋     | 215/462 [01:29<01:22,  3.00it/s][A
+Iteration:  47%|████▋     | 216/462 [01:29<01:22,  2.99it/s][A
+Iteration:  47%|████▋     | 217/462 [01:29<01:21,  3.00it/s][A
+Iteration:  47%|████▋     | 218/462 [01:30<01:21,  2.99it/s][A
+Iteration:  47%|████▋     | 219/462 [01:30<01:21,  2.99it/s][A
+Iteration:  48%|████▊     | 220/462 [01:30<01:21,  2.98it/s][A
+Iteration:  48%|████▊     | 221/462 [01:31<01:20,  2.98it/s][A
+Iteration:  48%|████▊     | 222/462 [01:31<01:20,  2.98it/s][A
+Iteration:  48%|████▊     | 223/462 [01:31<01:19,  3.00it/s][A
+Iteration:  48%|████▊     | 224/462 [01:32<01:19,  2.98it/s][A
+Iteration:  49%|████▊     | 225/462 [01:32<01:19,  2.99it/s][A
+Iteration:  49%|████▉     | 226/462 [01:32<01:19,  2.97it/s][A
+Iteration:  49%|████▉     | 227/462 [01:33<01:18,  2.99it/s][A
+Iteration:  49%|████▉     | 228/462 [01:33<01:18,  2.99it/s][A
+Iteration:  50%|████▉     | 229/462 [01:33<01:17,  3.00it/s][A
+Iteration:  50%|████▉     | 230/462 [01:34<01:17,  2.99it/s][A
+Iteration:  50%|█████     | 231/462 [01:34<01:17,  2.98it/s][A
+Iteration:  50%|█████     | 232/462 [01:34<01:16,  3.00it/s][A
+Iteration:  50%|█████     | 233/462 [01:35<01:16,  2.99it/s][A
+Iteration:  51%|█████     | 234/462 [01:35<01:16,  2.98it/s][A
+Iteration:  51%|█████     | 235/462 [01:35<01:15,  2.99it/s][A
+Iteration:  51%|█████     | 236/462 [01:36<01:15,  2.98it/s][A
+Iteration:  51%|█████▏    | 237/462 [01:36<01:15,  2.99it/s][A
+Iteration:  52%|█████▏    | 238/462 [01:36<01:14,  2.99it/s][A
+Iteration:  52%|█████▏    | 239/462 [01:37<01:14,  2.99it/s][A
+Iteration:  52%|█████▏    | 240/462 [01:37<01:14,  2.98it/s][A
+Iteration:  52%|█████▏    | 241/462 [01:37<01:14,  2.97it/s][A
+Iteration:  52%|█████▏    | 242/462 [01:38<01:13,  2.98it/s][A
+Iteration:  53%|█████▎    | 243/462 [01:38<01:13,  2.99it/s][A
+Iteration:  53%|█████▎    | 244/462 [01:38<01:13,  2.98it/s][A
+Iteration:  53%|█████▎    | 245/462 [01:39<01:12,  2.98it/s][A
+Iteration:  53%|█████▎    | 246/462 [01:39<01:12,  2.98it/s][A
+Iteration:  53%|█████▎    | 247/462 [01:39<01:12,  2.98it/s][A
+Iteration:  54%|█████▎    | 248/462 [01:40<01:12,  2.96it/s][A12/16/2019 13:29:58 - INFO - transformers.configuration_utils -   Configuration saved in output/squad_bert_base_uncased/checkpoint-250/config.json
+12/16/2019 13:29:58 - INFO - transformers.modeling_utils -   Model weights saved in output/squad_bert_base_uncased/checkpoint-250/pytorch_model.bin
+12/16/2019 13:29:58 - INFO - __main__ -   Saving model checkpoint to output/squad_bert_base_uncased/checkpoint-250
+
+Iteration:  54%|█████▍    | 249/462 [01:40<01:35,  2.23it/s][A
+Iteration:  54%|█████▍    | 250/462 [01:41<01:26,  2.44it/s][A
+Iteration:  54%|█████▍    | 251/462 [01:41<01:20,  2.61it/s][A
+Iteration:  55%|█████▍    | 252/462 [01:41<01:16,  2.73it/s][A
+Iteration:  55%|█████▍    | 253/462 [01:42<01:14,  2.81it/s][A
+Iteration:  55%|█████▍    | 254/462 [01:42<01:12,  2.88it/s][A
+Iteration:  55%|█████▌    | 255/462 [01:42<01:11,  2.91it/s][A
+Iteration:  55%|█████▌    | 256/462 [01:43<01:09,  2.97it/s][A
+Iteration:  56%|█████▌    | 257/462 [01:43<01:08,  2.97it/s][A
+Iteration:  56%|█████▌    | 258/462 [01:43<01:08,  2.99it/s][A
+Iteration:  56%|█████▌    | 259/462 [01:44<01:07,  3.00it/s][A
+Iteration:  56%|█████▋    | 260/462 [01:44<01:07,  2.99it/s][A
+Iteration:  56%|█████▋    | 261/462 [01:44<01:06,  3.01it/s][A
+Iteration:  57%|█████▋    | 262/462 [01:45<01:06,  3.01it/s][A
+Iteration:  57%|█████▋    | 263/462 [01:45<01:06,  3.01it/s][A
+Iteration:  57%|█████▋    | 264/462 [01:45<01:05,  3.02it/s][A
+Iteration:  57%|█████▋    | 265/462 [01:46<01:04,  3.03it/s][A
+Iteration:  58%|█████▊    | 266/462 [01:46<01:04,  3.04it/s][A
+Iteration:  58%|█████▊    | 267/462 [01:46<01:04,  3.05it/s][A
+Iteration:  58%|█████▊    | 268/462 [01:47<01:03,  3.05it/s][A
+Iteration:  58%|█████▊    | 269/462 [01:47<01:03,  3.06it/s][A
+Iteration:  58%|█████▊    | 270/462 [01:47<01:02,  3.06it/s][A
+Iteration:  59%|█████▊    | 271/462 [01:48<01:02,  3.06it/s][A
+Iteration:  59%|█████▉    | 272/462 [01:48<01:02,  3.06it/s][A
+Iteration:  59%|█████▉    | 273/462 [01:48<01:01,  3.05it/s][A
+Iteration:  59%|█████▉    | 274/462 [01:49<01:01,  3.04it/s][A
+Iteration:  60%|█████▉    | 275/462 [01:49<01:01,  3.04it/s][A
+Iteration:  60%|█████▉    | 276/462 [01:49<01:01,  3.04it/s][A
+Iteration:  60%|█████▉    | 277/462 [01:50<01:00,  3.04it/s][A
+Iteration:  60%|██████    | 278/462 [01:50<01:00,  3.04it/s][A
+Iteration:  60%|██████    | 279/462 [01:50<01:00,  3.04it/s][A
+Iteration:  61%|██████    | 280/462 [01:51<01:00,  3.03it/s][A
+Iteration:  61%|██████    | 281/462 [01:51<00:59,  3.03it/s][A
+Iteration:  61%|██████    | 282/462 [01:51<00:59,  3.04it/s][A
+Iteration:  61%|██████▏   | 283/462 [01:51<00:58,  3.04it/s][A
+Iteration:  61%|██████▏   | 284/462 [01:52<00:58,  3.04it/s][A
+Iteration:  62%|██████▏   | 285/462 [01:52<00:58,  3.03it/s][A
+Iteration:  62%|██████▏   | 286/462 [01:52<00:57,  3.04it/s][A
+Iteration:  62%|██████▏   | 287/462 [01:53<00:57,  3.04it/s][A
+Iteration:  62%|██████▏   | 288/462 [01:53<00:57,  3.03it/s][A
+Iteration:  63%|██████▎   | 289/462 [01:53<00:56,  3.04it/s][A
+Iteration:  63%|██████▎   | 290/462 [01:54<00:56,  3.04it/s][A
+Iteration:  63%|██████▎   | 291/462 [01:54<00:56,  3.04it/s][A
+Iteration:  63%|██████▎   | 292/462 [01:54<00:56,  3.03it/s][A
+Iteration:  63%|██████▎   | 293/462 [01:55<00:56,  3.01it/s][A
+Iteration:  64%|██████▎   | 294/462 [01:55<00:56,  2.98it/s][A
+Iteration:  64%|██████▍   | 295/462 [01:55<00:56,  2.97it/s][A
+Iteration:  64%|██████▍   | 296/462 [01:56<00:56,  2.96it/s][A
+Iteration:  64%|██████▍   | 297/462 [01:56<00:56,  2.94it/s][A
+Iteration:  65%|██████▍   | 298/462 [01:56<00:55,  2.95it/s][A12/16/2019 13:30:15 - INFO - transformers.configuration_utils -   Configuration saved in output/squad_bert_base_uncased/checkpoint-300/config.json
+12/16/2019 13:30:15 - INFO - transformers.modeling_utils -   Model weights saved in output/squad_bert_base_uncased/checkpoint-300/pytorch_model.bin
+12/16/2019 13:30:15 - INFO - __main__ -   Saving model checkpoint to output/squad_bert_base_uncased/checkpoint-300
+
+Iteration:  65%|██████▍   | 299/462 [01:57<01:13,  2.23it/s][A
+Iteration:  65%|██████▍   | 300/462 [01:58<01:06,  2.45it/s][A
+Iteration:  65%|██████▌   | 301/462 [01:58<01:01,  2.62it/s][A
+Iteration:  65%|██████▌   | 302/462 [01:58<00:58,  2.74it/s][A
+Iteration:  66%|██████▌   | 303/462 [01:58<00:56,  2.83it/s][A
+Iteration:  66%|██████▌   | 304/462 [01:59<00:54,  2.89it/s][A
+Iteration:  66%|██████▌   | 305/462 [01:59<00:53,  2.94it/s][A
+Iteration:  66%|██████▌   | 306/462 [01:59<00:52,  2.98it/s][A
+Iteration:  66%|██████▋   | 307/462 [02:00<00:51,  3.00it/s][A
+Iteration:  67%|██████▋   | 308/462 [02:00<00:51,  3.01it/s][A
+Iteration:  67%|██████▋   | 309/462 [02:00<00:50,  3.03it/s][A
+Iteration:  67%|██████▋   | 310/462 [02:01<00:50,  3.03it/s][A
+Iteration:  67%|██████▋   | 311/462 [02:01<00:49,  3.03it/s][A
+Iteration:  68%|██████▊   | 312/462 [02:01<00:49,  3.03it/s][A
+Iteration:  68%|██████▊   | 313/462 [02:02<00:49,  3.00it/s][A
+Iteration:  68%|██████▊   | 314/462 [02:02<00:49,  2.98it/s][A
+Iteration:  68%|██████▊   | 315/462 [02:02<00:49,  2.99it/s][A
+Iteration:  68%|██████▊   | 316/462 [02:03<00:48,  3.01it/s][A
+Iteration:  69%|██████▊   | 317/462 [02:03<00:48,  3.02it/s][A
+Iteration:  69%|██████▉   | 318/462 [02:03<00:47,  3.02it/s][A
+Iteration:  69%|██████▉   | 319/462 [02:04<00:47,  3.02it/s][A
+Iteration:  69%|██████▉   | 320/462 [02:04<00:46,  3.03it/s][A
+Iteration:  69%|██████▉   | 321/462 [02:04<00:46,  3.02it/s][A
+Iteration:  70%|██████▉   | 322/462 [02:05<00:46,  3.03it/s][A
+Iteration:  70%|██████▉   | 323/462 [02:05<00:45,  3.03it/s][A
+Iteration:  70%|███████   | 324/462 [02:05<00:45,  3.04it/s][A
+Iteration:  70%|███████   | 325/462 [02:06<00:45,  3.03it/s][A
+Iteration:  71%|███████   | 326/462 [02:06<00:44,  3.03it/s][A
+Iteration:  71%|███████   | 327/462 [02:06<00:44,  3.03it/s][A
+Iteration:  71%|███████   | 328/462 [02:07<00:44,  3.04it/s][A
+Iteration:  71%|███████   | 329/462 [02:07<00:43,  3.04it/s][A
+Iteration:  71%|███████▏  | 330/462 [02:07<00:43,  3.04it/s][A
+Iteration:  72%|███████▏  | 331/462 [02:08<00:43,  3.04it/s][A
+Iteration:  72%|███████▏  | 332/462 [02:08<00:43,  3.02it/s][A
+Iteration:  72%|███████▏  | 333/462 [02:08<00:42,  3.04it/s][A
+Iteration:  72%|███████▏  | 334/462 [02:09<00:42,  3.02it/s][A
+Iteration:  73%|███████▎  | 335/462 [02:09<00:42,  3.01it/s][A
+Iteration:  73%|███████▎  | 336/462 [02:09<00:41,  3.01it/s][A
+Iteration:  73%|███████▎  | 337/462 [02:10<00:41,  3.00it/s][A
+Iteration:  73%|███████▎  | 338/462 [02:10<00:41,  3.00it/s][A
+Iteration:  73%|███████▎  | 339/462 [02:10<00:41,  3.00it/s][A
+Iteration:  74%|███████▎  | 340/462 [02:11<00:40,  2.99it/s][A
+Iteration:  74%|███████▍  | 341/462 [02:11<00:40,  2.99it/s][A
+Iteration:  74%|███████▍  | 342/462 [02:11<00:40,  2.99it/s][A
+Iteration:  74%|███████▍  | 343/462 [02:12<00:39,  2.99it/s][A
+Iteration:  74%|███████▍  | 344/462 [02:12<00:39,  2.98it/s][A
+Iteration:  75%|███████▍  | 345/462 [02:12<00:39,  2.99it/s][A
+Iteration:  75%|███████▍  | 346/462 [02:13<00:38,  2.99it/s][A
+Iteration:  75%|███████▌  | 347/462 [02:13<00:38,  2.99it/s][A
+Iteration:  75%|███████▌  | 348/462 [02:13<00:38,  3.00it/s][A12/16/2019 13:30:32 - INFO - transformers.configuration_utils -   Configuration saved in output/squad_bert_base_uncased/checkpoint-350/config.json
+12/16/2019 13:30:32 - INFO - transformers.modeling_utils -   Model weights saved in output/squad_bert_base_uncased/checkpoint-350/pytorch_model.bin
+12/16/2019 13:30:32 - INFO - __main__ -   Saving model checkpoint to output/squad_bert_base_uncased/checkpoint-350
+
+Iteration:  76%|███████▌  | 349/462 [02:14<00:51,  2.21it/s][A
+Iteration:  76%|███████▌  | 350/462 [02:14<00:46,  2.43it/s][A
+Iteration:  76%|███████▌  | 351/462 [02:15<00:42,  2.61it/s][A
+Iteration:  76%|███████▌  | 352/462 [02:15<00:40,  2.71it/s][A
+Iteration:  76%|███████▋  | 353/462 [02:15<00:38,  2.80it/s][A
+Iteration:  77%|███████▋  | 354/462 [02:16<00:37,  2.87it/s][A
+Iteration:  77%|███████▋  | 355/462 [02:16<00:36,  2.91it/s][A
+Iteration:  77%|███████▋  | 356/462 [02:16<00:35,  2.95it/s][A
+Iteration:  77%|███████▋  | 357/462 [02:17<00:35,  2.97it/s][A
+Iteration:  77%|███████▋  | 358/462 [02:17<00:34,  2.99it/s][A
+Iteration:  78%|███████▊  | 359/462 [02:17<00:34,  2.99it/s][A
+Iteration:  78%|███████▊  | 360/462 [02:18<00:34,  3.00it/s][A
+Iteration:  78%|███████▊  | 361/462 [02:18<00:33,  3.01it/s][A
+Iteration:  78%|███████▊  | 362/462 [02:18<00:33,  3.01it/s][A
+Iteration:  79%|███████▊  | 363/462 [02:19<00:32,  3.00it/s][A
+Iteration:  79%|███████▉  | 364/462 [02:19<00:32,  3.02it/s][A
+Iteration:  79%|███████▉  | 365/462 [02:19<00:32,  3.03it/s][A
+Iteration:  79%|███████▉  | 366/462 [02:20<00:31,  3.03it/s][A
+Iteration:  79%|███████▉  | 367/462 [02:20<00:31,  3.02it/s][A
+Iteration:  80%|███████▉  | 368/462 [02:20<00:31,  3.03it/s][A
+Iteration:  80%|███████▉  | 369/462 [02:21<00:30,  3.05it/s][A
+Iteration:  80%|████████  | 370/462 [02:21<00:30,  3.05it/s][A
+Iteration:  80%|████████  | 371/462 [02:21<00:29,  3.05it/s][A
+Iteration:  81%|████████  | 372/462 [02:22<00:29,  3.05it/s][A
+Iteration:  81%|████████  | 373/462 [02:22<00:29,  3.05it/s][A
+Iteration:  81%|████████  | 374/462 [02:22<00:28,  3.05it/s][A
+Iteration:  81%|████████  | 375/462 [02:23<00:28,  3.05it/s][A
+Iteration:  81%|████████▏ | 376/462 [02:23<00:28,  3.05it/s][A
+Iteration:  82%|████████▏ | 377/462 [02:23<00:27,  3.05it/s][A
+Iteration:  82%|████████▏ | 378/462 [02:24<00:27,  3.04it/s][A
+Iteration:  82%|████████▏ | 379/462 [02:24<00:27,  3.02it/s][A
+Iteration:  82%|████████▏ | 380/462 [02:24<00:27,  3.02it/s][A
+Iteration:  82%|████████▏ | 381/462 [02:25<00:26,  3.03it/s][A
+Iteration:  83%|████████▎ | 382/462 [02:25<00:26,  3.03it/s][A
+Iteration:  83%|████████▎ | 383/462 [02:25<00:25,  3.04it/s][A
+Iteration:  83%|████████▎ | 384/462 [02:26<00:25,  3.03it/s][A
+Iteration:  83%|████████▎ | 385/462 [02:26<00:25,  3.03it/s][A
+Iteration:  84%|████████▎ | 386/462 [02:26<00:25,  3.04it/s][A
+Iteration:  84%|████████▍ | 387/462 [02:27<00:24,  3.01it/s][A
+Iteration:  84%|████████▍ | 388/462 [02:27<00:24,  3.03it/s][A
+Iteration:  84%|████████▍ | 389/462 [02:27<00:24,  3.04it/s][A
+Iteration:  84%|████████▍ | 390/462 [02:28<00:23,  3.05it/s][A
+Iteration:  85%|████████▍ | 391/462 [02:28<00:23,  3.04it/s][A
+Iteration:  85%|████████▍ | 392/462 [02:28<00:23,  3.04it/s][A
+Iteration:  85%|████████▌ | 393/462 [02:29<00:22,  3.04it/s][A
+Iteration:  85%|████████▌ | 394/462 [02:29<00:22,  3.04it/s][A
+Iteration:  85%|████████▌ | 395/462 [02:29<00:22,  3.04it/s][A
+Iteration:  86%|████████▌ | 396/462 [02:30<00:21,  3.05it/s][A
+Iteration:  86%|████████▌ | 397/462 [02:30<00:21,  3.04it/s][A
+Iteration:  86%|████████▌ | 398/462 [02:30<00:21,  3.04it/s][A12/16/2019 13:30:49 - INFO - transformers.configuration_utils -   Configuration saved in output/squad_bert_base_uncased/checkpoint-400/config.json
+12/16/2019 13:30:49 - INFO - transformers.modeling_utils -   Model weights saved in output/squad_bert_base_uncased/checkpoint-400/pytorch_model.bin
+12/16/2019 13:30:49 - INFO - __main__ -   Saving model checkpoint to output/squad_bert_base_uncased/checkpoint-400
+
+Iteration:  86%|████████▋ | 399/462 [02:31<00:27,  2.27it/s][A
+Iteration:  87%|████████▋ | 400/462 [02:31<00:25,  2.48it/s][A
+Iteration:  87%|████████▋ | 401/462 [02:32<00:23,  2.64it/s][A
+Iteration:  87%|████████▋ | 402/462 [02:32<00:21,  2.75it/s][A
+Iteration:  87%|████████▋ | 403/462 [02:32<00:20,  2.84it/s][A
+Iteration:  87%|████████▋ | 404/462 [02:33<00:19,  2.90it/s][A
+Iteration:  88%|████████▊ | 405/462 [02:33<00:19,  2.95it/s][A
+Iteration:  88%|████████▊ | 406/462 [02:33<00:18,  2.98it/s][A
+Iteration:  88%|████████▊ | 407/462 [02:34<00:18,  3.00it/s][A
+Iteration:  88%|████████▊ | 408/462 [02:34<00:17,  3.01it/s][A
+Iteration:  89%|████████▊ | 409/462 [02:34<00:17,  3.01it/s][A
+Iteration:  89%|████████▊ | 410/462 [02:35<00:17,  3.02it/s][A
+Iteration:  89%|████████▉ | 411/462 [02:35<00:16,  3.02it/s][A
+Iteration:  89%|████████▉ | 412/462 [02:35<00:16,  3.02it/s][A
+Iteration:  89%|████████▉ | 413/462 [02:36<00:16,  3.03it/s][A
+Iteration:  90%|████████▉ | 414/462 [02:36<00:15,  3.04it/s][A
+Iteration:  90%|████████▉ | 415/462 [02:36<00:15,  3.04it/s][A
+Iteration:  90%|█████████ | 416/462 [02:37<00:15,  3.04it/s][A
+Iteration:  90%|█████████ | 417/462 [02:37<00:14,  3.05it/s][A
+Iteration:  90%|█████████ | 418/462 [02:37<00:14,  3.05it/s][A
+Iteration:  91%|█████████ | 419/462 [02:37<00:14,  3.06it/s][A
+Iteration:  91%|█████████ | 420/462 [02:38<00:13,  3.06it/s][A
+Iteration:  91%|█████████ | 421/462 [02:38<00:13,  3.06it/s][A
+Iteration:  91%|█████████▏| 422/462 [02:38<00:13,  3.06it/s][A
+Iteration:  92%|█████████▏| 423/462 [02:39<00:12,  3.06it/s][A
+Iteration:  92%|█████████▏| 424/462 [02:39<00:12,  3.06it/s][A
+Iteration:  92%|█████████▏| 425/462 [02:39<00:12,  3.06it/s][A
+Iteration:  92%|█████████▏| 426/462 [02:40<00:11,  3.06it/s][A
+Iteration:  92%|█████████▏| 427/462 [02:40<00:11,  3.05it/s][A
+Iteration:  93%|█████████▎| 428/462 [02:40<00:11,  3.06it/s][A
+Iteration:  93%|█████████▎| 429/462 [02:41<00:10,  3.06it/s][A
+Iteration:  93%|█████████▎| 430/462 [02:41<00:10,  3.05it/s][A
+Iteration:  93%|█████████▎| 431/462 [02:41<00:10,  3.05it/s][A
+Iteration:  94%|█████████▎| 432/462 [02:42<00:09,  3.06it/s][A
+Iteration:  94%|█████████▎| 433/462 [02:42<00:09,  3.05it/s][A
+Iteration:  94%|█████████▍| 434/462 [02:42<00:09,  3.05it/s][A
+Iteration:  94%|█████████▍| 435/462 [02:43<00:08,  3.05it/s][A
+Iteration:  94%|█████████▍| 436/462 [02:43<00:08,  3.03it/s][A
+Iteration:  95%|█████████▍| 437/462 [02:43<00:08,  3.04it/s][A
+Iteration:  95%|█████████▍| 438/462 [02:44<00:07,  3.04it/s][A
+Iteration:  95%|█████████▌| 439/462 [02:44<00:07,  3.05it/s][A
+Iteration:  95%|█████████▌| 440/462 [02:44<00:07,  3.07it/s][A
+Iteration:  95%|█████████▌| 441/462 [02:45<00:06,  3.07it/s][A
+Iteration:  96%|█████████▌| 442/462 [02:45<00:06,  3.07it/s][A
+Iteration:  96%|█████████▌| 443/462 [02:45<00:06,  3.07it/s][A
+Iteration:  96%|█████████▌| 444/462 [02:46<00:05,  3.07it/s][A
+Iteration:  96%|█████████▋| 445/462 [02:46<00:05,  3.07it/s][A
+Iteration:  97%|█████████▋| 446/462 [02:46<00:05,  3.07it/s][A
+Iteration:  97%|█████████▋| 447/462 [02:47<00:04,  3.04it/s][A
+Iteration:  97%|█████████▋| 448/462 [02:47<00:04,  3.04it/s][A12/16/2019 13:31:05 - INFO - transformers.configuration_utils -   Configuration saved in output/squad_bert_base_uncased/checkpoint-450/config.json
+12/16/2019 13:31:06 - INFO - transformers.modeling_utils -   Model weights saved in output/squad_bert_base_uncased/checkpoint-450/pytorch_model.bin
+12/16/2019 13:31:06 - INFO - __main__ -   Saving model checkpoint to output/squad_bert_base_uncased/checkpoint-450
+
+Iteration:  97%|█████████▋| 449/462 [02:48<00:05,  2.27it/s][A
+Iteration:  97%|█████████▋| 450/462 [02:48<00:04,  2.48it/s][A
+Iteration:  98%|█████████▊| 451/462 [02:48<00:04,  2.64it/s][A
+Iteration:  98%|█████████▊| 452/462 [02:49<00:03,  2.76it/s][A
+Iteration:  98%|█████████▊| 453/462 [02:49<00:03,  2.84it/s][A
+Iteration:  98%|█████████▊| 454/462 [02:49<00:02,  2.90it/s][A
+Iteration:  98%|█████████▊| 455/462 [02:50<00:02,  2.94it/s][A
+Iteration:  99%|█████████▊| 456/462 [02:50<00:02,  2.97it/s][A
+Iteration:  99%|█████████▉| 457/462 [02:50<00:01,  2.99it/s][A
+Iteration:  99%|█████████▉| 458/462 [02:51<00:01,  3.01it/s][A
+Iteration:  99%|█████████▉| 459/462 [02:51<00:00,  3.01it/s][A
+Iteration: 100%|█████████▉| 460/462 [02:51<00:00,  3.01it/s][A
+Iteration: 100%|█████████▉| 461/462 [02:52<00:00,  3.01it/s][A
+Iteration: 100%|██████████| 462/462 [02:52<00:00,  3.19it/s][AIteration: 100%|██████████| 462/462 [02:52<00:00,  2.68it/s]
+Epoch:  50%|█████     | 1/2 [02:52<02:52, 172.39s/it]
+Iteration:   0%|          | 0/462 [00:00<?, ?it/s][A
+Iteration:   0%|          | 1/462 [00:00<02:34,  2.99it/s][A
+Iteration:   0%|          | 2/462 [00:00<02:33,  2.99it/s][A
+Iteration:   1%|          | 3/462 [00:00<02:32,  3.00it/s][A
+Iteration:   1%|          | 4/462 [00:01<02:33,  2.99it/s][A
+Iteration:   1%|          | 5/462 [00:01<02:34,  2.96it/s][A
+Iteration:   1%|▏         | 6/462 [00:02<02:34,  2.95it/s][A
+Iteration:   2%|▏         | 7/462 [00:02<02:34,  2.95it/s][A
+Iteration:   2%|▏         | 8/462 [00:02<02:32,  2.97it/s][A
+Iteration:   2%|▏         | 9/462 [00:03<02:33,  2.95it/s][A
+Iteration:   2%|▏         | 10/462 [00:03<02:34,  2.93it/s][A
+Iteration:   2%|▏         | 11/462 [00:03<02:33,  2.94it/s][A
+Iteration:   3%|▎         | 12/462 [00:04<02:32,  2.95it/s][A
+Iteration:   3%|▎         | 13/462 [00:04<02:30,  2.98it/s][A
+Iteration:   3%|▎         | 14/462 [00:04<02:29,  2.99it/s][A
+Iteration:   3%|▎         | 15/462 [00:05<02:28,  3.01it/s][A
+Iteration:   3%|▎         | 16/462 [00:05<02:27,  3.01it/s][A
+Iteration:   4%|▎         | 17/462 [00:05<02:27,  3.02it/s][A
+Iteration:   4%|▍         | 18/462 [00:06<02:27,  3.02it/s][A
+Iteration:   4%|▍         | 19/462 [00:06<02:27,  3.01it/s][A
+Iteration:   4%|▍         | 20/462 [00:06<02:26,  3.02it/s][A
+Iteration:   5%|▍         | 21/462 [00:07<02:25,  3.03it/s][A
+Iteration:   5%|▍         | 22/462 [00:07<02:25,  3.03it/s][A
+Iteration:   5%|▍         | 23/462 [00:07<02:25,  3.02it/s][A
+Iteration:   5%|▌         | 24/462 [00:08<02:25,  3.02it/s][A
+Iteration:   5%|▌         | 25/462 [00:08<02:24,  3.02it/s][A
+Iteration:   6%|▌         | 26/462 [00:08<02:24,  3.02it/s][A
+Iteration:   6%|▌         | 27/462 [00:09<02:23,  3.03it/s][A
+Iteration:   6%|▌         | 28/462 [00:09<02:22,  3.04it/s][A
+Iteration:   6%|▋         | 29/462 [00:09<02:22,  3.04it/s][A
+Iteration:   6%|▋         | 30/462 [00:09<02:21,  3.05it/s][A
+Iteration:   7%|▋         | 31/462 [00:10<02:21,  3.05it/s][A
+Iteration:   7%|▋         | 32/462 [00:10<02:21,  3.05it/s][A
+Iteration:   7%|▋         | 33/462 [00:10<02:20,  3.05it/s][A
+Iteration:   7%|▋         | 34/462 [00:11<02:20,  3.05it/s][A
+Iteration:   8%|▊         | 35/462 [00:11<02:19,  3.06it/s][A
+Iteration:   8%|▊         | 36/462 [00:11<02:19,  3.06it/s][A12/16/2019 13:31:22 - INFO - transformers.configuration_utils -   Configuration saved in output/squad_bert_base_uncased/checkpoint-500/config.json
+12/16/2019 13:31:23 - INFO - transformers.modeling_utils -   Model weights saved in output/squad_bert_base_uncased/checkpoint-500/pytorch_model.bin
+12/16/2019 13:31:23 - INFO - __main__ -   Saving model checkpoint to output/squad_bert_base_uncased/checkpoint-500
+
+Iteration:   8%|▊         | 37/462 [00:12<03:05,  2.29it/s][A
+Iteration:   8%|▊         | 38/462 [00:12<02:49,  2.50it/s][A
+Iteration:   8%|▊         | 39/462 [00:13<02:38,  2.66it/s][A
+Iteration:   9%|▊         | 40/462 [00:13<02:32,  2.77it/s][A
+Iteration:   9%|▉         | 41/462 [00:13<02:28,  2.84it/s][A
+Iteration:   9%|▉         | 42/462 [00:14<02:24,  2.90it/s][A
+Iteration:   9%|▉         | 43/462 [00:14<02:22,  2.94it/s][A
+Iteration:  10%|▉         | 44/462 [00:14<02:20,  2.97it/s][A
+Iteration:  10%|▉         | 45/462 [00:15<02:19,  3.00it/s][A
+Iteration:  10%|▉         | 46/462 [00:15<02:18,  3.00it/s][A
+Iteration:  10%|█         | 47/462 [00:15<02:17,  3.01it/s][A
+Iteration:  10%|█         | 48/462 [00:16<02:17,  3.01it/s][A
+Iteration:  11%|█         | 49/462 [00:16<02:16,  3.02it/s][A
+Iteration:  11%|█         | 50/462 [00:16<02:15,  3.03it/s][A
+Iteration:  11%|█         | 51/462 [00:17<02:15,  3.04it/s][A
+Iteration:  11%|█▏        | 52/462 [00:17<02:14,  3.04it/s][A
+Iteration:  11%|█▏        | 53/462 [00:17<02:14,  3.05it/s][A
+Iteration:  12%|█▏        | 54/462 [00:18<02:14,  3.03it/s][A
+Iteration:  12%|█▏        | 55/462 [00:18<02:13,  3.04it/s][A
+Iteration:  12%|█▏        | 56/462 [00:18<02:12,  3.05it/s][A
+Iteration:  12%|█▏        | 57/462 [00:19<02:12,  3.05it/s][A
+Iteration:  13%|█▎        | 58/462 [00:19<02:12,  3.06it/s][A
+Iteration:  13%|█▎        | 59/462 [00:19<02:11,  3.06it/s][A
+Iteration:  13%|█▎        | 60/462 [00:20<02:12,  3.04it/s][A
+Iteration:  13%|█▎        | 61/462 [00:20<02:11,  3.06it/s][A
+Iteration:  13%|█▎        | 62/462 [00:20<02:10,  3.06it/s][A
+Iteration:  14%|█▎        | 63/462 [00:21<02:11,  3.04it/s][A
+Iteration:  14%|█▍        | 64/462 [00:21<02:10,  3.04it/s][A
+Iteration:  14%|█▍        | 65/462 [00:21<02:09,  3.06it/s][A
+Iteration:  14%|█▍        | 66/462 [00:22<02:09,  3.05it/s][A
+Iteration:  15%|█▍        | 67/462 [00:22<02:09,  3.05it/s][A
+Iteration:  15%|█▍        | 68/462 [00:22<02:09,  3.05it/s][A
+Iteration:  15%|█▍        | 69/462 [00:23<02:08,  3.05it/s][A
+Iteration:  15%|█▌        | 70/462 [00:23<02:08,  3.06it/s][A
+Iteration:  15%|█▌        | 71/462 [00:23<02:07,  3.06it/s][A
+Iteration:  16%|█▌        | 72/462 [00:24<02:07,  3.05it/s][A
+Iteration:  16%|█▌        | 73/462 [00:24<02:07,  3.06it/s][A
+Iteration:  16%|█▌        | 74/462 [00:24<02:06,  3.06it/s][A
+Iteration:  16%|█▌        | 75/462 [00:25<02:06,  3.06it/s][A
+Iteration:  16%|█▋        | 76/462 [00:25<02:06,  3.06it/s][A
+Iteration:  17%|█▋        | 77/462 [00:25<02:06,  3.06it/s][A
+Iteration:  17%|█▋        | 78/462 [00:26<02:05,  3.05it/s][A
+Iteration:  17%|█▋        | 79/462 [00:26<02:05,  3.06it/s][A
+Iteration:  17%|█▋        | 80/462 [00:26<02:05,  3.04it/s][A
+Iteration:  18%|█▊        | 81/462 [00:27<02:05,  3.04it/s][A
+Iteration:  18%|█▊        | 82/462 [00:27<02:04,  3.05it/s][A
+Iteration:  18%|█▊        | 83/462 [00:27<02:04,  3.05it/s][A
+Iteration:  18%|█▊        | 84/462 [00:28<02:04,  3.05it/s][A
+Iteration:  18%|█▊        | 85/462 [00:28<02:03,  3.06it/s][A
+Iteration:  19%|█▊        | 86/462 [00:28<02:04,  3.02it/s][A12/16/2019 13:31:39 - INFO - transformers.configuration_utils -   Configuration saved in output/squad_bert_base_uncased/checkpoint-550/config.json
+12/16/2019 13:31:39 - INFO - transformers.modeling_utils -   Model weights saved in output/squad_bert_base_uncased/checkpoint-550/pytorch_model.bin
+12/16/2019 13:31:39 - INFO - __main__ -   Saving model checkpoint to output/squad_bert_base_uncased/checkpoint-550
+
+Iteration:  19%|█▉        | 87/462 [00:29<02:46,  2.25it/s][A
+Iteration:  19%|█▉        | 88/462 [00:29<02:32,  2.46it/s][A
+Iteration:  19%|█▉        | 89/462 [00:30<02:21,  2.63it/s][A
+Iteration:  19%|█▉        | 90/462 [00:30<02:15,  2.75it/s][A
+Iteration:  20%|█▉        | 91/462 [00:30<02:10,  2.84it/s][A
+Iteration:  20%|█▉        | 92/462 [00:31<02:07,  2.91it/s][A
+Iteration:  20%|██        | 93/462 [00:31<02:04,  2.96it/s][A
+Iteration:  20%|██        | 94/462 [00:31<02:02,  2.99it/s][A
+Iteration:  21%|██        | 95/462 [00:32<02:02,  3.00it/s][A
+Iteration:  21%|██        | 96/462 [00:32<02:01,  3.02it/s][A
+Iteration:  21%|██        | 97/462 [00:32<02:01,  3.00it/s][A
+Iteration:  21%|██        | 98/462 [00:33<02:02,  2.97it/s][A
+Iteration:  21%|██▏       | 99/462 [00:33<02:01,  2.98it/s][A
+Iteration:  22%|██▏       | 100/462 [00:33<02:01,  2.98it/s][A
+Iteration:  22%|██▏       | 101/462 [00:34<02:00,  3.00it/s][A
+Iteration:  22%|██▏       | 102/462 [00:34<01:59,  3.00it/s][A
+Iteration:  22%|██▏       | 103/462 [00:34<01:59,  3.01it/s][A
+Iteration:  23%|██▎       | 104/462 [00:35<01:58,  3.01it/s][A
+Iteration:  23%|██▎       | 105/462 [00:35<01:58,  3.01it/s][A
+Iteration:  23%|██▎       | 106/462 [00:35<01:57,  3.02it/s][A
+Iteration:  23%|██▎       | 107/462 [00:36<01:57,  3.01it/s][A
+Iteration:  23%|██▎       | 108/462 [00:36<01:57,  3.01it/s][A
+Iteration:  24%|██▎       | 109/462 [00:36<01:57,  3.01it/s][A
+Iteration:  24%|██▍       | 110/462 [00:37<01:57,  3.01it/s][A
+Iteration:  24%|██▍       | 111/462 [00:37<01:56,  3.00it/s][A
+Iteration:  24%|██▍       | 112/462 [00:37<01:56,  3.00it/s][A
+Iteration:  24%|██▍       | 113/462 [00:38<01:56,  3.00it/s][A
+Iteration:  25%|██▍       | 114/462 [00:38<01:56,  2.99it/s][A
+Iteration:  25%|██▍       | 115/462 [00:38<01:55,  3.01it/s][A
+Iteration:  25%|██▌       | 116/462 [00:39<01:55,  3.00it/s][A
+Iteration:  25%|██▌       | 117/462 [00:39<01:55,  2.99it/s][A
+Iteration:  26%|██▌       | 118/462 [00:39<01:54,  2.99it/s][A
+Iteration:  26%|██▌       | 119/462 [00:40<01:56,  2.94it/s][A
+Iteration:  26%|██▌       | 120/462 [00:40<01:57,  2.91it/s][A
+Iteration:  26%|██▌       | 121/462 [00:40<01:57,  2.90it/s][A
+Iteration:  26%|██▋       | 122/462 [00:41<01:56,  2.93it/s][A
+Iteration:  27%|██▋       | 123/462 [00:41<01:55,  2.94it/s][A
+Iteration:  27%|██▋       | 124/462 [00:41<01:54,  2.96it/s][A
+Iteration:  27%|██▋       | 125/462 [00:42<01:53,  2.97it/s][A
+Iteration:  27%|██▋       | 126/462 [00:42<01:52,  2.98it/s][A
+Iteration:  27%|██▋       | 127/462 [00:42<01:52,  2.98it/s][A
+Iteration:  28%|██▊       | 128/462 [00:43<01:51,  2.99it/s][A
+Iteration:  28%|██▊       | 129/462 [00:43<01:51,  2.99it/s][A
+Iteration:  28%|██▊       | 130/462 [00:43<01:51,  2.99it/s][A
+Iteration:  28%|██▊       | 131/462 [00:44<01:51,  2.98it/s][A
+Iteration:  29%|██▊       | 132/462 [00:44<01:50,  2.99it/s][A
+Iteration:  29%|██▉       | 133/462 [00:44<01:49,  2.99it/s][A
+Iteration:  29%|██▉       | 134/462 [00:45<01:49,  2.99it/s][A
+Iteration:  29%|██▉       | 135/462 [00:45<01:49,  2.99it/s][A
+Iteration:  29%|██▉       | 136/462 [00:45<01:48,  2.99it/s][A12/16/2019 13:31:56 - INFO - transformers.configuration_utils -   Configuration saved in output/squad_bert_base_uncased/checkpoint-600/config.json
+12/16/2019 13:31:56 - INFO - transformers.modeling_utils -   Model weights saved in output/squad_bert_base_uncased/checkpoint-600/pytorch_model.bin
+12/16/2019 13:31:56 - INFO - __main__ -   Saving model checkpoint to output/squad_bert_base_uncased/checkpoint-600
+
+Iteration:  30%|██▉       | 137/462 [00:46<02:23,  2.26it/s][A
+Iteration:  30%|██▉       | 138/462 [00:46<02:11,  2.47it/s][A
+Iteration:  30%|███       | 139/462 [00:47<02:02,  2.64it/s][A
+Iteration:  30%|███       | 140/462 [00:47<01:57,  2.75it/s][A
+Iteration:  31%|███       | 141/462 [00:47<01:53,  2.83it/s][A
+Iteration:  31%|███       | 142/462 [00:48<01:51,  2.87it/s][A
+Iteration:  31%|███       | 143/462 [00:48<01:48,  2.93it/s][A
+Iteration:  31%|███       | 144/462 [00:48<01:47,  2.96it/s][A
+Iteration:  31%|███▏      | 145/462 [00:49<01:46,  2.98it/s][A
+Iteration:  32%|███▏      | 146/462 [00:49<01:45,  2.98it/s][A
+Iteration:  32%|███▏      | 147/462 [00:49<01:45,  2.99it/s][A
+Iteration:  32%|███▏      | 148/462 [00:50<01:44,  2.99it/s][A
+Iteration:  32%|███▏      | 149/462 [00:50<01:44,  2.99it/s][A
+Iteration:  32%|███▏      | 150/462 [00:50<01:44,  2.99it/s][A
+Iteration:  33%|███▎      | 151/462 [00:51<01:43,  2.99it/s][A
+Iteration:  33%|███▎      | 152/462 [00:51<01:44,  2.98it/s][A
+Iteration:  33%|███▎      | 153/462 [00:51<01:43,  2.99it/s][A
+Iteration:  33%|███▎      | 154/462 [00:52<01:43,  2.98it/s][A
+Iteration:  34%|███▎      | 155/462 [00:52<01:42,  3.00it/s][A
+Iteration:  34%|███▍      | 156/462 [00:52<01:42,  3.00it/s][A
+Iteration:  34%|███▍      | 157/462 [00:53<01:41,  2.99it/s][A
+Iteration:  34%|███▍      | 158/462 [00:53<01:41,  2.99it/s][A
+Iteration:  34%|███▍      | 159/462 [00:53<01:41,  3.00it/s][A
+Iteration:  35%|███▍      | 160/462 [00:54<01:40,  3.00it/s][A
+Iteration:  35%|███▍      | 161/462 [00:54<01:40,  3.00it/s][A
+Iteration:  35%|███▌      | 162/462 [00:54<01:40,  2.99it/s][A
+Iteration:  35%|███▌      | 163/462 [00:55<01:40,  2.98it/s][A
+Iteration:  35%|███▌      | 164/462 [00:55<01:40,  2.97it/s][A
+Iteration:  36%|███▌      | 165/462 [00:55<01:39,  2.99it/s][A
+Iteration:  36%|███▌      | 166/462 [00:56<01:39,  2.98it/s][A
+Iteration:  36%|███▌      | 167/462 [00:56<01:38,  3.00it/s][A
+Iteration:  36%|███▋      | 168/462 [00:56<01:37,  3.00it/s][A
+Iteration:  37%|███▋      | 169/462 [00:57<01:37,  3.00it/s][A
+Iteration:  37%|███▋      | 170/462 [00:57<01:37,  2.99it/s][A
+Iteration:  37%|███▋      | 171/462 [00:57<01:36,  3.00it/s][A
+Iteration:  37%|███▋      | 172/462 [00:58<01:36,  3.00it/s][A
+Iteration:  37%|███▋      | 173/462 [00:58<01:36,  3.00it/s][A
+Iteration:  38%|███▊      | 174/462 [00:58<01:36,  3.00it/s][A
+Iteration:  38%|███▊      | 175/462 [00:59<01:35,  3.00it/s][A
+Iteration:  38%|███▊      | 176/462 [00:59<01:35,  3.00it/s][A
+Iteration:  38%|███▊      | 177/462 [00:59<01:35,  3.00it/s][A
+Iteration:  39%|███▊      | 178/462 [01:00<01:34,  2.99it/s][A
+Iteration:  39%|███▊      | 179/462 [01:00<01:34,  3.01it/s][A
+Iteration:  39%|███▉      | 180/462 [01:00<01:33,  3.01it/s][A
+Iteration:  39%|███▉      | 181/462 [01:01<01:33,  3.01it/s][A
+Iteration:  39%|███▉      | 182/462 [01:01<01:33,  3.01it/s][A
+Iteration:  40%|███▉      | 183/462 [01:01<01:32,  3.01it/s][A
+Iteration:  40%|███▉      | 184/462 [01:02<01:32,  3.00it/s][A
+Iteration:  40%|████      | 185/462 [01:02<01:32,  3.00it/s][A
+Iteration:  40%|████      | 186/462 [01:02<01:33,  2.95it/s][A12/16/2019 13:32:13 - INFO - transformers.configuration_utils -   Configuration saved in output/squad_bert_base_uncased/checkpoint-650/config.json
+12/16/2019 13:32:13 - INFO - transformers.modeling_utils -   Model weights saved in output/squad_bert_base_uncased/checkpoint-650/pytorch_model.bin
+12/16/2019 13:32:13 - INFO - __main__ -   Saving model checkpoint to output/squad_bert_base_uncased/checkpoint-650
+
+Iteration:  40%|████      | 187/462 [01:03<02:03,  2.22it/s][A
+Iteration:  41%|████      | 188/462 [01:03<01:52,  2.43it/s][A
+Iteration:  41%|████      | 189/462 [01:04<01:44,  2.60it/s][A
+Iteration:  41%|████      | 190/462 [01:04<01:39,  2.74it/s][A
+Iteration:  41%|████▏     | 191/462 [01:04<01:35,  2.83it/s][A
+Iteration:  42%|████▏     | 192/462 [01:05<01:33,  2.87it/s][A
+Iteration:  42%|████▏     | 193/462 [01:05<01:31,  2.93it/s][A
+Iteration:  42%|████▏     | 194/462 [01:05<01:30,  2.96it/s][A
+Iteration:  42%|████▏     | 195/462 [01:06<01:29,  2.98it/s][A
+Iteration:  42%|████▏     | 196/462 [01:06<01:29,  2.98it/s][A
+Iteration:  43%|████▎     | 197/462 [01:06<01:28,  2.99it/s][A
+Iteration:  43%|████▎     | 198/462 [01:07<01:28,  2.97it/s][A
+Iteration:  43%|████▎     | 199/462 [01:07<01:28,  2.99it/s][A
+Iteration:  43%|████▎     | 200/462 [01:07<01:27,  2.99it/s][A
+Iteration:  44%|████▎     | 201/462 [01:08<01:27,  2.98it/s][A
+Iteration:  44%|████▎     | 202/462 [01:08<01:27,  2.99it/s][A
+Iteration:  44%|████▍     | 203/462 [01:08<01:26,  3.00it/s][A
+Iteration:  44%|████▍     | 204/462 [01:09<01:26,  3.00it/s][A
+Iteration:  44%|████▍     | 205/462 [01:09<01:25,  3.01it/s][A
+Iteration:  45%|████▍     | 206/462 [01:09<01:24,  3.02it/s][A
+Iteration:  45%|████▍     | 207/462 [01:10<01:23,  3.04it/s][A
+Iteration:  45%|████▌     | 208/462 [01:10<01:23,  3.03it/s][A
+Iteration:  45%|████▌     | 209/462 [01:10<01:23,  3.03it/s][A
+Iteration:  45%|████▌     | 210/462 [01:11<01:23,  3.03it/s][A
+Iteration:  46%|████▌     | 211/462 [01:11<01:22,  3.04it/s][A
+Iteration:  46%|████▌     | 212/462 [01:11<01:22,  3.05it/s][A
+Iteration:  46%|████▌     | 213/462 [01:12<01:22,  3.03it/s][A
+Iteration:  46%|████▋     | 214/462 [01:12<01:21,  3.05it/s][A
+Iteration:  47%|████▋     | 215/462 [01:12<01:20,  3.06it/s][A
+Iteration:  47%|████▋     | 216/462 [01:13<01:20,  3.06it/s][A
+Iteration:  47%|████▋     | 217/462 [01:13<01:20,  3.06it/s][A
+Iteration:  47%|████▋     | 218/462 [01:13<01:19,  3.06it/s][A
+Iteration:  47%|████▋     | 219/462 [01:14<01:19,  3.05it/s][A
+Iteration:  48%|████▊     | 220/462 [01:14<01:19,  3.06it/s][A
+Iteration:  48%|████▊     | 221/462 [01:14<01:18,  3.06it/s][A
+Iteration:  48%|████▊     | 222/462 [01:14<01:18,  3.05it/s][A
+Iteration:  48%|████▊     | 223/462 [01:15<01:18,  3.05it/s][A
+Iteration:  48%|████▊     | 224/462 [01:15<01:17,  3.05it/s][A
+Iteration:  49%|████▊     | 225/462 [01:15<01:17,  3.05it/s][A
+Iteration:  49%|████▉     | 226/462 [01:16<01:17,  3.05it/s][A
+Iteration:  49%|████▉     | 227/462 [01:16<01:17,  3.05it/s][A
+Iteration:  49%|████▉     | 228/462 [01:16<01:16,  3.05it/s][A
+Iteration:  50%|████▉     | 229/462 [01:17<01:16,  3.04it/s][A
+Iteration:  50%|████▉     | 230/462 [01:17<01:16,  3.03it/s][A
+Iteration:  50%|█████     | 231/462 [01:17<01:15,  3.05it/s][A
+Iteration:  50%|█████     | 232/462 [01:18<01:15,  3.04it/s][A
+Iteration:  50%|█████     | 233/462 [01:18<01:15,  3.04it/s][A
+Iteration:  51%|█████     | 234/462 [01:18<01:15,  3.03it/s][A
+Iteration:  51%|█████     | 235/462 [01:19<01:14,  3.04it/s][A
+Iteration:  51%|█████     | 236/462 [01:19<01:14,  3.04it/s][A12/16/2019 13:32:30 - INFO - transformers.configuration_utils -   Configuration saved in output/squad_bert_base_uncased/checkpoint-700/config.json
+12/16/2019 13:32:30 - INFO - transformers.modeling_utils -   Model weights saved in output/squad_bert_base_uncased/checkpoint-700/pytorch_model.bin
+12/16/2019 13:32:30 - INFO - __main__ -   Saving model checkpoint to output/squad_bert_base_uncased/checkpoint-700
+
+Iteration:  51%|█████▏    | 237/462 [01:20<01:38,  2.27it/s][A
+Iteration:  52%|█████▏    | 238/462 [01:20<01:30,  2.48it/s][A
+Iteration:  52%|█████▏    | 239/462 [01:20<01:24,  2.64it/s][A
+Iteration:  52%|█████▏    | 240/462 [01:21<01:20,  2.75it/s][A
+Iteration:  52%|█████▏    | 241/462 [01:21<01:17,  2.84it/s][A
+Iteration:  52%|█████▏    | 242/462 [01:21<01:15,  2.91it/s][A
+Iteration:  53%|█████▎    | 243/462 [01:22<01:14,  2.95it/s][A
+Iteration:  53%|█████▎    | 244/462 [01:22<01:13,  2.98it/s][A
+Iteration:  53%|█████▎    | 245/462 [01:22<01:11,  3.02it/s][A
+Iteration:  53%|█████▎    | 246/462 [01:23<01:11,  3.03it/s][A
+Iteration:  53%|█████▎    | 247/462 [01:23<01:10,  3.03it/s][A
+Iteration:  54%|█████▎    | 248/462 [01:23<01:10,  3.03it/s][A
+Iteration:  54%|█████▍    | 249/462 [01:24<01:10,  3.03it/s][A
+Iteration:  54%|█████▍    | 250/462 [01:24<01:09,  3.04it/s][A
+Iteration:  54%|█████▍    | 251/462 [01:24<01:09,  3.04it/s][A
+Iteration:  55%|█████▍    | 252/462 [01:25<01:08,  3.05it/s][A
+Iteration:  55%|█████▍    | 253/462 [01:25<01:08,  3.05it/s][A
+Iteration:  55%|█████▍    | 254/462 [01:25<01:08,  3.04it/s][A
+Iteration:  55%|█████▌    | 255/462 [01:26<01:08,  3.03it/s][A
+Iteration:  55%|█████▌    | 256/462 [01:26<01:07,  3.05it/s][A
+Iteration:  56%|█████▌    | 257/462 [01:26<01:07,  3.04it/s][A
+Iteration:  56%|█████▌    | 258/462 [01:27<01:07,  3.01it/s][A
+Iteration:  56%|█████▌    | 259/462 [01:27<01:07,  3.00it/s][A
+Iteration:  56%|█████▋    | 260/462 [01:27<01:07,  2.98it/s][A
+Iteration:  56%|█████▋    | 261/462 [01:28<01:07,  2.98it/s][A
+Iteration:  57%|█████▋    | 262/462 [01:28<01:06,  3.01it/s][A
+Iteration:  57%|█████▋    | 263/462 [01:28<01:05,  3.02it/s][A
+Iteration:  57%|█████▋    | 264/462 [01:29<01:05,  3.03it/s][A
+Iteration:  57%|█████▋    | 265/462 [01:29<01:04,  3.04it/s][A
+Iteration:  58%|█████▊    | 266/462 [01:29<01:04,  3.04it/s][A
+Iteration:  58%|█████▊    | 267/462 [01:30<01:04,  3.04it/s][A
+Iteration:  58%|█████▊    | 268/462 [01:30<01:03,  3.05it/s][A
+Iteration:  58%|█████▊    | 269/462 [01:30<01:03,  3.05it/s][A
+Iteration:  58%|█████▊    | 270/462 [01:31<01:02,  3.06it/s][A
+Iteration:  59%|█████▊    | 271/462 [01:31<01:02,  3.04it/s][A
+Iteration:  59%|█████▉    | 272/462 [01:31<01:01,  3.07it/s][A
+Iteration:  59%|█████▉    | 273/462 [01:32<01:02,  3.04it/s][A
+Iteration:  59%|█████▉    | 274/462 [01:32<01:01,  3.06it/s][A
+Iteration:  60%|█████▉    | 275/462 [01:32<01:00,  3.07it/s][A
+Iteration:  60%|█████▉    | 276/462 [01:33<01:00,  3.06it/s][A
+Iteration:  60%|█████▉    | 277/462 [01:33<01:00,  3.06it/s][A
+Iteration:  60%|██████    | 278/462 [01:33<01:00,  3.07it/s][A
+Iteration:  60%|██████    | 279/462 [01:34<00:59,  3.06it/s][A
+Iteration:  61%|██████    | 280/462 [01:34<00:59,  3.06it/s][A
+Iteration:  61%|██████    | 281/462 [01:34<00:59,  3.05it/s][A
+Iteration:  61%|██████    | 282/462 [01:35<00:58,  3.06it/s][A
+Iteration:  61%|██████▏   | 283/462 [01:35<00:58,  3.05it/s][A
+Iteration:  61%|██████▏   | 284/462 [01:35<00:58,  3.06it/s][A
+Iteration:  62%|██████▏   | 285/462 [01:36<00:57,  3.05it/s][A
+Iteration:  62%|██████▏   | 286/462 [01:36<00:57,  3.07it/s][A12/16/2019 13:32:47 - INFO - transformers.configuration_utils -   Configuration saved in output/squad_bert_base_uncased/checkpoint-750/config.json
+12/16/2019 13:32:47 - INFO - transformers.modeling_utils -   Model weights saved in output/squad_bert_base_uncased/checkpoint-750/pytorch_model.bin
+12/16/2019 13:32:47 - INFO - __main__ -   Saving model checkpoint to output/squad_bert_base_uncased/checkpoint-750
+
+Iteration:  62%|██████▏   | 287/462 [01:37<01:16,  2.27it/s][A
+Iteration:  62%|██████▏   | 288/462 [01:37<01:10,  2.48it/s][A
+Iteration:  63%|██████▎   | 289/462 [01:37<01:05,  2.64it/s][A
+Iteration:  63%|██████▎   | 290/462 [01:38<01:02,  2.76it/s][A
+Iteration:  63%|██████▎   | 291/462 [01:38<01:00,  2.84it/s][A
+Iteration:  63%|██████▎   | 292/462 [01:38<00:58,  2.91it/s][A
+Iteration:  63%|██████▎   | 293/462 [01:38<00:57,  2.94it/s][A
+Iteration:  64%|██████▎   | 294/462 [01:39<00:56,  2.98it/s][A
+Iteration:  64%|██████▍   | 295/462 [01:39<00:55,  3.01it/s][A
+Iteration:  64%|██████▍   | 296/462 [01:39<00:54,  3.03it/s][A
+Iteration:  64%|██████▍   | 297/462 [01:40<00:54,  3.04it/s][A
+Iteration:  65%|██████▍   | 298/462 [01:40<00:53,  3.04it/s][A
+Iteration:  65%|██████▍   | 299/462 [01:40<00:53,  3.06it/s][A
+Iteration:  65%|██████▍   | 300/462 [01:41<00:52,  3.06it/s][A
+Iteration:  65%|██████▌   | 301/462 [01:41<00:52,  3.07it/s][A
+Iteration:  65%|██████▌   | 302/462 [01:41<00:52,  3.06it/s][A
+Iteration:  66%|██████▌   | 303/462 [01:42<00:52,  3.04it/s][A
+Iteration:  66%|██████▌   | 304/462 [01:42<00:51,  3.05it/s][A
+Iteration:  66%|██████▌   | 305/462 [01:42<00:51,  3.06it/s][A
+Iteration:  66%|██████▌   | 306/462 [01:43<00:50,  3.06it/s][A
+Iteration:  66%|██████▋   | 307/462 [01:43<00:50,  3.05it/s][A
+Iteration:  67%|██████▋   | 308/462 [01:43<00:50,  3.05it/s][A
+Iteration:  67%|██████▋   | 309/462 [01:44<00:50,  3.03it/s][A
+Iteration:  67%|██████▋   | 310/462 [01:44<00:50,  3.04it/s][A
+Iteration:  67%|██████▋   | 311/462 [01:44<00:49,  3.02it/s][A
+Iteration:  68%|██████▊   | 312/462 [01:45<00:49,  3.04it/s][A
+Iteration:  68%|██████▊   | 313/462 [01:45<00:48,  3.04it/s][A
+Iteration:  68%|██████▊   | 314/462 [01:45<00:48,  3.05it/s][A
+Iteration:  68%|██████▊   | 315/462 [01:46<00:48,  3.05it/s][A
+Iteration:  68%|██████▊   | 316/462 [01:46<00:47,  3.05it/s][A
+Iteration:  69%|██████▊   | 317/462 [01:46<00:47,  3.05it/s][A
+Iteration:  69%|██████▉   | 318/462 [01:47<00:47,  3.05it/s][A
+Iteration:  69%|██████▉   | 319/462 [01:47<00:46,  3.05it/s][A
+Iteration:  69%|██████▉   | 320/462 [01:47<00:46,  3.04it/s][A
+Iteration:  69%|██████▉   | 321/462 [01:48<00:46,  3.03it/s][A
+Iteration:  70%|██████▉   | 322/462 [01:48<00:45,  3.05it/s][A
+Iteration:  70%|██████▉   | 323/462 [01:48<00:45,  3.06it/s][A
+Iteration:  70%|███████   | 324/462 [01:49<00:45,  3.05it/s][A
+Iteration:  70%|███████   | 325/462 [01:49<00:44,  3.05it/s][A
+Iteration:  71%|███████   | 326/462 [01:49<00:44,  3.05it/s][A
+Iteration:  71%|███████   | 327/462 [01:50<00:44,  3.06it/s][A
+Iteration:  71%|███████   | 328/462 [01:50<00:43,  3.06it/s][A
+Iteration:  71%|███████   | 329/462 [01:50<00:43,  3.06it/s][A
+Iteration:  71%|███████▏  | 330/462 [01:51<00:43,  3.06it/s][A
+Iteration:  72%|███████▏  | 331/462 [01:51<00:42,  3.06it/s][A
+Iteration:  72%|███████▏  | 332/462 [01:51<00:42,  3.06it/s][A
+Iteration:  72%|███████▏  | 333/462 [01:52<00:42,  3.04it/s][A
+Iteration:  72%|███████▏  | 334/462 [01:52<00:41,  3.05it/s][A
+Iteration:  73%|███████▎  | 335/462 [01:52<00:41,  3.04it/s][A
+Iteration:  73%|███████▎  | 336/462 [01:53<00:41,  3.03it/s][A12/16/2019 13:33:03 - INFO - transformers.configuration_utils -   Configuration saved in output/squad_bert_base_uncased/checkpoint-800/config.json
+12/16/2019 13:33:04 - INFO - transformers.modeling_utils -   Model weights saved in output/squad_bert_base_uncased/checkpoint-800/pytorch_model.bin
+12/16/2019 13:33:04 - INFO - __main__ -   Saving model checkpoint to output/squad_bert_base_uncased/checkpoint-800
+
+Iteration:  73%|███████▎  | 337/462 [01:53<00:55,  2.26it/s][A
+Iteration:  73%|███████▎  | 338/462 [01:54<00:50,  2.47it/s][A
+Iteration:  73%|███████▎  | 339/462 [01:54<00:46,  2.64it/s][A
+Iteration:  74%|███████▎  | 340/462 [01:54<00:44,  2.75it/s][A
+Iteration:  74%|███████▍  | 341/462 [01:55<00:42,  2.84it/s][A
+Iteration:  74%|███████▍  | 342/462 [01:55<00:41,  2.90it/s][A
+Iteration:  74%|███████▍  | 343/462 [01:55<00:40,  2.95it/s][A
+Iteration:  74%|███████▍  | 344/462 [01:56<00:39,  2.97it/s][A
+Iteration:  75%|███████▍  | 345/462 [01:56<00:38,  3.01it/s][A
+Iteration:  75%|███████▍  | 346/462 [01:56<00:38,  3.02it/s][A
+Iteration:  75%|███████▌  | 347/462 [01:57<00:38,  3.02it/s][A
+Iteration:  75%|███████▌  | 348/462 [01:57<00:37,  3.03it/s][A
+Iteration:  76%|███████▌  | 349/462 [01:57<00:37,  3.03it/s][A
+Iteration:  76%|███████▌  | 350/462 [01:58<00:37,  3.02it/s][A
+Iteration:  76%|███████▌  | 351/462 [01:58<00:36,  3.04it/s][A
+Iteration:  76%|███████▌  | 352/462 [01:58<00:36,  3.04it/s][A
+Iteration:  76%|███████▋  | 353/462 [01:59<00:35,  3.04it/s][A
+Iteration:  77%|███████▋  | 354/462 [01:59<00:35,  3.04it/s][A
+Iteration:  77%|███████▋  | 355/462 [01:59<00:35,  3.03it/s][A
+Iteration:  77%|███████▋  | 356/462 [02:00<00:35,  3.02it/s][A
+Iteration:  77%|███████▋  | 357/462 [02:00<00:34,  3.02it/s][A
+Iteration:  77%|███████▋  | 358/462 [02:00<00:34,  3.01it/s][A
+Iteration:  78%|███████▊  | 359/462 [02:01<00:33,  3.04it/s][A
+Iteration:  78%|███████▊  | 360/462 [02:01<00:33,  3.02it/s][A
+Iteration:  78%|███████▊  | 361/462 [02:01<00:33,  3.03it/s][A
+Iteration:  78%|███████▊  | 362/462 [02:02<00:33,  3.00it/s][A
+Iteration:  79%|███████▊  | 363/462 [02:02<00:33,  2.99it/s][A
+Iteration:  79%|███████▉  | 364/462 [02:02<00:32,  3.01it/s][A
+Iteration:  79%|███████▉  | 365/462 [02:03<00:32,  3.02it/s][A
+Iteration:  79%|███████▉  | 366/462 [02:03<00:31,  3.03it/s][A
+Iteration:  79%|███████▉  | 367/462 [02:03<00:31,  3.04it/s][A
+Iteration:  80%|███████▉  | 368/462 [02:03<00:31,  3.03it/s][A
+Iteration:  80%|███████▉  | 369/462 [02:04<00:30,  3.04it/s][A
+Iteration:  80%|████████  | 370/462 [02:04<00:30,  3.05it/s][A
+Iteration:  80%|████████  | 371/462 [02:04<00:29,  3.05it/s][A
+Iteration:  81%|████████  | 372/462 [02:05<00:29,  3.06it/s][A
+Iteration:  81%|████████  | 373/462 [02:05<00:29,  3.06it/s][A
+Iteration:  81%|████████  | 374/462 [02:05<00:28,  3.06it/s][A
+Iteration:  81%|████████  | 375/462 [02:06<00:28,  3.06it/s][A
+Iteration:  81%|████████▏ | 376/462 [02:06<00:28,  3.06it/s][A
+Iteration:  82%|████████▏ | 377/462 [02:06<00:27,  3.06it/s][A
+Iteration:  82%|████████▏ | 378/462 [02:07<00:27,  3.06it/s][A
+Iteration:  82%|████████▏ | 379/462 [02:07<00:27,  3.06it/s][A
+Iteration:  82%|████████▏ | 380/462 [02:07<00:26,  3.05it/s][A
+Iteration:  82%|████████▏ | 381/462 [02:08<00:26,  3.05it/s][A
+Iteration:  83%|████████▎ | 382/462 [02:08<00:26,  3.05it/s][A
+Iteration:  83%|████████▎ | 383/462 [02:08<00:26,  3.03it/s][A
+Iteration:  83%|████████▎ | 384/462 [02:09<00:25,  3.02it/s][A
+Iteration:  83%|████████▎ | 385/462 [02:09<00:25,  3.01it/s][A
+Iteration:  84%|████████▎ | 386/462 [02:09<00:25,  3.01it/s][A12/16/2019 13:33:20 - INFO - transformers.configuration_utils -   Configuration saved in output/squad_bert_base_uncased/checkpoint-850/config.json
+12/16/2019 13:33:21 - INFO - transformers.modeling_utils -   Model weights saved in output/squad_bert_base_uncased/checkpoint-850/pytorch_model.bin
+12/16/2019 13:33:21 - INFO - __main__ -   Saving model checkpoint to output/squad_bert_base_uncased/checkpoint-850
+
+Iteration:  84%|████████▍ | 387/462 [02:10<00:33,  2.26it/s][A
+Iteration:  84%|████████▍ | 388/462 [02:10<00:30,  2.46it/s][A
+Iteration:  84%|████████▍ | 389/462 [02:11<00:27,  2.63it/s][A
+Iteration:  84%|████████▍ | 390/462 [02:11<00:26,  2.74it/s][A
+Iteration:  85%|████████▍ | 391/462 [02:11<00:25,  2.83it/s][A
+Iteration:  85%|████████▍ | 392/462 [02:12<00:24,  2.88it/s][A
+Iteration:  85%|████████▌ | 393/462 [02:12<00:23,  2.91it/s][A
+Iteration:  85%|████████▌ | 394/462 [02:12<00:23,  2.94it/s][A
+Iteration:  85%|████████▌ | 395/462 [02:13<00:22,  2.96it/s][A
+Iteration:  86%|████████▌ | 396/462 [02:13<00:22,  2.97it/s][A
+Iteration:  86%|████████▌ | 397/462 [02:13<00:21,  2.99it/s][A
+Iteration:  86%|████████▌ | 398/462 [02:14<00:21,  3.00it/s][A
+Iteration:  86%|████████▋ | 399/462 [02:14<00:20,  3.01it/s][A
+Iteration:  87%|████████▋ | 400/462 [02:14<00:20,  3.02it/s][A
+Iteration:  87%|████████▋ | 401/462 [02:15<00:20,  3.02it/s][A
+Iteration:  87%|████████▋ | 402/462 [02:15<00:19,  3.02it/s][A
+Iteration:  87%|████████▋ | 403/462 [02:15<00:19,  3.02it/s][A
+Iteration:  87%|████████▋ | 404/462 [02:16<00:19,  3.01it/s][A
+Iteration:  88%|████████▊ | 405/462 [02:16<00:18,  3.02it/s][A
+Iteration:  88%|████████▊ | 406/462 [02:16<00:18,  3.03it/s][A
+Iteration:  88%|████████▊ | 407/462 [02:17<00:18,  3.03it/s][A
+Iteration:  88%|████████▊ | 408/462 [02:17<00:17,  3.03it/s][A
+Iteration:  89%|████████▊ | 409/462 [02:17<00:17,  3.03it/s][A
+Iteration:  89%|████████▊ | 410/462 [02:18<00:17,  3.03it/s][A
+Iteration:  89%|████████▉ | 411/462 [02:18<00:16,  3.04it/s][A
+Iteration:  89%|████████▉ | 412/462 [02:18<00:16,  3.03it/s][A
+Iteration:  89%|████████▉ | 413/462 [02:19<00:16,  3.02it/s][A
+Iteration:  90%|████████▉ | 414/462 [02:19<00:15,  3.01it/s][A
+Iteration:  90%|████████▉ | 415/462 [02:19<00:15,  3.00it/s][A
+Iteration:  90%|█████████ | 416/462 [02:20<00:15,  2.99it/s][A
+Iteration:  90%|█████████ | 417/462 [02:20<00:14,  3.00it/s][A
+Iteration:  90%|█████████ | 418/462 [02:20<00:14,  3.00it/s][A
+Iteration:  91%|█████████ | 419/462 [02:21<00:14,  2.99it/s][A
+Iteration:  91%|█████████ | 420/462 [02:21<00:14,  2.99it/s][A
+Iteration:  91%|█████████ | 421/462 [02:21<00:13,  2.98it/s][A
+Iteration:  91%|█████████▏| 422/462 [02:22<00:13,  2.98it/s][A
+Iteration:  92%|█████████▏| 423/462 [02:22<00:13,  2.98it/s][A
+Iteration:  92%|█████████▏| 424/462 [02:22<00:12,  2.98it/s][A
+Iteration:  92%|█████████▏| 425/462 [02:23<00:12,  2.98it/s][A
+Iteration:  92%|█████████▏| 426/462 [02:23<00:12,  2.98it/s][A
+Iteration:  92%|█████████▏| 427/462 [02:23<00:11,  2.98it/s][A
+Iteration:  93%|█████████▎| 428/462 [02:24<00:11,  2.97it/s][A
+Iteration:  93%|█████████▎| 429/462 [02:24<00:11,  2.98it/s][A
+Iteration:  93%|█████████▎| 430/462 [02:24<00:10,  2.98it/s][A
+Iteration:  93%|█████████▎| 431/462 [02:25<00:10,  2.98it/s][A
+Iteration:  94%|█████████▎| 432/462 [02:25<00:10,  2.98it/s][A
+Iteration:  94%|█████████▎| 433/462 [02:25<00:09,  2.98it/s][A
+Iteration:  94%|█████████▍| 434/462 [02:26<00:09,  2.98it/s][A
+Iteration:  94%|█████████▍| 435/462 [02:26<00:09,  2.98it/s][A
+Iteration:  94%|█████████▍| 436/462 [02:26<00:08,  2.99it/s][A12/16/2019 13:33:37 - INFO - transformers.configuration_utils -   Configuration saved in output/squad_bert_base_uncased/checkpoint-900/config.json
+12/16/2019 13:33:38 - INFO - transformers.modeling_utils -   Model weights saved in output/squad_bert_base_uncased/checkpoint-900/pytorch_model.bin
+12/16/2019 13:33:38 - INFO - __main__ -   Saving model checkpoint to output/squad_bert_base_uncased/checkpoint-900
+
+Iteration:  95%|█████████▍| 437/462 [02:27<00:11,  2.18it/s][A
+Iteration:  95%|█████████▍| 438/462 [02:27<00:09,  2.41it/s][A
+Iteration:  95%|█████████▌| 439/462 [02:28<00:08,  2.58it/s][A
+Iteration:  95%|█████████▌| 440/462 [02:28<00:08,  2.70it/s][A
+Iteration:  95%|█████████▌| 441/462 [02:28<00:07,  2.80it/s][A
+Iteration:  96%|█████████▌| 442/462 [02:29<00:06,  2.87it/s][A
+Iteration:  96%|█████████▌| 443/462 [02:29<00:06,  2.93it/s][A
+Iteration:  96%|█████████▌| 444/462 [02:29<00:06,  2.95it/s][A
+Iteration:  96%|█████████▋| 445/462 [02:30<00:05,  2.98it/s][A
+Iteration:  97%|█████████▋| 446/462 [02:30<00:05,  3.00it/s][A
+Iteration:  97%|█████████▋| 447/462 [02:30<00:04,  3.01it/s][A
+Iteration:  97%|█████████▋| 448/462 [02:31<00:04,  2.99it/s][A
+Iteration:  97%|█████████▋| 449/462 [02:31<00:04,  2.96it/s][A
+Iteration:  97%|█████████▋| 450/462 [02:31<00:04,  2.95it/s][A
+Iteration:  98%|█████████▊| 451/462 [02:32<00:03,  2.97it/s][A
+Iteration:  98%|█████████▊| 452/462 [02:32<00:03,  2.99it/s][A
+Iteration:  98%|█████████▊| 453/462 [02:32<00:02,  3.00it/s][A
+Iteration:  98%|█████████▊| 454/462 [02:33<00:02,  3.01it/s][A
+Iteration:  98%|█████████▊| 455/462 [02:33<00:02,  3.02it/s][A
+Iteration:  99%|█████████▊| 456/462 [02:33<00:01,  3.02it/s][A
+Iteration:  99%|█████████▉| 457/462 [02:34<00:01,  3.02it/s][A
+Iteration:  99%|█████████▉| 458/462 [02:34<00:01,  3.02it/s][A
+Iteration:  99%|█████████▉| 459/462 [02:34<00:00,  3.01it/s][A
+Iteration: 100%|█████████▉| 460/462 [02:35<00:00,  3.03it/s][A
+Iteration: 100%|█████████▉| 461/462 [02:35<00:00,  3.03it/s][A
+Iteration: 100%|██████████| 462/462 [02:35<00:00,  3.20it/s][AIteration: 100%|██████████| 462/462 [02:35<00:00,  2.96it/s]
+Epoch: 100%|██████████| 2/2 [05:28<00:00, 167.43s/it]Epoch: 100%|██████████| 2/2 [05:28<00:00, 164.11s/it]
+12/16/2019 13:33:46 - INFO - __main__ -    Total training time = 328.268203945001
+12/16/2019 13:33:46 - INFO - __main__ -    global_step = 925, average loss = 1.3983564965145008
+12/16/2019 13:33:46 - INFO - __main__ -   Saving model checkpoint to output/squad_bert_base_uncased/
+12/16/2019 13:33:46 - INFO - transformers.configuration_utils -   Configuration saved in output/squad_bert_base_uncased/config.json
+12/16/2019 13:33:46 - INFO - transformers.modeling_utils -   Model weights saved in output/squad_bert_base_uncased/pytorch_model.bin
+12/16/2019 13:33:46 - INFO - transformers.configuration_utils -   loading configuration file output/squad_bert_base_uncased/config.json
+12/16/2019 13:33:46 - INFO - transformers.configuration_utils -   Model config {
+  "attention_probs_dropout_prob": 0.1,
+  "finetuning_task": null,
+  "hidden_act": "gelu",
+  "hidden_dropout_prob": 0.1,
+  "hidden_size": 768,
+  "initializer_range": 0.02,
+  "intermediate_size": 3072,
+  "is_decoder": false,
+  "layer_norm_eps": 1e-12,
+  "max_position_embeddings": 512,
+  "num_attention_heads": 12,
+  "num_hidden_layers": 12,
+  "num_labels": 2,
+  "output_attentions": false,
+  "output_hidden_states": false,
+  "output_past": true,
+  "pruned_heads": {},
+  "torchscript": false,
+  "type_vocab_size": 2,
+  "use_bfloat16": false,
+  "vocab_size": 30522
+}
+
+12/16/2019 13:33:46 - INFO - transformers.modeling_utils -   loading weights file output/squad_bert_base_uncased/pytorch_model.bin
+12/16/2019 13:33:48 - INFO - transformers.tokenization_utils -   Model name 'output/squad_bert_base_uncased/' not found in model shortcut name list (bert-base-uncased, bert-large-uncased, bert-base-cased, bert-large-cased, bert-base-multilingual-uncased, bert-base-multilingual-cased, bert-base-chinese, bert-base-german-cased, bert-large-uncased-whole-word-masking, bert-large-cased-whole-word-masking, bert-large-uncased-whole-word-masking-finetuned-squad, bert-large-cased-whole-word-masking-finetuned-squad, bert-base-cased-finetuned-mrpc, bert-base-german-dbmdz-cased, bert-base-german-dbmdz-uncased). Assuming 'output/squad_bert_base_uncased/' is a path or url to a directory containing tokenizer files.
+12/16/2019 13:33:48 - INFO - transformers.tokenization_utils -   loading file output/squad_bert_base_uncased/vocab.txt
+12/16/2019 13:33:48 - INFO - transformers.tokenization_utils -   loading file output/squad_bert_base_uncased/added_tokens.json
+12/16/2019 13:33:48 - INFO - transformers.tokenization_utils -   loading file output/squad_bert_base_uncased/special_tokens_map.json
+12/16/2019 13:33:48 - INFO - transformers.tokenization_utils -   loading file output/squad_bert_base_uncased/tokenizer_config.json
+12/16/2019 13:33:49 - INFO - __main__ -   Loading checkpoints saved during training for evaluation
+12/16/2019 13:33:49 - INFO - __main__ -   Evaluate the following checkpoints: ['output/squad_bert_base_uncased/']
+12/16/2019 13:33:49 - INFO - transformers.configuration_utils -   loading configuration file output/squad_bert_base_uncased/config.json
+12/16/2019 13:33:49 - INFO - transformers.configuration_utils -   Model config {
+  "attention_probs_dropout_prob": 0.1,
+  "finetuning_task": null,
+  "hidden_act": "gelu",
+  "hidden_dropout_prob": 0.1,
+  "hidden_size": 768,
+  "initializer_range": 0.02,
+  "intermediate_size": 3072,
+  "is_decoder": false,
+  "layer_norm_eps": 1e-12,
+  "max_position_embeddings": 512,
+  "num_attention_heads": 12,
+  "num_hidden_layers": 12,
+  "num_labels": 2,
+  "output_attentions": false,
+  "output_hidden_states": false,
+  "output_past": true,
+  "pruned_heads": {},
+  "torchscript": false,
+  "type_vocab_size": 2,
+  "use_bfloat16": false,
+  "vocab_size": 30522
+}
+
+12/16/2019 13:33:49 - INFO - transformers.modeling_utils -   loading weights file output/squad_bert_base_uncased/pytorch_model.bin
+12/16/2019 13:33:51 - INFO - __main__ -   Creating features from dataset file at .
+  0%|          | 0/48 [00:00<?, ?it/s]  2%|▏         | 1/48 [00:00<00:07,  6.32it/s]  8%|▊         | 4/48 [00:00<00:05,  7.79it/s] 15%|█▍        | 7/48 [00:00<00:04,  9.21it/s] 23%|██▎       | 11/48 [00:00<00:03, 11.70it/s] 27%|██▋       | 13/48 [00:00<00:02, 13.17it/s] 33%|███▎      | 16/48 [00:00<00:02, 13.66it/s] 40%|███▉      | 19/48 [00:01<00:01, 15.72it/s] 48%|████▊     | 23/48 [00:01<00:01, 18.15it/s] 54%|█████▍    | 26/48 [00:01<00:01, 15.46it/s] 60%|██████    | 29/48 [00:01<00:01, 16.82it/s] 71%|███████   | 34/48 [00:01<00:00, 18.95it/s] 77%|███████▋  | 37/48 [00:02<00:00, 14.05it/s] 83%|████████▎ | 40/48 [00:02<00:00, 15.53it/s] 90%|████████▉ | 43/48 [00:02<00:00, 16.91it/s] 94%|█████████▍| 45/48 [00:02<00:00, 17.44it/s]100%|██████████| 48/48 [00:02<00:00, 18.38it/s]100%|██████████| 48/48 [00:02<00:00, 17.87it/s]
+Converting examples to features:   0%|          | 0/10570 [00:00<?, ?it/s]Converting examples to features:   0%|          | 19/10570 [00:00<00:57, 183.34it/s]Converting examples to features:   0%|          | 39/10570 [00:00<00:56, 187.83it/s]Converting examples to features:   1%|          | 65/10570 [00:00<00:51, 204.76it/s]Converting examples to features:   1%|          | 99/10570 [00:00<00:45, 232.29it/s]Converting examples to features:   1%|▏         | 142/10570 [00:00<00:38, 268.96it/s]Converting examples to features:   2%|▏         | 170/10570 [00:00<00:38, 270.08it/s]Converting examples to features:   2%|▏         | 198/10570 [00:00<00:41, 252.88it/s]Converting examples to features:   2%|▏         | 224/10570 [00:00<00:50, 203.15it/s]Converting examples to features:   2%|▏         | 247/10570 [00:01<01:02, 166.38it/s]Converting examples to features:   3%|▎         | 266/10570 [00:01<01:25, 120.55it/s]Converting examples to features:   3%|▎         | 282/10570 [00:01<01:26, 118.86it/s]Converting examples to features:   3%|▎         | 300/10570 [00:01<01:17, 131.69it/s]Converting examples to features:   3%|▎         | 331/10570 [00:01<01:04, 159.06it/s]Converting examples to features:   3%|▎         | 366/10570 [00:01<00:53, 189.46it/s]Converting examples to features:   4%|▎         | 393/10570 [00:01<00:49, 206.32it/s]Converting examples to features:   4%|▍         | 418/10570 [00:02<00:54, 185.81it/s]Converting examples to features:   4%|▍         | 446/10570 [00:02<00:49, 206.55it/s]Converting examples to features:   4%|▍         | 470/10570 [00:02<00:47, 210.71it/s]Converting examples to features:   5%|▍         | 499/10570 [00:02<00:44, 228.55it/s]Converting examples to features:   5%|▌         | 535/10570 [00:02<00:39, 254.69it/s]Converting examples to features:   5%|▌         | 563/10570 [00:02<00:42, 234.94it/s]Converting examples to features:   6%|▌         | 589/10570 [00:02<00:42, 236.15it/s]Converting examples to features:   6%|▌         | 614/10570 [00:02<00:41, 237.84it/s]Converting examples to features:   6%|▌         | 642/10570 [00:02<00:40, 244.94it/s]Converting examples to features:   6%|▋         | 677/10570 [00:03<00:36, 268.88it/s]Converting examples to features:   7%|▋         | 706/10570 [00:03<00:39, 249.40it/s]Converting examples to features:   7%|▋         | 733/10570 [00:03<00:44, 220.10it/s]Converting examples to features:   7%|▋         | 757/10570 [00:03<00:48, 200.63it/s]Converting examples to features:   7%|▋         | 779/10570 [00:03<00:52, 188.19it/s]Converting examples to features:   8%|▊         | 799/10570 [00:03<01:02, 156.26it/s]Converting examples to features:   8%|▊         | 817/10570 [00:03<01:09, 139.64it/s]Converting examples to features:   8%|▊         | 833/10570 [00:04<01:07, 143.21it/s]Converting examples to features:   8%|▊         | 855/10570 [00:04<01:00, 159.87it/s]Converting examples to features:   8%|▊         | 877/10570 [00:04<00:55, 173.50it/s]Converting examples to features:   9%|▊         | 899/10570 [00:04<00:52, 183.25it/s]Converting examples to features:   9%|▊         | 919/10570 [00:04<01:00, 159.67it/s]Converting examples to features:   9%|▉         | 939/10570 [00:04<00:57, 168.87it/s]Converting examples to features:   9%|▉         | 959/10570 [00:04<00:54, 175.30it/s]Converting examples to features:   9%|▉         | 978/10570 [00:04<00:55, 171.75it/s]Converting examples to features:   9%|▉         | 996/10570 [00:04<00:56, 169.69it/s]Converting examples to features:  10%|▉         | 1014/10570 [00:05<00:57, 164.86it/s]Converting examples to features:  10%|▉         | 1033/10570 [00:05<00:56, 169.05it/s]Converting examples to features:  10%|▉         | 1051/10570 [00:05<00:55, 171.39it/s]Converting examples to features:  10%|█         | 1069/10570 [00:05<00:54, 173.40it/s]Converting examples to features:  10%|█         | 1089/10570 [00:05<00:52, 179.49it/s]Converting examples to features:  10%|█         | 1108/10570 [00:05<00:53, 178.47it/s]Converting examples to features:  11%|█         | 1130/10570 [00:05<00:50, 187.65it/s]Converting examples to features:  11%|█         | 1157/10570 [00:05<00:45, 204.96it/s]Converting examples to features:  11%|█         | 1186/10570 [00:05<00:41, 224.46it/s]Converting examples to features:  11%|█▏        | 1210/10570 [00:06<00:41, 223.45it/s]Converting examples to features:  12%|█▏        | 1242/10570 [00:06<00:38, 244.58it/s]Converting examples to features:  12%|█▏        | 1268/10570 [00:06<00:43, 211.78it/s]Converting examples to features:  12%|█▏        | 1299/10570 [00:06<00:39, 233.17it/s]Converting examples to features:  13%|█▎        | 1325/10570 [00:06<00:38, 240.29it/s]Converting examples to features:  13%|█▎        | 1351/10570 [00:06<00:39, 231.55it/s]Converting examples to features:  13%|█▎        | 1376/10570 [00:06<00:42, 218.00it/s]Converting examples to features:  13%|█▎        | 1399/10570 [00:06<00:47, 192.96it/s]Converting examples to features:  13%|█▎        | 1423/10570 [00:07<00:45, 202.62it/s]Converting examples to features:  14%|█▎        | 1446/10570 [00:07<00:43, 209.68it/s]Converting examples to features:  14%|█▍        | 1468/10570 [00:07<00:43, 207.12it/s]Converting examples to features:  14%|█▍        | 1491/10570 [00:07<00:42, 212.74it/s]Converting examples to features:  14%|█▍        | 1518/10570 [00:07<00:40, 225.84it/s]Converting examples to features:  15%|█▍        | 1543/10570 [00:07<00:38, 232.57it/s]Converting examples to features:  15%|█▍        | 1569/10570 [00:07<00:37, 239.38it/s]Converting examples to features:  15%|█▌        | 1595/10570 [00:07<00:36, 243.49it/s]Converting examples to features:  15%|█▌        | 1621/10570 [00:07<00:36, 247.13it/s]Converting examples to features:  16%|█▌        | 1648/10570 [00:07<00:35, 252.94it/s]Converting examples to features:  16%|█▌        | 1687/10570 [00:08<00:31, 282.14it/s]Converting examples to features:  16%|█▌        | 1717/10570 [00:08<00:33, 265.70it/s]Converting examples to features:  17%|█▋        | 1745/10570 [00:08<00:36, 242.11it/s]Converting examples to features:  17%|█▋        | 1771/10570 [00:08<00:37, 236.99it/s]Converting examples to features:  17%|█▋        | 1800/10570 [00:08<00:35, 249.14it/s]Converting examples to features:  17%|█▋        | 1826/10570 [00:08<00:36, 240.43it/s]Converting examples to features:  18%|█▊        | 1851/10570 [00:08<00:36, 237.38it/s]Converting examples to features:  18%|█▊        | 1877/10570 [00:08<00:35, 242.76it/s]Converting examples to features:  18%|█▊        | 1914/10570 [00:08<00:32, 270.46it/s]Converting examples to features:  18%|█▊        | 1943/10570 [00:09<00:33, 257.93it/s]Converting examples to features:  19%|█▊        | 1976/10570 [00:09<00:31, 275.26it/s]Converting examples to features:  19%|█▉        | 2005/10570 [00:09<00:34, 251.02it/s]Converting examples to features:  19%|█▉        | 2032/10570 [00:09<00:36, 236.75it/s]Converting examples to features:  20%|█▉        | 2063/10570 [00:09<00:33, 254.00it/s]Converting examples to features:  20%|█▉        | 2098/10570 [00:09<00:30, 274.44it/s]Converting examples to features:  20%|██        | 2127/10570 [00:09<00:40, 208.17it/s]Converting examples to features:  20%|██        | 2152/10570 [00:09<00:40, 208.65it/s]Converting examples to features:  21%|██        | 2176/10570 [00:10<00:41, 201.20it/s]Converting examples to features:  21%|██        | 2203/10570 [00:10<00:38, 215.05it/s]Converting examples to features:  21%|██        | 2236/10570 [00:10<00:34, 239.29it/s]Converting examples to features:  21%|██▏       | 2262/10570 [00:10<00:38, 213.83it/s]Converting examples to features:  22%|██▏       | 2291/10570 [00:10<00:35, 230.33it/s]Converting examples to features:  22%|██▏       | 2316/10570 [00:10<00:37, 221.14it/s]Converting examples to features:  22%|██▏       | 2342/10570 [00:10<00:36, 228.09it/s]Converting examples to features:  22%|██▏       | 2366/10570 [00:10<00:35, 228.38it/s]Converting examples to features:  23%|██▎       | 2390/10570 [00:11<00:41, 198.22it/s]Converting examples to features:  23%|██▎       | 2411/10570 [00:11<00:42, 193.36it/s]Converting examples to features:  23%|██▎       | 2436/10570 [00:11<00:39, 206.33it/s]Converting examples to features:  23%|██▎       | 2458/10570 [00:11<00:41, 196.75it/s]Converting examples to features:  23%|██▎       | 2483/10570 [00:11<00:38, 209.44it/s]Converting examples to features:  24%|██▎       | 2505/10570 [00:11<00:44, 179.67it/s]Converting examples to features:  24%|██▍       | 2525/10570 [00:11<00:46, 173.73it/s]Converting examples to features:  24%|██▍       | 2544/10570 [00:11<00:49, 163.64it/s]Converting examples to features:  24%|██▍       | 2562/10570 [00:12<00:51, 156.94it/s]Converting examples to features:  24%|██▍       | 2579/10570 [00:12<00:50, 157.29it/s]Converting examples to features:  25%|██▍       | 2603/10570 [00:12<00:45, 175.21it/s]Converting examples to features:  25%|██▍       | 2633/10570 [00:12<00:39, 200.03it/s]Converting examples to features:  25%|██▌       | 2660/10570 [00:12<00:36, 215.19it/s]Converting examples to features:  25%|██▌       | 2684/10570 [00:12<00:37, 212.49it/s]Converting examples to features:  26%|██▌       | 2707/10570 [00:12<00:37, 210.72it/s]Converting examples to features:  26%|██▌       | 2737/10570 [00:12<00:34, 230.35it/s]Converting examples to features:  26%|██▌       | 2773/10570 [00:12<00:30, 257.39it/s]Converting examples to features:  27%|██▋       | 2808/10570 [00:12<00:27, 278.49it/s]Converting examples to features:  27%|██▋       | 2838/10570 [00:13<00:30, 254.31it/s]Converting examples to features:  27%|██▋       | 2866/10570 [00:13<00:32, 234.69it/s]Converting examples to features:  27%|██▋       | 2891/10570 [00:13<00:36, 212.73it/s]Converting examples to features:  28%|██▊       | 2914/10570 [00:13<00:36, 211.03it/s]Converting examples to features:  28%|██▊       | 2937/10570 [00:13<00:35, 212.50it/s]Converting examples to features:  28%|██▊       | 2959/10570 [00:13<00:36, 207.28it/s]Converting examples to features:  28%|██▊       | 2981/10570 [00:13<00:37, 203.57it/s]Converting examples to features:  28%|██▊       | 3004/10570 [00:13<00:36, 208.85it/s]Converting examples to features:  29%|██▊       | 3028/10570 [00:14<00:34, 216.25it/s]Converting examples to features:  29%|██▉       | 3050/10570 [00:14<00:35, 210.19it/s]Converting examples to features:  29%|██▉       | 3072/10570 [00:14<00:38, 195.23it/s]Converting examples to features:  29%|██▉       | 3097/10570 [00:14<00:36, 207.49it/s]Converting examples to features:  30%|██▉       | 3119/10570 [00:14<00:36, 202.46it/s]Converting examples to features:  30%|██▉       | 3140/10570 [00:14<00:37, 198.41it/s]Converting examples to features:  30%|██▉       | 3161/10570 [00:14<00:37, 196.57it/s]Converting examples to features:  30%|███       | 3181/10570 [00:14<00:40, 182.13it/s]Converting examples to features:  30%|███       | 3203/10570 [00:14<00:38, 191.36it/s]Converting examples to features:  30%|███       | 3223/10570 [00:15<00:38, 188.78it/s]Converting examples to features:  31%|███       | 3243/10570 [00:15<00:41, 178.00it/s]Converting examples to features:  31%|███       | 3262/10570 [00:15<00:41, 176.82it/s]Converting examples to features:  31%|███       | 3280/10570 [00:15<00:41, 175.57it/s]Converting examples to features:  31%|███       | 3301/10570 [00:15<00:39, 183.16it/s]Converting examples to features:  31%|███▏      | 3321/10570 [00:15<00:38, 187.52it/s]Converting examples to features:  32%|███▏      | 3343/10570 [00:15<00:37, 195.25it/s]Converting examples to features:  32%|███▏      | 3363/10570 [00:15<00:37, 189.97it/s]Converting examples to features:  32%|███▏      | 3385/10570 [00:15<00:36, 196.32it/s]Converting examples to features:  32%|███▏      | 3405/10570 [00:16<00:37, 192.44it/s]Converting examples to features:  32%|███▏      | 3425/10570 [00:16<00:38, 183.58it/s]Converting examples to features:  33%|███▎      | 3446/10570 [00:16<00:37, 188.51it/s]Converting examples to features:  33%|███▎      | 3466/10570 [00:16<00:37, 191.05it/s]Converting examples to features:  33%|███▎      | 3486/10570 [00:16<00:38, 182.28it/s]Converting examples to features:  33%|███▎      | 3506/10570 [00:16<00:38, 184.17it/s]Converting examples to features:  33%|███▎      | 3529/10570 [00:16<00:36, 193.94it/s]Converting examples to features:  34%|███▎      | 3551/10570 [00:16<00:35, 199.86it/s]Converting examples to features:  34%|███▍      | 3572/10570 [00:16<00:37, 189.03it/s]Converting examples to features:  34%|███▍      | 3592/10570 [00:17<00:37, 185.96it/s]Converting examples to features:  34%|███▍      | 3611/10570 [00:17<00:37, 185.41it/s]Converting examples to features:  34%|███▍      | 3633/10570 [00:17<00:36, 192.55it/s]Converting examples to features:  35%|███▍      | 3655/10570 [00:17<00:34, 199.55it/s]Converting examples to features:  35%|███▍      | 3676/10570 [00:17<00:34, 197.04it/s]Converting examples to features:  35%|███▍      | 3697/10570 [00:17<00:34, 199.03it/s]Converting examples to features:  35%|███▌      | 3720/10570 [00:17<00:33, 206.26it/s]Converting examples to features:  35%|███▌      | 3741/10570 [00:17<00:35, 194.49it/s]Converting examples to features:  36%|███▌      | 3764/10570 [00:17<00:33, 203.60it/s]Converting examples to features:  36%|███▌      | 3786/10570 [00:17<00:32, 207.13it/s]Converting examples to features:  36%|███▌      | 3807/10570 [00:18<00:36, 187.48it/s]Converting examples to features:  36%|███▌      | 3827/10570 [00:18<00:36, 186.03it/s]Converting examples to features:  36%|███▋      | 3847/10570 [00:18<00:35, 189.77it/s]Converting examples to features:  37%|███▋      | 3867/10570 [00:18<00:35, 189.85it/s]Converting examples to features:  37%|███▋      | 3887/10570 [00:18<00:35, 187.82it/s]Converting examples to features:  37%|███▋      | 3906/10570 [00:18<00:35, 186.71it/s]Converting examples to features:  37%|███▋      | 3925/10570 [00:18<00:35, 187.24it/s]Converting examples to features:  37%|███▋      | 3946/10570 [00:18<00:34, 191.82it/s]Converting examples to features:  38%|███▊      | 3968/10570 [00:18<00:33, 198.13it/s]Converting examples to features:  38%|███▊      | 3990/10570 [00:19<00:32, 203.39it/s]Converting examples to features:  38%|███▊      | 4011/10570 [00:19<00:34, 187.73it/s]Converting examples to features:  38%|███▊      | 4031/10570 [00:19<00:35, 186.02it/s]Converting examples to features:  38%|███▊      | 4052/10570 [00:19<00:34, 191.20it/s]Converting examples to features:  39%|███▊      | 4075/10570 [00:19<00:32, 200.97it/s]Converting examples to features:  39%|███▉      | 4096/10570 [00:19<00:36, 178.58it/s]Converting examples to features:  39%|███▉      | 4115/10570 [00:19<00:44, 145.23it/s]Converting examples to features:  39%|███▉      | 4131/10570 [00:19<00:48, 132.35it/s]Converting examples to features:  39%|███▉      | 4146/10570 [00:20<00:59, 107.86it/s]Converting examples to features:  39%|███▉      | 4159/10570 [00:20<01:13, 87.05it/s] Converting examples to features:  39%|███▉      | 4170/10570 [00:20<01:13, 87.51it/s]Converting examples to features:  40%|███▉      | 4180/10570 [00:20<01:13, 87.21it/s]Converting examples to features:  40%|███▉      | 4190/10570 [00:20<01:25, 74.58it/s]Converting examples to features:  40%|███▉      | 4199/10570 [00:20<01:24, 75.02it/s]Converting examples to features:  40%|███▉      | 4208/10570 [00:21<01:25, 74.46it/s]Converting examples to features:  40%|███▉      | 4221/10570 [00:21<01:14, 85.13it/s]Converting examples to features:  40%|████      | 4237/10570 [00:21<01:04, 98.48it/s]Converting examples to features:  40%|████      | 4251/10570 [00:21<00:59, 107.05it/s]Converting examples to features:  40%|████      | 4263/10570 [00:21<01:09, 90.37it/s] Converting examples to features:  40%|████      | 4274/10570 [00:21<01:28, 71.54it/s]Converting examples to features:  41%|████      | 4283/10570 [00:21<01:38, 63.58it/s]Converting examples to features:  41%|████      | 4292/10570 [00:22<01:31, 68.36it/s]Converting examples to features:  41%|████      | 4300/10570 [00:22<01:37, 64.61it/s]Converting examples to features:  41%|████      | 4308/10570 [00:22<01:41, 61.64it/s]Converting examples to features:  41%|████      | 4323/10570 [00:22<01:23, 74.48it/s]Converting examples to features:  41%|████      | 4346/10570 [00:22<01:06, 93.13it/s]Converting examples to features:  41%|████▏     | 4363/10570 [00:22<00:57, 107.14it/s]Converting examples to features:  41%|████▏     | 4383/10570 [00:22<00:50, 123.71it/s]Converting examples to features:  42%|████▏     | 4399/10570 [00:22<00:46, 131.93it/s]Converting examples to features:  42%|████▏     | 4419/10570 [00:22<00:41, 146.55it/s]Converting examples to features:  42%|████▏     | 4442/10570 [00:23<00:37, 163.04it/s]Converting examples to features:  42%|████▏     | 4464/10570 [00:23<00:34, 176.70it/s]Converting examples to features:  42%|████▏     | 4488/10570 [00:23<00:31, 190.07it/s]Converting examples to features:  43%|████▎     | 4509/10570 [00:23<00:35, 170.83it/s]Converting examples to features:  43%|████▎     | 4528/10570 [00:23<00:39, 152.77it/s]Converting examples to features:  43%|████▎     | 4545/10570 [00:23<00:39, 151.77it/s]Converting examples to features:  43%|████▎     | 4567/10570 [00:23<00:36, 166.44it/s]Converting examples to features:  43%|████▎     | 4585/10570 [00:23<00:37, 158.84it/s]Converting examples to features:  44%|████▎     | 4602/10570 [00:24<00:39, 150.53it/s]Converting examples to features:  44%|████▎     | 4620/10570 [00:24<00:37, 157.10it/s]Converting examples to features:  44%|████▍     | 4641/10570 [00:24<00:35, 167.22it/s]Converting examples to features:  44%|████▍     | 4659/10570 [00:24<00:41, 141.19it/s]Converting examples to features:  44%|████▍     | 4675/10570 [00:24<00:41, 140.64it/s]Converting examples to features:  44%|████▍     | 4699/10570 [00:24<00:36, 160.24it/s]Converting examples to features:  45%|████▍     | 4719/10570 [00:24<00:34, 168.36it/s]Converting examples to features:  45%|████▍     | 4737/10570 [00:24<00:34, 168.82it/s]Converting examples to features:  45%|████▍     | 4755/10570 [00:25<00:37, 154.13it/s]Converting examples to features:  45%|████▌     | 4772/10570 [00:25<00:42, 135.74it/s]Converting examples to features:  45%|████▌     | 4791/10570 [00:25<00:39, 147.13it/s]Converting examples to features:  46%|████▌     | 4812/10570 [00:25<00:36, 159.76it/s]Converting examples to features:  46%|████▌     | 4834/10570 [00:25<00:32, 174.03it/s]Converting examples to features:  46%|████▌     | 4853/10570 [00:25<00:38, 149.17it/s]Converting examples to features:  46%|████▌     | 4872/10570 [00:25<00:35, 158.95it/s]Converting examples to features:  46%|████▋     | 4890/10570 [00:25<00:35, 159.75it/s]Converting examples to features:  46%|████▋     | 4911/10570 [00:25<00:33, 170.14it/s]Converting examples to features:  47%|████▋     | 4929/10570 [00:26<00:32, 171.03it/s]Converting examples to features:  47%|████▋     | 4948/10570 [00:26<00:32, 175.21it/s]Converting examples to features:  47%|████▋     | 4966/10570 [00:26<00:32, 170.12it/s]Converting examples to features:  47%|████▋     | 4984/10570 [00:26<00:32, 172.32it/s]Converting examples to features:  47%|████▋     | 5002/10570 [00:26<00:38, 144.82it/s]Converting examples to features:  47%|████▋     | 5019/10570 [00:26<00:37, 149.69it/s]Converting examples to features:  48%|████▊     | 5035/10570 [00:26<00:36, 150.26it/s]Converting examples to features:  48%|████▊     | 5053/10570 [00:26<00:34, 157.89it/s]Converting examples to features:  48%|████▊     | 5070/10570 [00:26<00:34, 160.95it/s]Converting examples to features:  48%|████▊     | 5087/10570 [00:27<00:36, 149.88it/s]Converting examples to features:  48%|████▊     | 5108/10570 [00:27<00:33, 161.82it/s]Converting examples to features:  48%|████▊     | 5126/10570 [00:27<00:32, 166.30it/s]Converting examples to features:  49%|████▊     | 5145/10570 [00:27<00:31, 171.34it/s]Converting examples to features:  49%|████▉     | 5163/10570 [00:27<00:31, 169.56it/s]Converting examples to features:  49%|████▉     | 5181/10570 [00:27<00:32, 168.21it/s]Converting examples to features:  49%|████▉     | 5199/10570 [00:27<00:31, 169.60it/s]Converting examples to features:  49%|████▉     | 5217/10570 [00:27<00:32, 167.15it/s]Converting examples to features:  50%|████▉     | 5236/10570 [00:27<00:30, 173.07it/s]Converting examples to features:  50%|████▉     | 5255/10570 [00:28<00:30, 175.71it/s]Converting examples to features:  50%|████▉     | 5276/10570 [00:28<00:28, 183.91it/s]Converting examples to features:  50%|█████     | 5297/10570 [00:28<00:27, 189.41it/s]Converting examples to features:  50%|█████     | 5318/10570 [00:28<00:27, 194.32it/s]Converting examples to features:  51%|█████     | 5338/10570 [00:28<00:27, 189.48it/s]Converting examples to features:  51%|█████     | 5358/10570 [00:28<00:29, 178.94it/s]Converting examples to features:  51%|█████     | 5377/10570 [00:28<00:29, 179.03it/s]Converting examples to features:  51%|█████     | 5396/10570 [00:28<00:28, 178.45it/s]Converting examples to features:  51%|█████     | 5414/10570 [00:28<00:28, 177.98it/s]Converting examples to features:  51%|█████▏    | 5432/10570 [00:29<00:30, 169.61it/s]Converting examples to features:  52%|█████▏    | 5450/10570 [00:29<00:36, 141.82it/s]Converting examples to features:  52%|█████▏    | 5466/10570 [00:29<00:38, 133.24it/s]Converting examples to features:  52%|█████▏    | 5481/10570 [00:29<00:39, 128.68it/s]Converting examples to features:  52%|█████▏    | 5495/10570 [00:29<00:39, 129.67it/s]Converting examples to features:  52%|█████▏    | 5509/10570 [00:29<00:39, 129.27it/s]Converting examples to features:  52%|█████▏    | 5523/10570 [00:29<00:39, 128.40it/s]Converting examples to features:  52%|█████▏    | 5541/10570 [00:29<00:36, 138.96it/s]Converting examples to features:  53%|█████▎    | 5556/10570 [00:30<00:37, 133.93it/s]Converting examples to features:  53%|█████▎    | 5572/10570 [00:30<00:35, 140.28it/s]Converting examples to features:  53%|█████▎    | 5588/10570 [00:30<00:34, 143.90it/s]Converting examples to features:  53%|█████▎    | 5606/10570 [00:30<00:32, 152.67it/s]Converting examples to features:  53%|█████▎    | 5622/10570 [00:30<00:35, 140.41it/s]Converting examples to features:  53%|█████▎    | 5637/10570 [00:30<00:34, 143.05it/s]Converting examples to features:  53%|█████▎    | 5654/10570 [00:30<00:33, 146.10it/s]Converting examples to features:  54%|█████▎    | 5671/10570 [00:30<00:32, 149.92it/s]Converting examples to features:  54%|█████▍    | 5693/10570 [00:30<00:29, 163.60it/s]Converting examples to features:  54%|█████▍    | 5712/10570 [00:30<00:28, 169.09it/s]Converting examples to features:  54%|█████▍    | 5730/10570 [00:31<00:29, 165.65it/s]Converting examples to features:  54%|█████▍    | 5747/10570 [00:31<00:30, 160.44it/s]Converting examples to features:  55%|█████▍    | 5764/10570 [00:31<00:29, 160.26it/s]Converting examples to features:  55%|█████▍    | 5781/10570 [00:31<00:32, 149.54it/s]Converting examples to features:  55%|█████▍    | 5797/10570 [00:31<00:33, 143.01it/s]Converting examples to features:  55%|█████▍    | 5812/10570 [00:31<00:32, 144.84it/s]Converting examples to features:  55%|█████▌    | 5832/10570 [00:31<00:30, 156.82it/s]Converting examples to features:  55%|█████▌    | 5849/10570 [00:31<00:31, 148.76it/s]Converting examples to features:  55%|█████▌    | 5866/10570 [00:32<00:30, 153.20it/s]Converting examples to features:  56%|█████▌    | 5886/10570 [00:32<00:28, 163.61it/s]Converting examples to features:  56%|█████▌    | 5903/10570 [00:32<00:28, 161.58it/s]Converting examples to features:  56%|█████▌    | 5920/10570 [00:32<00:30, 153.39it/s]Converting examples to features:  56%|█████▌    | 5938/10570 [00:32<00:28, 160.05it/s]Converting examples to features:  56%|█████▋    | 5958/10570 [00:32<00:27, 169.17it/s]Converting examples to features:  57%|█████▋    | 5979/10570 [00:32<00:25, 178.45it/s]Converting examples to features:  57%|█████▋    | 5998/10570 [00:32<00:26, 169.82it/s]Converting examples to features:  57%|█████▋    | 6016/10570 [00:32<00:27, 168.12it/s]Converting examples to features:  57%|█████▋    | 6034/10570 [00:32<00:27, 167.50it/s]Converting examples to features:  57%|█████▋    | 6051/10570 [00:33<00:28, 158.55it/s]Converting examples to features:  57%|█████▋    | 6068/10570 [00:33<00:30, 146.84it/s]Converting examples to features:  58%|█████▊    | 6085/10570 [00:33<00:29, 151.09it/s]Converting examples to features:  58%|█████▊    | 6101/10570 [00:33<00:29, 150.44it/s]Converting examples to features:  58%|█████▊    | 6122/10570 [00:33<00:27, 163.84it/s]Converting examples to features:  58%|█████▊    | 6145/10570 [00:33<00:24, 179.25it/s]Converting examples to features:  58%|█████▊    | 6164/10570 [00:33<00:24, 178.13it/s]Converting examples to features:  58%|█████▊    | 6183/10570 [00:33<00:24, 179.63it/s]Converting examples to features:  59%|█████▊    | 6202/10570 [00:33<00:25, 173.42it/s]Converting examples to features:  59%|█████▉    | 6222/10570 [00:34<00:24, 178.18it/s]Converting examples to features:  59%|█████▉    | 6241/10570 [00:34<00:27, 158.19it/s]Converting examples to features:  59%|█████▉    | 6258/10570 [00:34<00:27, 155.26it/s]Converting examples to features:  59%|█████▉    | 6277/10570 [00:34<00:26, 163.86it/s]Converting examples to features:  60%|█████▉    | 6298/10570 [00:34<00:24, 173.74it/s]Converting examples to features:  60%|█████▉    | 6319/10570 [00:34<00:23, 181.19it/s]Converting examples to features:  60%|█████▉    | 6338/10570 [00:34<00:23, 176.52it/s]Converting examples to features:  60%|██████    | 6359/10570 [00:34<00:23, 182.75it/s]Converting examples to features:  60%|██████    | 6378/10570 [00:35<00:25, 161.55it/s]Converting examples to features:  61%|██████    | 6398/10570 [00:35<00:24, 171.34it/s]Converting examples to features:  61%|██████    | 6421/10570 [00:35<00:22, 183.33it/s]Converting examples to features:  61%|██████    | 6443/10570 [00:35<00:21, 191.03it/s]Converting examples to features:  61%|██████    | 6466/10570 [00:35<00:20, 199.16it/s]Converting examples to features:  61%|██████▏   | 6487/10570 [00:35<00:21, 189.31it/s]Converting examples to features:  62%|██████▏   | 6507/10570 [00:35<00:21, 187.11it/s]Converting examples to features:  62%|██████▏   | 6527/10570 [00:35<00:22, 178.98it/s]Converting examples to features:  62%|██████▏   | 6548/10570 [00:35<00:21, 186.37it/s]Converting examples to features:  62%|██████▏   | 6567/10570 [00:36<00:21, 185.61it/s]Converting examples to features:  62%|██████▏   | 6586/10570 [00:36<00:22, 176.44it/s]Converting examples to features:  62%|██████▏   | 6604/10570 [00:36<00:23, 167.07it/s]Converting examples to features:  63%|██████▎   | 6626/10570 [00:36<00:22, 178.36it/s]Converting examples to features:  63%|██████▎   | 6647/10570 [00:36<00:21, 186.05it/s]Converting examples to features:  63%|██████▎   | 6667/10570 [00:36<00:21, 184.92it/s]Converting examples to features:  63%|██████▎   | 6686/10570 [00:36<00:21, 183.22it/s]Converting examples to features:  63%|██████▎   | 6705/10570 [00:36<00:23, 164.82it/s]Converting examples to features:  64%|██████▎   | 6722/10570 [00:36<00:24, 158.84it/s]Converting examples to features:  64%|██████▍   | 6743/10570 [00:37<00:22, 170.03it/s]Converting examples to features:  64%|██████▍   | 6769/10570 [00:37<00:20, 188.33it/s]Converting examples to features:  64%|██████▍   | 6789/10570 [00:37<00:21, 174.22it/s]Converting examples to features:  64%|██████▍   | 6808/10570 [00:37<00:22, 166.37it/s]Converting examples to features:  65%|██████▍   | 6826/10570 [00:37<00:23, 157.78it/s]Converting examples to features:  65%|██████▍   | 6843/10570 [00:37<00:24, 150.47it/s]Converting examples to features:  65%|██████▍   | 6862/10570 [00:37<00:23, 159.30it/s]Converting examples to features:  65%|██████▌   | 6879/10570 [00:37<00:24, 152.75it/s]Converting examples to features:  65%|██████▌   | 6897/10570 [00:37<00:23, 157.24it/s]Converting examples to features:  65%|██████▌   | 6914/10570 [00:38<00:23, 152.50it/s]Converting examples to features:  66%|██████▌   | 6938/10570 [00:38<00:21, 170.19it/s]Converting examples to features:  66%|██████▌   | 6956/10570 [00:38<00:21, 171.09it/s]Converting examples to features:  66%|██████▌   | 6975/10570 [00:38<00:20, 176.02it/s]Converting examples to features:  66%|██████▌   | 6997/10570 [00:38<00:19, 187.13it/s]Converting examples to features:  66%|██████▋   | 7019/10570 [00:38<00:18, 194.44it/s]Converting examples to features:  67%|██████▋   | 7039/10570 [00:38<00:18, 193.19it/s]Converting examples to features:  67%|██████▋   | 7059/10570 [00:38<00:19, 183.29it/s]Converting examples to features:  67%|██████▋   | 7078/10570 [00:38<00:19, 179.64it/s]Converting examples to features:  67%|██████▋   | 7100/10570 [00:39<00:18, 189.22it/s]Converting examples to features:  67%|██████▋   | 7121/10570 [00:39<00:17, 194.07it/s]Converting examples to features:  68%|██████▊   | 7141/10570 [00:39<00:17, 195.25it/s]Converting examples to features:  68%|██████▊   | 7162/10570 [00:39<00:17, 196.57it/s]Converting examples to features:  68%|██████▊   | 7182/10570 [00:39<00:17, 188.45it/s]Converting examples to features:  68%|██████▊   | 7202/10570 [00:39<00:18, 183.57it/s]Converting examples to features:  68%|██████▊   | 7221/10570 [00:39<00:19, 173.72it/s]Converting examples to features:  68%|██████▊   | 7239/10570 [00:39<00:19, 170.86it/s]Converting examples to features:  69%|██████▊   | 7257/10570 [00:39<00:19, 170.32it/s]Converting examples to features:  69%|██████▉   | 7275/10570 [00:40<00:20, 163.91it/s]Converting examples to features:  69%|██████▉   | 7294/10570 [00:40<00:19, 170.55it/s]Converting examples to features:  69%|██████▉   | 7316/10570 [00:40<00:17, 181.07it/s]Converting examples to features:  69%|██████▉   | 7335/10570 [00:40<00:20, 154.70it/s]Converting examples to features:  70%|██████▉   | 7352/10570 [00:40<00:22, 144.99it/s]Converting examples to features:  70%|██████▉   | 7373/10570 [00:40<00:20, 158.90it/s]Converting examples to features:  70%|██████▉   | 7390/10570 [00:40<00:21, 145.91it/s]Converting examples to features:  70%|███████   | 7410/10570 [00:40<00:19, 158.20it/s]Converting examples to features:  70%|███████   | 7431/10570 [00:41<00:18, 167.87it/s]Converting examples to features:  70%|███████   | 7449/10570 [00:41<00:18, 165.88it/s]Converting examples to features:  71%|███████   | 7467/10570 [00:41<00:19, 157.11it/s]Converting examples to features:  71%|███████   | 7488/10570 [00:41<00:18, 167.33it/s]Converting examples to features:  71%|███████   | 7506/10570 [00:41<00:17, 170.70it/s]Converting examples to features:  71%|███████   | 7528/10570 [00:41<00:16, 181.93it/s]Converting examples to features:  71%|███████▏  | 7547/10570 [00:41<00:17, 173.37it/s]Converting examples to features:  72%|███████▏  | 7566/10570 [00:41<00:17, 175.19it/s]Converting examples to features:  72%|███████▏  | 7585/10570 [00:41<00:16, 178.76it/s]Converting examples to features:  72%|███████▏  | 7605/10570 [00:41<00:16, 183.71it/s]Converting examples to features:  72%|███████▏  | 7624/10570 [00:42<00:16, 180.98it/s]Converting examples to features:  72%|███████▏  | 7643/10570 [00:42<00:16, 178.51it/s]Converting examples to features:  72%|███████▏  | 7661/10570 [00:42<00:17, 163.64it/s]Converting examples to features:  73%|███████▎  | 7685/10570 [00:42<00:16, 179.89it/s]Converting examples to features:  73%|███████▎  | 7704/10570 [00:42<00:16, 178.95it/s]Converting examples to features:  73%|███████▎  | 7723/10570 [00:42<00:15, 179.70it/s]Converting examples to features:  73%|███████▎  | 7744/10570 [00:42<00:15, 183.92it/s]Converting examples to features:  73%|███████▎  | 7763/10570 [00:42<00:17, 161.93it/s]Converting examples to features:  74%|███████▎  | 7780/10570 [00:43<00:17, 156.60it/s]Converting examples to features:  74%|███████▍  | 7798/10570 [00:43<00:17, 161.82it/s]Converting examples to features:  74%|███████▍  | 7815/10570 [00:43<00:17, 158.45it/s]Converting examples to features:  74%|███████▍  | 7832/10570 [00:43<00:17, 155.23it/s]Converting examples to features:  74%|███████▍  | 7850/10570 [00:43<00:16, 161.29it/s]Converting examples to features:  74%|███████▍  | 7871/10570 [00:43<00:15, 172.58it/s]Converting examples to features:  75%|███████▍  | 7889/10570 [00:43<00:15, 170.90it/s]Converting examples to features:  75%|███████▍  | 7909/10570 [00:43<00:15, 176.45it/s]Converting examples to features:  75%|███████▌  | 7931/10570 [00:43<00:14, 184.88it/s]Converting examples to features:  75%|███████▌  | 7952/10570 [00:43<00:13, 189.46it/s]Converting examples to features:  75%|███████▌  | 7972/10570 [00:44<00:15, 168.63it/s]Converting examples to features:  76%|███████▌  | 7991/10570 [00:44<00:15, 170.74it/s]Converting examples to features:  76%|███████▌  | 8009/10570 [00:44<00:15, 169.14it/s]Converting examples to features:  76%|███████▌  | 8028/10570 [00:44<00:14, 173.24it/s]Converting examples to features:  76%|███████▌  | 8046/10570 [00:44<00:16, 152.97it/s]Converting examples to features:  76%|███████▋  | 8062/10570 [00:44<00:16, 154.61it/s]Converting examples to features:  76%|███████▋  | 8085/10570 [00:44<00:14, 169.76it/s]Converting examples to features:  77%|███████▋  | 8106/10570 [00:44<00:13, 178.90it/s]Converting examples to features:  77%|███████▋  | 8127/10570 [00:45<00:13, 186.13it/s]Converting examples to features:  77%|███████▋  | 8147/10570 [00:45<00:14, 173.03it/s]Converting examples to features:  77%|███████▋  | 8165/10570 [00:45<00:14, 162.49it/s]Converting examples to features:  77%|███████▋  | 8182/10570 [00:45<00:14, 159.80it/s]Converting examples to features:  78%|███████▊  | 8199/10570 [00:45<00:16, 148.12it/s]Converting examples to features:  78%|███████▊  | 8215/10570 [00:45<00:15, 150.05it/s]Converting examples to features:  78%|███████▊  | 8231/10570 [00:45<00:15, 150.71it/s]Converting examples to features:  78%|███████▊  | 8247/10570 [00:45<00:15, 152.64it/s]Converting examples to features:  78%|███████▊  | 8263/10570 [00:45<00:16, 136.28it/s]Converting examples to features:  78%|███████▊  | 8278/10570 [00:46<00:17, 129.68it/s]Converting examples to features:  78%|███████▊  | 8294/10570 [00:46<00:16, 137.35it/s]Converting examples to features:  79%|███████▊  | 8314/10570 [00:46<00:14, 150.94it/s]Converting examples to features:  79%|███████▉  | 8330/10570 [00:46<00:15, 142.66it/s]Converting examples to features:  79%|███████▉  | 8352/10570 [00:46<00:13, 159.44it/s]Converting examples to features:  79%|███████▉  | 8370/10570 [00:46<00:13, 163.45it/s]Converting examples to features:  79%|███████▉  | 8392/10570 [00:46<00:12, 176.07it/s]Converting examples to features:  80%|███████▉  | 8411/10570 [00:46<00:12, 178.44it/s]Converting examples to features:  80%|███████▉  | 8435/10570 [00:46<00:11, 190.37it/s]Converting examples to features:  80%|████████  | 8456/10570 [00:47<00:10, 195.69it/s]Converting examples to features:  80%|████████  | 8477/10570 [00:47<00:10, 193.71it/s]Converting examples to features:  80%|████████  | 8497/10570 [00:47<00:10, 192.19it/s]Converting examples to features:  81%|████████  | 8517/10570 [00:47<00:22, 92.62it/s] Converting examples to features:  81%|████████  | 8539/10570 [00:47<00:18, 112.06it/s]Converting examples to features:  81%|████████  | 8557/10570 [00:47<00:16, 125.72it/s]Converting examples to features:  81%|████████  | 8575/10570 [00:48<00:15, 131.80it/s]Converting examples to features:  81%|████████▏ | 8595/10570 [00:48<00:13, 146.52it/s]Converting examples to features:  82%|████████▏ | 8616/10570 [00:48<00:12, 160.18it/s]Converting examples to features:  82%|████████▏ | 8637/10570 [00:48<00:11, 172.33it/s]Converting examples to features:  82%|████████▏ | 8657/10570 [00:48<00:12, 157.87it/s]Converting examples to features:  82%|████████▏ | 8678/10570 [00:48<00:11, 168.88it/s]Converting examples to features:  82%|████████▏ | 8701/10570 [00:48<00:10, 182.87it/s]Converting examples to features:  83%|████████▎ | 8721/10570 [00:48<00:10, 182.22it/s]Converting examples to features:  83%|████████▎ | 8741/10570 [00:48<00:09, 185.62it/s]Converting examples to features:  83%|████████▎ | 8761/10570 [00:49<00:09, 186.76it/s]Converting examples to features:  83%|████████▎ | 8781/10570 [00:49<00:09, 182.21it/s]Converting examples to features:  83%|████████▎ | 8801/10570 [00:49<00:09, 184.39it/s]Converting examples to features:  83%|████████▎ | 8820/10570 [00:49<00:09, 179.97it/s]Converting examples to features:  84%|████████▎ | 8841/10570 [00:49<00:09, 186.57it/s]Converting examples to features:  84%|████████▍ | 8864/10570 [00:49<00:08, 196.22it/s]Converting examples to features:  84%|████████▍ | 8887/10570 [00:49<00:08, 203.38it/s]Converting examples to features:  84%|████████▍ | 8908/10570 [00:49<00:08, 192.14it/s]Converting examples to features:  84%|████████▍ | 8929/10570 [00:49<00:08, 195.76it/s]Converting examples to features:  85%|████████▍ | 8950/10570 [00:50<00:08, 199.08it/s]Converting examples to features:  85%|████████▍ | 8972/10570 [00:50<00:07, 204.07it/s]Converting examples to features:  85%|████████▌ | 8993/10570 [00:50<00:07, 203.45it/s]Converting examples to features:  85%|████████▌ | 9014/10570 [00:50<00:07, 200.44it/s]Converting examples to features:  85%|████████▌ | 9035/10570 [00:50<00:08, 186.77it/s]Converting examples to features:  86%|████████▌ | 9054/10570 [00:50<00:08, 185.46it/s]Converting examples to features:  86%|████████▌ | 9073/10570 [00:50<00:08, 186.60it/s]Converting examples to features:  86%|████████▌ | 9092/10570 [00:50<00:08, 184.25it/s]Converting examples to features:  86%|████████▌ | 9111/10570 [00:50<00:08, 179.88it/s]Converting examples to features:  86%|████████▋ | 9133/10570 [00:50<00:07, 189.43it/s]Converting examples to features:  87%|████████▋ | 9153/10570 [00:51<00:07, 186.38it/s]Converting examples to features:  87%|████████▋ | 9175/10570 [00:51<00:07, 193.60it/s]Converting examples to features:  87%|████████▋ | 9198/10570 [00:51<00:06, 202.93it/s]Converting examples to features:  87%|████████▋ | 9219/10570 [00:51<00:06, 196.84it/s]Converting examples to features:  87%|████████▋ | 9242/10570 [00:51<00:06, 204.69it/s]Converting examples to features:  88%|████████▊ | 9263/10570 [00:51<00:06, 205.76it/s]Converting examples to features:  88%|████████▊ | 9284/10570 [00:51<00:06, 202.28it/s]Converting examples to features:  88%|████████▊ | 9305/10570 [00:51<00:06, 202.09it/s]Converting examples to features:  88%|████████▊ | 9326/10570 [00:51<00:06, 193.07it/s]Converting examples to features:  88%|████████▊ | 9346/10570 [00:52<00:06, 186.89it/s]Converting examples to features:  89%|████████▊ | 9369/10570 [00:52<00:06, 196.58it/s]Converting examples to features:  89%|████████▉ | 9389/10570 [00:52<00:06, 187.86it/s]Converting examples to features:  89%|████████▉ | 9409/10570 [00:52<00:06, 187.85it/s]Converting examples to features:  89%|████████▉ | 9428/10570 [00:52<00:06, 186.16it/s]Converting examples to features:  89%|████████▉ | 9448/10570 [00:52<00:05, 189.86it/s]Converting examples to features:  90%|████████▉ | 9469/10570 [00:52<00:05, 191.98it/s]Converting examples to features:  90%|████████▉ | 9489/10570 [00:52<00:05, 183.32it/s]Converting examples to features:  90%|████████▉ | 9508/10570 [00:52<00:05, 178.78it/s]Converting examples to features:  90%|█████████ | 9532/10570 [00:53<00:05, 193.02it/s]Converting examples to features:  90%|█████████ | 9552/10570 [00:53<00:05, 192.73it/s]Converting examples to features:  91%|█████████ | 9572/10570 [00:53<00:05, 184.78it/s]Converting examples to features:  91%|█████████ | 9591/10570 [00:53<00:05, 174.71it/s]Converting examples to features:  91%|█████████ | 9614/10570 [00:53<00:05, 186.56it/s]Converting examples to features:  91%|█████████ | 9634/10570 [00:53<00:05, 184.41it/s]Converting examples to features:  91%|█████████▏| 9655/10570 [00:53<00:04, 189.01it/s]Converting examples to features:  92%|█████████▏| 9676/10570 [00:53<00:04, 193.79it/s]Converting examples to features:  92%|█████████▏| 9701/10570 [00:53<00:04, 206.40it/s]Converting examples to features:  92%|█████████▏| 9725/10570 [00:54<00:03, 213.40it/s]Converting examples to features:  92%|█████████▏| 9747/10570 [00:54<00:03, 210.40it/s]Converting examples to features:  92%|█████████▏| 9769/10570 [00:54<00:03, 209.37it/s]Converting examples to features:  93%|█████████▎| 9791/10570 [00:54<00:03, 197.50it/s]Converting examples to features:  93%|█████████▎| 9812/10570 [00:54<00:03, 197.29it/s]Converting examples to features:  93%|█████████▎| 9832/10570 [00:54<00:04, 174.82it/s]Converting examples to features:  93%|█████████▎| 9851/10570 [00:54<00:04, 159.72it/s]Converting examples to features:  93%|█████████▎| 9871/10570 [00:54<00:04, 168.40it/s]Converting examples to features:  94%|█████████▎| 9890/10570 [00:54<00:03, 171.70it/s]Converting examples to features:  94%|█████████▎| 9908/10570 [00:55<00:04, 160.40it/s]Converting examples to features:  94%|█████████▍| 9930/10570 [00:55<00:03, 172.56it/s]Converting examples to features:  94%|█████████▍| 9948/10570 [00:55<00:03, 172.08it/s]Converting examples to features:  94%|█████████▍| 9966/10570 [00:55<00:03, 163.46it/s]Converting examples to features:  94%|█████████▍| 9983/10570 [00:55<00:03, 149.45it/s]Converting examples to features:  95%|█████████▍| 10001/10570 [00:55<00:03, 155.90it/s]Converting examples to features:  95%|█████████▍| 10022/10570 [00:55<00:03, 167.84it/s]Converting examples to features:  95%|█████████▌| 10043/10570 [00:55<00:02, 177.26it/s]Converting examples to features:  95%|█████████▌| 10062/10570 [00:55<00:02, 177.28it/s]Converting examples to features:  95%|█████████▌| 10081/10570 [00:56<00:02, 174.84it/s]Converting examples to features:  96%|█████████▌| 10099/10570 [00:56<00:02, 175.51it/s]Converting examples to features:  96%|█████████▌| 10119/10570 [00:56<00:02, 181.15it/s]Converting examples to features:  96%|█████████▌| 10138/10570 [00:56<00:02, 180.63it/s]Converting examples to features:  96%|█████████▌| 10157/10570 [00:56<00:02, 182.72it/s]Converting examples to features:  96%|█████████▋| 10176/10570 [00:56<00:02, 167.64it/s]Converting examples to features:  96%|█████████▋| 10197/10570 [00:56<00:02, 178.23it/s]Converting examples to features:  97%|█████████▋| 10216/10570 [00:56<00:01, 178.24it/s]Converting examples to features:  97%|█████████▋| 10237/10570 [00:56<00:01, 185.04it/s]Converting examples to features:  97%|█████████▋| 10256/10570 [00:57<00:01, 183.29it/s]Converting examples to features:  97%|█████████▋| 10275/10570 [00:57<00:01, 178.75it/s]Converting examples to features:  97%|█████████▋| 10296/10570 [00:57<00:01, 186.61it/s]Converting examples to features:  98%|█████████▊| 10315/10570 [00:57<00:01, 178.80it/s]Converting examples to features:  98%|█████████▊| 10334/10570 [00:57<00:01, 177.19it/s]Converting examples to features:  98%|█████████▊| 10353/10570 [00:57<00:01, 179.17it/s]Converting examples to features:  98%|█████████▊| 10372/10570 [00:57<00:01, 174.39it/s]Converting examples to features:  98%|█████████▊| 10390/10570 [00:57<00:01, 164.77it/s]Converting examples to features:  98%|█████████▊| 10407/10570 [00:57<00:01, 161.18it/s]Converting examples to features:  99%|█████████▊| 10424/10570 [00:58<00:00, 163.34it/s]Converting examples to features:  99%|█████████▉| 10441/10570 [00:58<00:00, 159.96it/s]Converting examples to features:  99%|█████████▉| 10458/10570 [00:58<00:00, 161.53it/s]Converting examples to features:  99%|█████████▉| 10475/10570 [00:58<00:00, 144.09it/s]Converting examples to features:  99%|█████████▉| 10494/10570 [00:58<00:00, 154.67it/s]Converting examples to features:  99%|█████████▉| 10515/10570 [00:58<00:00, 167.94it/s]Converting examples to features: 100%|█████████▉| 10534/10570 [00:58<00:00, 173.22it/s]Converting examples to features: 100%|█████████▉| 10556/10570 [00:58<00:00, 184.82it/s]Converting examples to features: 100%|██████████| 10570/10570 [00:58<00:00, 179.54it/s]
+12/16/2019 13:34:53 - INFO - __main__ -   Saving features into cached file ./cached_dev_bert-base-uncased_384
+12/16/2019 13:35:00 - INFO - __main__ -   ***** Running evaluation  *****
+12/16/2019 13:35:00 - INFO - __main__ -     Num examples = 10833
+12/16/2019 13:35:00 - INFO - __main__ -     Batch size = 8
+Evaluating:   0%|          | 0/1355 [00:00<?, ?it/s]Evaluating:   0%|          | 2/1355 [00:00<01:35, 14.23it/s]Evaluating:   0%|          | 4/1355 [00:00<01:33, 14.40it/s]Evaluating:   0%|          | 6/1355 [00:00<01:31, 14.66it/s]Evaluating:   1%|          | 8/1355 [00:00<01:30, 14.88it/s]Evaluating:   1%|          | 10/1355 [00:00<01:29, 15.08it/s]Evaluating:   1%|          | 12/1355 [00:00<01:28, 15.22it/s]Evaluating:   1%|          | 14/1355 [00:00<01:27, 15.32it/s]Evaluating:   1%|          | 16/1355 [00:01<01:27, 15.38it/s]Evaluating:   1%|▏         | 18/1355 [00:01<01:26, 15.43it/s]Evaluating:   1%|▏         | 20/1355 [00:01<01:26, 15.46it/s]Evaluating:   2%|▏         | 22/1355 [00:01<01:26, 15.48it/s]Evaluating:   2%|▏         | 24/1355 [00:01<01:26, 15.46it/s]Evaluating:   2%|▏         | 26/1355 [00:01<01:25, 15.48it/s]Evaluating:   2%|▏         | 28/1355 [00:01<01:25, 15.50it/s]Evaluating:   2%|▏         | 30/1355 [00:01<01:25, 15.49it/s]Evaluating:   2%|▏         | 32/1355 [00:02<01:25, 15.49it/s]Evaluating:   3%|▎         | 34/1355 [00:02<01:25, 15.48it/s]Evaluating:   3%|▎         | 36/1355 [00:02<01:25, 15.48it/s]Evaluating:   3%|▎         | 38/1355 [00:02<01:25, 15.48it/s]Evaluating:   3%|▎         | 40/1355 [00:02<01:25, 15.46it/s]Evaluating:   3%|▎         | 42/1355 [00:02<01:24, 15.46it/s]Evaluating:   3%|▎         | 44/1355 [00:02<01:24, 15.46it/s]Evaluating:   3%|▎         | 46/1355 [00:02<01:24, 15.48it/s]Evaluating:   4%|▎         | 48/1355 [00:03<01:24, 15.49it/s]Evaluating:   4%|▎         | 50/1355 [00:03<01:24, 15.49it/s]Evaluating:   4%|▍         | 52/1355 [00:03<01:24, 15.49it/s]Evaluating:   4%|▍         | 54/1355 [00:03<01:24, 15.49it/s]Evaluating:   4%|▍         | 56/1355 [00:03<01:24, 15.45it/s]Evaluating:   4%|▍         | 58/1355 [00:03<01:23, 15.47it/s]Evaluating:   4%|▍         | 60/1355 [00:03<01:23, 15.46it/s]Evaluating:   5%|▍         | 62/1355 [00:04<01:23, 15.46it/s]Evaluating:   5%|▍         | 64/1355 [00:04<01:23, 15.46it/s]Evaluating:   5%|▍         | 66/1355 [00:04<01:23, 15.47it/s]Evaluating:   5%|▌         | 68/1355 [00:04<01:23, 15.47it/s]Evaluating:   5%|▌         | 70/1355 [00:04<01:23, 15.48it/s]Evaluating:   5%|▌         | 72/1355 [00:04<01:22, 15.46it/s]Evaluating:   5%|▌         | 74/1355 [00:04<01:22, 15.46it/s]Evaluating:   6%|▌         | 76/1355 [00:04<01:22, 15.46it/s]Evaluating:   6%|▌         | 78/1355 [00:05<01:22, 15.46it/s]Evaluating:   6%|▌         | 80/1355 [00:05<01:22, 15.48it/s]Evaluating:   6%|▌         | 82/1355 [00:05<01:22, 15.48it/s]Evaluating:   6%|▌         | 84/1355 [00:05<01:22, 15.47it/s]Evaluating:   6%|▋         | 86/1355 [00:05<01:21, 15.48it/s]Evaluating:   6%|▋         | 88/1355 [00:05<01:21, 15.46it/s]Evaluating:   7%|▋         | 90/1355 [00:05<01:21, 15.45it/s]Evaluating:   7%|▋         | 92/1355 [00:05<01:21, 15.43it/s]Evaluating:   7%|▋         | 94/1355 [00:06<01:21, 15.45it/s]Evaluating:   7%|▋         | 96/1355 [00:06<01:21, 15.45it/s]Evaluating:   7%|▋         | 98/1355 [00:06<01:21, 15.46it/s]Evaluating:   7%|▋         | 100/1355 [00:06<01:21, 15.46it/s]Evaluating:   8%|▊         | 102/1355 [00:06<01:21, 15.46it/s]Evaluating:   8%|▊         | 104/1355 [00:06<01:21, 15.44it/s]Evaluating:   8%|▊         | 106/1355 [00:06<01:20, 15.44it/s]Evaluating:   8%|▊         | 108/1355 [00:06<01:20, 15.44it/s]Evaluating:   8%|▊         | 110/1355 [00:07<01:20, 15.44it/s]Evaluating:   8%|▊         | 112/1355 [00:07<01:20, 15.45it/s]Evaluating:   8%|▊         | 114/1355 [00:07<01:20, 15.46it/s]Evaluating:   9%|▊         | 116/1355 [00:07<01:20, 15.46it/s]Evaluating:   9%|▊         | 118/1355 [00:07<01:20, 15.46it/s]Evaluating:   9%|▉         | 120/1355 [00:07<01:20, 15.43it/s]Evaluating:   9%|▉         | 122/1355 [00:07<01:19, 15.45it/s]Evaluating:   9%|▉         | 124/1355 [00:08<01:19, 15.45it/s]Evaluating:   9%|▉         | 126/1355 [00:08<01:19, 15.46it/s]Evaluating:   9%|▉         | 128/1355 [00:08<01:19, 15.46it/s]Evaluating:  10%|▉         | 130/1355 [00:08<01:19, 15.46it/s]Evaluating:  10%|▉         | 132/1355 [00:08<01:19, 15.45it/s]Evaluating:  10%|▉         | 134/1355 [00:08<01:19, 15.44it/s]Evaluating:  10%|█         | 136/1355 [00:08<01:20, 15.05it/s]Evaluating:  10%|█         | 138/1355 [00:08<01:20, 15.16it/s]Evaluating:  10%|█         | 140/1355 [00:09<01:19, 15.25it/s]Evaluating:  10%|█         | 142/1355 [00:09<01:19, 15.29it/s]Evaluating:  11%|█         | 144/1355 [00:09<01:18, 15.34it/s]Evaluating:  11%|█         | 146/1355 [00:09<01:18, 15.37it/s]Evaluating:  11%|█         | 148/1355 [00:09<01:18, 15.40it/s]Evaluating:  11%|█         | 150/1355 [00:09<01:18, 15.42it/s]Evaluating:  11%|█         | 152/1355 [00:09<01:18, 15.41it/s]Evaluating:  11%|█▏        | 154/1355 [00:09<01:17, 15.42it/s]Evaluating:  12%|█▏        | 156/1355 [00:10<01:17, 15.43it/s]Evaluating:  12%|█▏        | 158/1355 [00:10<01:17, 15.44it/s]Evaluating:  12%|█▏        | 160/1355 [00:10<01:17, 15.44it/s]Evaluating:  12%|█▏        | 162/1355 [00:10<01:17, 15.45it/s]Evaluating:  12%|█▏        | 164/1355 [00:10<01:17, 15.45it/s]Evaluating:  12%|█▏        | 166/1355 [00:10<01:16, 15.45it/s]Evaluating:  12%|█▏        | 168/1355 [00:10<01:16, 15.44it/s]Evaluating:  13%|█▎        | 170/1355 [00:11<01:16, 15.45it/s]Evaluating:  13%|█▎        | 172/1355 [00:11<01:16, 15.46it/s]Evaluating:  13%|█▎        | 174/1355 [00:11<01:16, 15.47it/s]Evaluating:  13%|█▎        | 176/1355 [00:11<01:16, 15.45it/s]Evaluating:  13%|█▎        | 178/1355 [00:11<01:16, 15.45it/s]Evaluating:  13%|█▎        | 180/1355 [00:11<01:16, 15.44it/s]Evaluating:  13%|█▎        | 182/1355 [00:11<01:15, 15.44it/s]Evaluating:  14%|█▎        | 184/1355 [00:11<01:15, 15.42it/s]Evaluating:  14%|█▎        | 186/1355 [00:12<01:15, 15.44it/s]Evaluating:  14%|█▍        | 188/1355 [00:12<01:15, 15.44it/s]Evaluating:  14%|█▍        | 190/1355 [00:12<01:15, 15.44it/s]Evaluating:  14%|█▍        | 192/1355 [00:12<01:15, 15.44it/s]Evaluating:  14%|█▍        | 194/1355 [00:12<01:15, 15.45it/s]Evaluating:  14%|█▍        | 196/1355 [00:12<01:15, 15.44it/s]Evaluating:  15%|█▍        | 198/1355 [00:12<01:14, 15.44it/s]Evaluating:  15%|█▍        | 200/1355 [00:12<01:14, 15.43it/s]Evaluating:  15%|█▍        | 202/1355 [00:13<01:14, 15.44it/s]Evaluating:  15%|█▌        | 204/1355 [00:13<01:14, 15.45it/s]Evaluating:  15%|█▌        | 206/1355 [00:13<01:14, 15.45it/s]Evaluating:  15%|█▌        | 208/1355 [00:13<01:14, 15.46it/s]Evaluating:  15%|█▌        | 210/1355 [00:13<01:14, 15.46it/s]Evaluating:  16%|█▌        | 212/1355 [00:13<01:14, 15.42it/s]Evaluating:  16%|█▌        | 214/1355 [00:13<01:13, 15.42it/s]Evaluating:  16%|█▌        | 216/1355 [00:14<01:13, 15.41it/s]Evaluating:  16%|█▌        | 218/1355 [00:14<01:13, 15.42it/s]Evaluating:  16%|█▌        | 220/1355 [00:14<01:13, 15.43it/s]Evaluating:  16%|█▋        | 222/1355 [00:14<01:13, 15.44it/s]Evaluating:  17%|█▋        | 224/1355 [00:14<01:13, 15.45it/s]Evaluating:  17%|█▋        | 226/1355 [00:14<01:13, 15.45it/s]Evaluating:  17%|█▋        | 228/1355 [00:14<01:12, 15.45it/s]Evaluating:  17%|█▋        | 230/1355 [00:14<01:12, 15.45it/s]Evaluating:  17%|█▋        | 232/1355 [00:15<01:12, 15.45it/s]Evaluating:  17%|█▋        | 234/1355 [00:15<01:12, 15.40it/s]Evaluating:  17%|█▋        | 236/1355 [00:15<01:12, 15.41it/s]Evaluating:  18%|█▊        | 238/1355 [00:15<01:12, 15.43it/s]Evaluating:  18%|█▊        | 240/1355 [00:15<01:12, 15.44it/s]Evaluating:  18%|█▊        | 242/1355 [00:15<01:12, 15.45it/s]Evaluating:  18%|█▊        | 244/1355 [00:15<01:11, 15.45it/s]Evaluating:  18%|█▊        | 246/1355 [00:15<01:11, 15.46it/s]Evaluating:  18%|█▊        | 248/1355 [00:16<01:11, 15.45it/s]Evaluating:  18%|█▊        | 250/1355 [00:16<01:11, 15.45it/s]Evaluating:  19%|█▊        | 252/1355 [00:16<01:11, 15.43it/s]Evaluating:  19%|█▊        | 254/1355 [00:16<01:11, 15.41it/s]Evaluating:  19%|█▉        | 256/1355 [00:16<01:11, 15.40it/s]Evaluating:  19%|█▉        | 258/1355 [00:16<01:11, 15.40it/s]Evaluating:  19%|█▉        | 260/1355 [00:16<01:10, 15.43it/s]Evaluating:  19%|█▉        | 262/1355 [00:16<01:10, 15.44it/s]Evaluating:  19%|█▉        | 264/1355 [00:17<01:10, 15.44it/s]Evaluating:  20%|█▉        | 266/1355 [00:17<01:10, 15.44it/s]Evaluating:  20%|█▉        | 268/1355 [00:17<01:10, 15.45it/s]Evaluating:  20%|█▉        | 270/1355 [00:17<01:10, 15.42it/s]Evaluating:  20%|██        | 272/1355 [00:17<01:10, 15.41it/s]Evaluating:  20%|██        | 274/1355 [00:17<01:10, 15.38it/s]Evaluating:  20%|██        | 276/1355 [00:17<01:10, 15.40it/s]Evaluating:  21%|██        | 278/1355 [00:18<01:09, 15.39it/s]Evaluating:  21%|██        | 280/1355 [00:18<01:09, 15.41it/s]Evaluating:  21%|██        | 282/1355 [00:18<01:09, 15.44it/s]Evaluating:  21%|██        | 284/1355 [00:18<01:09, 15.44it/s]Evaluating:  21%|██        | 286/1355 [00:18<01:09, 15.44it/s]Evaluating:  21%|██▏       | 288/1355 [00:18<01:09, 15.44it/s]Evaluating:  21%|██▏       | 290/1355 [00:18<01:08, 15.45it/s]Evaluating:  22%|██▏       | 292/1355 [00:18<01:08, 15.44it/s]Evaluating:  22%|██▏       | 294/1355 [00:19<01:08, 15.39it/s]Evaluating:  22%|██▏       | 296/1355 [00:19<01:08, 15.39it/s]Evaluating:  22%|██▏       | 298/1355 [00:19<01:08, 15.40it/s]Evaluating:  22%|██▏       | 300/1355 [00:19<01:08, 15.42it/s]Evaluating:  22%|██▏       | 302/1355 [00:19<01:08, 15.42it/s]Evaluating:  22%|██▏       | 304/1355 [00:19<01:08, 15.42it/s]Evaluating:  23%|██▎       | 306/1355 [00:19<01:08, 15.41it/s]Evaluating:  23%|██▎       | 308/1355 [00:19<01:07, 15.40it/s]Evaluating:  23%|██▎       | 310/1355 [00:20<01:07, 15.41it/s]Evaluating:  23%|██▎       | 312/1355 [00:20<01:07, 15.40it/s]Evaluating:  23%|██▎       | 314/1355 [00:20<01:07, 15.38it/s]Evaluating:  23%|██▎       | 316/1355 [00:20<01:07, 15.40it/s]Evaluating:  23%|██▎       | 318/1355 [00:20<01:07, 15.41it/s]Evaluating:  24%|██▎       | 320/1355 [00:20<01:07, 15.40it/s]Evaluating:  24%|██▍       | 322/1355 [00:20<01:07, 15.38it/s]Evaluating:  24%|██▍       | 324/1355 [00:21<01:06, 15.39it/s]Evaluating:  24%|██▍       | 326/1355 [00:21<01:06, 15.41it/s]Evaluating:  24%|██▍       | 328/1355 [00:21<01:06, 15.42it/s]Evaluating:  24%|██▍       | 330/1355 [00:21<01:06, 15.41it/s]Evaluating:  25%|██▍       | 332/1355 [00:21<01:06, 15.42it/s]Evaluating:  25%|██▍       | 334/1355 [00:21<01:06, 15.38it/s]Evaluating:  25%|██▍       | 336/1355 [00:21<01:06, 15.40it/s]Evaluating:  25%|██▍       | 338/1355 [00:21<01:06, 15.40it/s]Evaluating:  25%|██▌       | 340/1355 [00:22<01:05, 15.40it/s]Evaluating:  25%|██▌       | 342/1355 [00:22<01:05, 15.42it/s]Evaluating:  25%|██▌       | 344/1355 [00:22<01:05, 15.42it/s]Evaluating:  26%|██▌       | 346/1355 [00:22<01:05, 15.40it/s]Evaluating:  26%|██▌       | 348/1355 [00:22<01:05, 15.41it/s]Evaluating:  26%|██▌       | 350/1355 [00:22<01:05, 15.42it/s]Evaluating:  26%|██▌       | 352/1355 [00:22<01:05, 15.42it/s]Evaluating:  26%|██▌       | 354/1355 [00:22<01:07, 14.91it/s]Evaluating:  26%|██▋       | 356/1355 [00:23<01:06, 15.07it/s]Evaluating:  26%|██▋       | 358/1355 [00:23<01:05, 15.16it/s]Evaluating:  27%|██▋       | 360/1355 [00:23<01:05, 15.24it/s]Evaluating:  27%|██▋       | 362/1355 [00:23<01:04, 15.29it/s]Evaluating:  27%|██▋       | 364/1355 [00:23<01:04, 15.32it/s]Evaluating:  27%|██▋       | 366/1355 [00:23<01:04, 15.35it/s]Evaluating:  27%|██▋       | 368/1355 [00:23<01:04, 15.37it/s]Evaluating:  27%|██▋       | 370/1355 [00:24<01:03, 15.40it/s]Evaluating:  27%|██▋       | 372/1355 [00:24<01:03, 15.39it/s]Evaluating:  28%|██▊       | 374/1355 [00:24<01:03, 15.38it/s]Evaluating:  28%|██▊       | 376/1355 [00:24<01:03, 15.38it/s]Evaluating:  28%|██▊       | 378/1355 [00:24<01:03, 15.38it/s]Evaluating:  28%|██▊       | 380/1355 [00:24<01:03, 15.39it/s]Evaluating:  28%|██▊       | 382/1355 [00:24<01:03, 15.40it/s]Evaluating:  28%|██▊       | 384/1355 [00:24<01:03, 15.41it/s]Evaluating:  28%|██▊       | 386/1355 [00:25<01:02, 15.39it/s]Evaluating:  29%|██▊       | 388/1355 [00:25<01:02, 15.40it/s]Evaluating:  29%|██▉       | 390/1355 [00:25<01:02, 15.42it/s]Evaluating:  29%|██▉       | 392/1355 [00:25<01:02, 15.40it/s]Evaluating:  29%|██▉       | 394/1355 [00:25<01:02, 15.38it/s]Evaluating:  29%|██▉       | 396/1355 [00:25<01:02, 15.39it/s]Evaluating:  29%|██▉       | 398/1355 [00:25<01:02, 15.41it/s]Evaluating:  30%|██▉       | 400/1355 [00:25<01:01, 15.40it/s]Evaluating:  30%|██▉       | 402/1355 [00:26<01:01, 15.41it/s]Evaluating:  30%|██▉       | 404/1355 [00:26<01:01, 15.40it/s]Evaluating:  30%|██▉       | 406/1355 [00:26<01:01, 15.39it/s]Evaluating:  30%|███       | 408/1355 [00:26<01:01, 15.38it/s]Evaluating:  30%|███       | 410/1355 [00:26<01:01, 15.38it/s]Evaluating:  30%|███       | 412/1355 [00:26<01:01, 15.39it/s]Evaluating:  31%|███       | 414/1355 [00:26<01:01, 15.38it/s]Evaluating:  31%|███       | 416/1355 [00:26<01:01, 15.37it/s]Evaluating:  31%|███       | 418/1355 [00:27<01:00, 15.39it/s]Evaluating:  31%|███       | 420/1355 [00:27<01:00, 15.37it/s]Evaluating:  31%|███       | 422/1355 [00:27<01:00, 15.37it/s]Evaluating:  31%|███▏      | 424/1355 [00:27<01:00, 15.38it/s]Evaluating:  31%|███▏      | 426/1355 [00:27<01:00, 15.39it/s]Evaluating:  32%|███▏      | 428/1355 [00:27<01:00, 15.40it/s]Evaluating:  32%|███▏      | 430/1355 [00:27<01:00, 15.41it/s]Evaluating:  32%|███▏      | 432/1355 [00:28<00:59, 15.41it/s]Evaluating:  32%|███▏      | 434/1355 [00:28<00:59, 15.39it/s]Evaluating:  32%|███▏      | 436/1355 [00:28<00:59, 15.41it/s]Evaluating:  32%|███▏      | 438/1355 [00:28<00:59, 15.40it/s]Evaluating:  32%|███▏      | 440/1355 [00:28<00:59, 15.40it/s]Evaluating:  33%|███▎      | 442/1355 [00:28<00:59, 15.40it/s]Evaluating:  33%|███▎      | 444/1355 [00:28<00:59, 15.41it/s]Evaluating:  33%|███▎      | 446/1355 [00:28<00:58, 15.42it/s]Evaluating:  33%|███▎      | 448/1355 [00:29<00:58, 15.39it/s]Evaluating:  33%|███▎      | 450/1355 [00:29<00:58, 15.39it/s]Evaluating:  33%|███▎      | 452/1355 [00:29<00:58, 15.39it/s]Evaluating:  34%|███▎      | 454/1355 [00:29<00:58, 15.36it/s]Evaluating:  34%|███▎      | 456/1355 [00:29<00:58, 15.38it/s]Evaluating:  34%|███▍      | 458/1355 [00:29<00:58, 15.39it/s]Evaluating:  34%|███▍      | 460/1355 [00:29<00:58, 15.40it/s]Evaluating:  34%|███▍      | 462/1355 [00:29<00:57, 15.40it/s]Evaluating:  34%|███▍      | 464/1355 [00:30<00:57, 15.40it/s]Evaluating:  34%|███▍      | 466/1355 [00:30<00:57, 15.41it/s]Evaluating:  35%|███▍      | 468/1355 [00:30<00:57, 15.40it/s]Evaluating:  35%|███▍      | 470/1355 [00:30<00:57, 15.40it/s]Evaluating:  35%|███▍      | 472/1355 [00:30<00:57, 15.42it/s]Evaluating:  35%|███▍      | 474/1355 [00:30<00:57, 15.39it/s]Evaluating:  35%|███▌      | 476/1355 [00:30<00:57, 15.41it/s]Evaluating:  35%|███▌      | 478/1355 [00:31<00:56, 15.41it/s]Evaluating:  35%|███▌      | 480/1355 [00:31<00:56, 15.41it/s]Evaluating:  36%|███▌      | 482/1355 [00:31<00:56, 15.42it/s]Evaluating:  36%|███▌      | 484/1355 [00:31<00:56, 15.39it/s]Evaluating:  36%|███▌      | 486/1355 [00:31<00:56, 15.41it/s]Evaluating:  36%|███▌      | 488/1355 [00:31<00:56, 15.32it/s]Evaluating:  36%|███▌      | 490/1355 [00:31<00:56, 15.35it/s]Evaluating:  36%|███▋      | 492/1355 [00:31<00:56, 15.38it/s]Evaluating:  36%|███▋      | 494/1355 [00:32<00:56, 15.37it/s]Evaluating:  37%|███▋      | 496/1355 [00:32<00:55, 15.38it/s]Evaluating:  37%|███▋      | 498/1355 [00:32<00:55, 15.39it/s]Evaluating:  37%|███▋      | 500/1355 [00:32<00:55, 15.39it/s]Evaluating:  37%|███▋      | 502/1355 [00:32<00:55, 15.40it/s]Evaluating:  37%|███▋      | 504/1355 [00:32<00:55, 15.40it/s]Evaluating:  37%|███▋      | 506/1355 [00:32<00:55, 15.42it/s]Evaluating:  37%|███▋      | 508/1355 [00:32<00:54, 15.42it/s]Evaluating:  38%|███▊      | 510/1355 [00:33<00:54, 15.42it/s]Evaluating:  38%|███▊      | 512/1355 [00:33<00:54, 15.42it/s]Evaluating:  38%|███▊      | 514/1355 [00:33<00:54, 15.39it/s]Evaluating:  38%|███▊      | 516/1355 [00:33<00:54, 15.40it/s]Evaluating:  38%|███▊      | 518/1355 [00:33<00:54, 15.40it/s]Evaluating:  38%|███▊      | 520/1355 [00:33<00:54, 15.39it/s]Evaluating:  39%|███▊      | 522/1355 [00:33<00:54, 15.40it/s]Evaluating:  39%|███▊      | 524/1355 [00:34<00:54, 15.39it/s]Evaluating:  39%|███▉      | 526/1355 [00:34<00:53, 15.38it/s]Evaluating:  39%|███▉      | 528/1355 [00:34<00:53, 15.38it/s]Evaluating:  39%|███▉      | 530/1355 [00:34<00:53, 15.38it/s]Evaluating:  39%|███▉      | 532/1355 [00:34<00:53, 15.38it/s]Evaluating:  39%|███▉      | 534/1355 [00:34<00:53, 15.36it/s]Evaluating:  40%|███▉      | 536/1355 [00:34<00:53, 15.38it/s]Evaluating:  40%|███▉      | 538/1355 [00:34<00:53, 15.37it/s]Evaluating:  40%|███▉      | 540/1355 [00:35<00:53, 15.38it/s]Evaluating:  40%|████      | 542/1355 [00:35<00:52, 15.39it/s]Evaluating:  40%|████      | 544/1355 [00:35<00:52, 15.39it/s]Evaluating:  40%|████      | 546/1355 [00:35<00:52, 15.38it/s]Evaluating:  40%|████      | 548/1355 [00:35<00:52, 15.38it/s]Evaluating:  41%|████      | 550/1355 [00:35<00:52, 15.38it/s]Evaluating:  41%|████      | 552/1355 [00:35<00:52, 15.38it/s]Evaluating:  41%|████      | 554/1355 [00:35<00:52, 15.37it/s]Evaluating:  41%|████      | 556/1355 [00:36<00:51, 15.37it/s]Evaluating:  41%|████      | 558/1355 [00:36<00:51, 15.37it/s]Evaluating:  41%|████▏     | 560/1355 [00:36<00:51, 15.38it/s]Evaluating:  41%|████▏     | 562/1355 [00:36<00:51, 15.38it/s]Evaluating:  42%|████▏     | 564/1355 [00:36<00:51, 15.39it/s]Evaluating:  42%|████▏     | 566/1355 [00:36<00:51, 15.41it/s]Evaluating:  42%|████▏     | 568/1355 [00:36<00:51, 15.42it/s]Evaluating:  42%|████▏     | 570/1355 [00:36<00:50, 15.41it/s]Evaluating:  42%|████▏     | 572/1355 [00:37<00:50, 15.40it/s]Evaluating:  42%|████▏     | 574/1355 [00:37<00:50, 15.36it/s]Evaluating:  43%|████▎     | 576/1355 [00:37<00:50, 15.38it/s]Evaluating:  43%|████▎     | 578/1355 [00:37<00:50, 15.40it/s]Evaluating:  43%|████▎     | 580/1355 [00:37<00:50, 15.39it/s]Evaluating:  43%|████▎     | 582/1355 [00:37<00:50, 15.40it/s]Evaluating:  43%|████▎     | 584/1355 [00:37<00:50, 15.41it/s]Evaluating:  43%|████▎     | 586/1355 [00:38<00:49, 15.41it/s]Evaluating:  43%|████▎     | 588/1355 [00:38<00:49, 15.40it/s]Evaluating:  44%|████▎     | 590/1355 [00:38<00:49, 15.41it/s]Evaluating:  44%|████▎     | 592/1355 [00:38<00:49, 15.41it/s]Evaluating:  44%|████▍     | 594/1355 [00:38<00:51, 14.85it/s]Evaluating:  44%|████▍     | 596/1355 [00:38<00:50, 15.02it/s]Evaluating:  44%|████▍     | 598/1355 [00:38<00:50, 15.13it/s]Evaluating:  44%|████▍     | 600/1355 [00:38<00:49, 15.14it/s]Evaluating:  44%|████▍     | 602/1355 [00:39<00:49, 15.23it/s]Evaluating:  45%|████▍     | 604/1355 [00:39<00:49, 15.29it/s]Evaluating:  45%|████▍     | 606/1355 [00:39<00:48, 15.31it/s]Evaluating:  45%|████▍     | 608/1355 [00:39<00:48, 15.30it/s]Evaluating:  45%|████▌     | 610/1355 [00:39<00:48, 15.32it/s]Evaluating:  45%|████▌     | 612/1355 [00:39<00:48, 15.35it/s]Evaluating:  45%|████▌     | 614/1355 [00:39<00:48, 15.34it/s]Evaluating:  45%|████▌     | 616/1355 [00:40<00:48, 15.37it/s]Evaluating:  46%|████▌     | 618/1355 [00:40<00:47, 15.36it/s]Evaluating:  46%|████▌     | 620/1355 [00:40<00:47, 15.36it/s]Evaluating:  46%|████▌     | 622/1355 [00:40<00:47, 15.37it/s]Evaluating:  46%|████▌     | 624/1355 [00:40<00:47, 15.37it/s]Evaluating:  46%|████▌     | 626/1355 [00:40<00:47, 15.39it/s]Evaluating:  46%|████▋     | 628/1355 [00:40<00:47, 15.41it/s]Evaluating:  46%|████▋     | 630/1355 [00:40<00:47, 15.41it/s]Evaluating:  47%|████▋     | 632/1355 [00:41<00:46, 15.39it/s]Evaluating:  47%|████▋     | 634/1355 [00:41<00:46, 15.38it/s]Evaluating:  47%|████▋     | 636/1355 [00:41<00:46, 15.39it/s]Evaluating:  47%|████▋     | 638/1355 [00:41<00:46, 15.30it/s]Evaluating:  47%|████▋     | 640/1355 [00:41<00:46, 15.34it/s]Evaluating:  47%|████▋     | 642/1355 [00:41<00:46, 15.35it/s]Evaluating:  48%|████▊     | 644/1355 [00:41<00:46, 15.38it/s]Evaluating:  48%|████▊     | 646/1355 [00:41<00:46, 15.39it/s]Evaluating:  48%|████▊     | 648/1355 [00:42<00:45, 15.39it/s]Evaluating:  48%|████▊     | 650/1355 [00:42<00:45, 15.40it/s]Evaluating:  48%|████▊     | 652/1355 [00:42<00:45, 15.40it/s]Evaluating:  48%|████▊     | 654/1355 [00:42<00:45, 15.37it/s]Evaluating:  48%|████▊     | 656/1355 [00:42<00:45, 15.38it/s]Evaluating:  49%|████▊     | 658/1355 [00:42<00:45, 15.39it/s]Evaluating:  49%|████▊     | 660/1355 [00:42<00:45, 15.40it/s]Evaluating:  49%|████▉     | 662/1355 [00:42<00:45, 15.39it/s]Evaluating:  49%|████▉     | 664/1355 [00:43<00:44, 15.40it/s]Evaluating:  49%|████▉     | 666/1355 [00:43<00:44, 15.41it/s]Evaluating:  49%|████▉     | 668/1355 [00:43<00:44, 15.41it/s]Evaluating:  49%|████▉     | 670/1355 [00:43<00:44, 15.41it/s]Evaluating:  50%|████▉     | 672/1355 [00:43<00:44, 15.40it/s]Evaluating:  50%|████▉     | 674/1355 [00:43<00:44, 15.35it/s]Evaluating:  50%|████▉     | 676/1355 [00:43<00:45, 15.08it/s]Evaluating:  50%|█████     | 678/1355 [00:44<00:44, 15.17it/s]Evaluating:  50%|█████     | 680/1355 [00:44<00:44, 15.24it/s]Evaluating:  50%|█████     | 682/1355 [00:44<00:44, 15.28it/s]Evaluating:  50%|█████     | 684/1355 [00:44<00:43, 15.34it/s]Evaluating:  51%|█████     | 686/1355 [00:44<00:43, 15.36it/s]Evaluating:  51%|█████     | 688/1355 [00:44<00:43, 15.39it/s]Evaluating:  51%|█████     | 690/1355 [00:44<00:43, 15.38it/s]Evaluating:  51%|█████     | 692/1355 [00:44<00:43, 15.39it/s]Evaluating:  51%|█████     | 694/1355 [00:45<00:42, 15.38it/s]Evaluating:  51%|█████▏    | 696/1355 [00:45<00:42, 15.39it/s]Evaluating:  52%|█████▏    | 698/1355 [00:45<00:42, 15.39it/s]Evaluating:  52%|█████▏    | 700/1355 [00:45<00:42, 15.40it/s]Evaluating:  52%|█████▏    | 702/1355 [00:45<00:42, 15.41it/s]Evaluating:  52%|█████▏    | 704/1355 [00:45<00:42, 15.41it/s]Evaluating:  52%|█████▏    | 706/1355 [00:45<00:42, 15.40it/s]Evaluating:  52%|█████▏    | 708/1355 [00:45<00:42, 15.39it/s]Evaluating:  52%|█████▏    | 710/1355 [00:46<00:41, 15.38it/s]Evaluating:  53%|█████▎    | 712/1355 [00:46<00:41, 15.39it/s]Evaluating:  53%|█████▎    | 714/1355 [00:46<00:41, 15.35it/s]Evaluating:  53%|█████▎    | 716/1355 [00:46<00:41, 15.34it/s]Evaluating:  53%|█████▎    | 718/1355 [00:46<00:41, 15.36it/s]Evaluating:  53%|█████▎    | 720/1355 [00:46<00:41, 15.37it/s]Evaluating:  53%|█████▎    | 722/1355 [00:46<00:41, 15.37it/s]Evaluating:  53%|█████▎    | 724/1355 [00:47<00:40, 15.39it/s]Evaluating:  54%|█████▎    | 726/1355 [00:47<00:40, 15.41it/s]Evaluating:  54%|█████▎    | 728/1355 [00:47<00:40, 15.41it/s]Evaluating:  54%|█████▍    | 730/1355 [00:47<00:40, 15.40it/s]Evaluating:  54%|█████▍    | 732/1355 [00:47<00:40, 15.40it/s]Evaluating:  54%|█████▍    | 734/1355 [00:47<00:40, 15.36it/s]Evaluating:  54%|█████▍    | 736/1355 [00:47<00:40, 15.37it/s]Evaluating:  54%|█████▍    | 738/1355 [00:47<00:40, 15.39it/s]Evaluating:  55%|█████▍    | 740/1355 [00:48<00:39, 15.39it/s]Evaluating:  55%|█████▍    | 742/1355 [00:48<00:39, 15.41it/s]Evaluating:  55%|█████▍    | 744/1355 [00:48<00:39, 15.42it/s]Evaluating:  55%|█████▌    | 746/1355 [00:48<00:39, 15.41it/s]Evaluating:  55%|█████▌    | 748/1355 [00:48<00:39, 15.39it/s]Evaluating:  55%|█████▌    | 750/1355 [00:48<00:39, 15.40it/s]Evaluating:  55%|█████▌    | 752/1355 [00:48<00:39, 15.33it/s]Evaluating:  56%|█████▌    | 754/1355 [00:48<00:39, 15.33it/s]Evaluating:  56%|█████▌    | 756/1355 [00:49<00:39, 15.35it/s]Evaluating:  56%|█████▌    | 758/1355 [00:49<00:38, 15.37it/s]Evaluating:  56%|█████▌    | 760/1355 [00:49<00:38, 15.38it/s]Evaluating:  56%|█████▌    | 762/1355 [00:49<00:38, 15.40it/s]Evaluating:  56%|█████▋    | 764/1355 [00:49<00:38, 15.40it/s]Evaluating:  57%|█████▋    | 766/1355 [00:49<00:38, 15.39it/s]Evaluating:  57%|█████▋    | 768/1355 [00:49<00:38, 15.40it/s]Evaluating:  57%|█████▋    | 770/1355 [00:50<00:38, 15.39it/s]Evaluating:  57%|█████▋    | 772/1355 [00:50<00:37, 15.39it/s]Evaluating:  57%|█████▋    | 774/1355 [00:50<00:37, 15.38it/s]Evaluating:  57%|█████▋    | 776/1355 [00:50<00:37, 15.39it/s]Evaluating:  57%|█████▋    | 778/1355 [00:50<00:37, 15.39it/s]Evaluating:  58%|█████▊    | 780/1355 [00:50<00:37, 15.40it/s]Evaluating:  58%|█████▊    | 782/1355 [00:50<00:37, 15.38it/s]Evaluating:  58%|█████▊    | 784/1355 [00:50<00:37, 15.38it/s]Evaluating:  58%|█████▊    | 786/1355 [00:51<00:36, 15.39it/s]Evaluating:  58%|█████▊    | 788/1355 [00:51<00:36, 15.40it/s]Evaluating:  58%|█████▊    | 790/1355 [00:51<00:36, 15.40it/s]Evaluating:  58%|█████▊    | 792/1355 [00:51<00:36, 15.39it/s]Evaluating:  59%|█████▊    | 794/1355 [00:51<00:36, 15.38it/s]Evaluating:  59%|█████▊    | 796/1355 [00:51<00:36, 15.38it/s]Evaluating:  59%|█████▉    | 798/1355 [00:51<00:36, 15.38it/s]Evaluating:  59%|█████▉    | 800/1355 [00:51<00:36, 15.37it/s]Evaluating:  59%|█████▉    | 802/1355 [00:52<00:35, 15.37it/s]Evaluating:  59%|█████▉    | 804/1355 [00:52<00:35, 15.38it/s]Evaluating:  59%|█████▉    | 806/1355 [00:52<00:35, 15.40it/s]Evaluating:  60%|█████▉    | 808/1355 [00:52<00:35, 15.40it/s]Evaluating:  60%|█████▉    | 810/1355 [00:52<00:35, 15.40it/s]Evaluating:  60%|█████▉    | 812/1355 [00:52<00:35, 15.40it/s]Evaluating:  60%|██████    | 814/1355 [00:52<00:35, 15.39it/s]Evaluating:  60%|██████    | 816/1355 [00:53<00:35, 15.38it/s]Evaluating:  60%|██████    | 818/1355 [00:53<00:34, 15.39it/s]Evaluating:  61%|██████    | 820/1355 [00:53<00:34, 15.39it/s]Evaluating:  61%|██████    | 822/1355 [00:53<00:34, 15.40it/s]Evaluating:  61%|██████    | 824/1355 [00:53<00:34, 15.39it/s]Evaluating:  61%|██████    | 826/1355 [00:53<00:34, 15.40it/s]Evaluating:  61%|██████    | 828/1355 [00:53<00:34, 15.28it/s]Evaluating:  61%|██████▏   | 830/1355 [00:53<00:34, 15.33it/s]Evaluating:  61%|██████▏   | 832/1355 [00:54<00:34, 15.34it/s]Evaluating:  62%|██████▏   | 834/1355 [00:54<00:35, 14.75it/s]Evaluating:  62%|██████▏   | 836/1355 [00:54<00:34, 14.94it/s]Evaluating:  62%|██████▏   | 838/1355 [00:54<00:34, 15.07it/s]Evaluating:  62%|██████▏   | 840/1355 [00:54<00:33, 15.16it/s]Evaluating:  62%|██████▏   | 842/1355 [00:54<00:33, 15.23it/s]Evaluating:  62%|██████▏   | 844/1355 [00:54<00:33, 15.29it/s]Evaluating:  62%|██████▏   | 846/1355 [00:54<00:33, 15.31it/s]Evaluating:  63%|██████▎   | 848/1355 [00:55<00:33, 15.35it/s]Evaluating:  63%|██████▎   | 850/1355 [00:55<00:32, 15.36it/s]Evaluating:  63%|██████▎   | 852/1355 [00:55<00:32, 15.38it/s]Evaluating:  63%|██████▎   | 854/1355 [00:55<00:32, 15.37it/s]Evaluating:  63%|██████▎   | 856/1355 [00:55<00:32, 15.36it/s]Evaluating:  63%|██████▎   | 858/1355 [00:55<00:32, 15.36it/s]Evaluating:  63%|██████▎   | 860/1355 [00:55<00:32, 15.37it/s]Evaluating:  64%|██████▎   | 862/1355 [00:56<00:32, 15.38it/s]Evaluating:  64%|██████▍   | 864/1355 [00:56<00:31, 15.37it/s]Evaluating:  64%|██████▍   | 866/1355 [00:56<00:31, 15.39it/s]Evaluating:  64%|██████▍   | 868/1355 [00:56<00:31, 15.41it/s]Evaluating:  64%|██████▍   | 870/1355 [00:56<00:31, 15.39it/s]Evaluating:  64%|██████▍   | 872/1355 [00:56<00:31, 15.38it/s]Evaluating:  65%|██████▍   | 874/1355 [00:56<00:31, 15.36it/s]Evaluating:  65%|██████▍   | 876/1355 [00:56<00:31, 15.38it/s]Evaluating:  65%|██████▍   | 878/1355 [00:57<00:31, 15.37it/s]Evaluating:  65%|██████▍   | 880/1355 [00:57<00:30, 15.38it/s]Evaluating:  65%|██████▌   | 882/1355 [00:57<00:30, 15.39it/s]Evaluating:  65%|██████▌   | 884/1355 [00:57<00:30, 15.39it/s]Evaluating:  65%|██████▌   | 886/1355 [00:57<00:30, 15.38it/s]Evaluating:  66%|██████▌   | 888/1355 [00:57<00:30, 15.38it/s]Evaluating:  66%|██████▌   | 890/1355 [00:57<00:30, 15.38it/s]Evaluating:  66%|██████▌   | 892/1355 [00:57<00:30, 15.37it/s]Evaluating:  66%|██████▌   | 894/1355 [00:58<00:30, 15.36it/s]Evaluating:  66%|██████▌   | 896/1355 [00:58<00:29, 15.37it/s]Evaluating:  66%|██████▋   | 898/1355 [00:58<00:29, 15.38it/s]Evaluating:  66%|██████▋   | 900/1355 [00:58<00:29, 15.39it/s]Evaluating:  67%|██████▋   | 902/1355 [00:58<00:29, 15.39it/s]Evaluating:  67%|██████▋   | 904/1355 [00:58<00:29, 15.42it/s]Evaluating:  67%|██████▋   | 906/1355 [00:58<00:29, 15.42it/s]Evaluating:  67%|██████▋   | 908/1355 [00:59<00:28, 15.42it/s]Evaluating:  67%|██████▋   | 910/1355 [00:59<00:28, 15.39it/s]Evaluating:  67%|██████▋   | 912/1355 [00:59<00:28, 15.40it/s]Evaluating:  67%|██████▋   | 914/1355 [00:59<00:28, 15.38it/s]Evaluating:  68%|██████▊   | 916/1355 [00:59<00:28, 15.39it/s]Evaluating:  68%|██████▊   | 918/1355 [00:59<00:28, 15.39it/s]Evaluating:  68%|██████▊   | 920/1355 [00:59<00:28, 15.39it/s]Evaluating:  68%|██████▊   | 922/1355 [00:59<00:28, 15.40it/s]Evaluating:  68%|██████▊   | 924/1355 [01:00<00:27, 15.40it/s]Evaluating:  68%|██████▊   | 926/1355 [01:00<00:27, 15.38it/s]Evaluating:  68%|██████▊   | 928/1355 [01:00<00:27, 15.39it/s]Evaluating:  69%|██████▊   | 930/1355 [01:00<00:27, 15.39it/s]Evaluating:  69%|██████▉   | 932/1355 [01:00<00:27, 15.39it/s]Evaluating:  69%|██████▉   | 934/1355 [01:00<00:27, 15.36it/s]Evaluating:  69%|██████▉   | 936/1355 [01:00<00:27, 15.36it/s]Evaluating:  69%|██████▉   | 938/1355 [01:00<00:27, 15.36it/s]Evaluating:  69%|██████▉   | 940/1355 [01:01<00:27, 15.36it/s]Evaluating:  70%|██████▉   | 942/1355 [01:01<00:26, 15.38it/s]Evaluating:  70%|██████▉   | 944/1355 [01:01<00:26, 15.39it/s]Evaluating:  70%|██████▉   | 946/1355 [01:01<00:26, 15.40it/s]Evaluating:  70%|██████▉   | 948/1355 [01:01<00:26, 15.38it/s]Evaluating:  70%|███████   | 950/1355 [01:01<00:26, 15.37it/s]Evaluating:  70%|███████   | 952/1355 [01:01<00:26, 15.38it/s]Evaluating:  70%|███████   | 954/1355 [01:02<00:26, 15.37it/s]Evaluating:  71%|███████   | 956/1355 [01:02<00:25, 15.38it/s]Evaluating:  71%|███████   | 958/1355 [01:02<00:25, 15.37it/s]Evaluating:  71%|███████   | 960/1355 [01:02<00:25, 15.40it/s]Evaluating:  71%|███████   | 962/1355 [01:02<00:25, 15.41it/s]Evaluating:  71%|███████   | 964/1355 [01:02<00:25, 15.42it/s]Evaluating:  71%|███████▏  | 966/1355 [01:02<00:25, 15.40it/s]Evaluating:  71%|███████▏  | 968/1355 [01:02<00:25, 15.42it/s]Evaluating:  72%|███████▏  | 970/1355 [01:03<00:24, 15.42it/s]Evaluating:  72%|███████▏  | 972/1355 [01:03<00:24, 15.40it/s]Evaluating:  72%|███████▏  | 974/1355 [01:03<00:24, 15.39it/s]Evaluating:  72%|███████▏  | 976/1355 [01:03<00:24, 15.39it/s]Evaluating:  72%|███████▏  | 978/1355 [01:03<00:24, 15.40it/s]Evaluating:  72%|███████▏  | 980/1355 [01:03<00:24, 15.42it/s]Evaluating:  72%|███████▏  | 982/1355 [01:03<00:24, 15.42it/s]Evaluating:  73%|███████▎  | 984/1355 [01:03<00:24, 15.42it/s]Evaluating:  73%|███████▎  | 986/1355 [01:04<00:23, 15.41it/s]Evaluating:  73%|███████▎  | 988/1355 [01:04<00:23, 15.40it/s]Evaluating:  73%|███████▎  | 990/1355 [01:04<00:23, 15.40it/s]Evaluating:  73%|███████▎  | 992/1355 [01:04<00:23, 15.40it/s]Evaluating:  73%|███████▎  | 994/1355 [01:04<00:23, 15.39it/s]Evaluating:  74%|███████▎  | 996/1355 [01:04<00:23, 15.39it/s]Evaluating:  74%|███████▎  | 998/1355 [01:04<00:23, 15.40it/s]Evaluating:  74%|███████▍  | 1000/1355 [01:04<00:23, 15.40it/s]Evaluating:  74%|███████▍  | 1002/1355 [01:05<00:22, 15.39it/s]Evaluating:  74%|███████▍  | 1004/1355 [01:05<00:22, 15.40it/s]Evaluating:  74%|███████▍  | 1006/1355 [01:05<00:22, 15.40it/s]Evaluating:  74%|███████▍  | 1008/1355 [01:05<00:22, 15.39it/s]Evaluating:  75%|███████▍  | 1010/1355 [01:05<00:22, 15.38it/s]Evaluating:  75%|███████▍  | 1012/1355 [01:05<00:22, 15.30it/s]Evaluating:  75%|███████▍  | 1014/1355 [01:05<00:22, 15.30it/s]Evaluating:  75%|███████▍  | 1016/1355 [01:06<00:22, 15.34it/s]Evaluating:  75%|███████▌  | 1018/1355 [01:06<00:21, 15.37it/s]Evaluating:  75%|███████▌  | 1020/1355 [01:06<00:21, 15.37it/s]Evaluating:  75%|███████▌  | 1022/1355 [01:06<00:21, 15.38it/s]Evaluating:  76%|███████▌  | 1024/1355 [01:06<00:21, 15.40it/s]Evaluating:  76%|███████▌  | 1026/1355 [01:06<00:21, 15.39it/s]Evaluating:  76%|███████▌  | 1028/1355 [01:06<00:21, 15.39it/s]Evaluating:  76%|███████▌  | 1030/1355 [01:06<00:21, 15.39it/s]Evaluating:  76%|███████▌  | 1032/1355 [01:07<00:20, 15.40it/s]Evaluating:  76%|███████▋  | 1034/1355 [01:07<00:20, 15.36it/s]Evaluating:  76%|███████▋  | 1036/1355 [01:07<00:20, 15.39it/s]Evaluating:  77%|███████▋  | 1038/1355 [01:07<00:20, 15.39it/s]Evaluating:  77%|███████▋  | 1040/1355 [01:07<00:20, 15.39it/s]Evaluating:  77%|███████▋  | 1042/1355 [01:07<00:20, 15.39it/s]Evaluating:  77%|███████▋  | 1044/1355 [01:07<00:20, 15.41it/s]Evaluating:  77%|███████▋  | 1046/1355 [01:07<00:20, 15.40it/s]Evaluating:  77%|███████▋  | 1048/1355 [01:08<00:19, 15.40it/s]Evaluating:  77%|███████▋  | 1050/1355 [01:08<00:19, 15.33it/s]Evaluating:  78%|███████▊  | 1052/1355 [01:08<00:19, 15.35it/s]Evaluating:  78%|███████▊  | 1054/1355 [01:08<00:19, 15.35it/s]Evaluating:  78%|███████▊  | 1056/1355 [01:08<00:19, 15.36it/s]Evaluating:  78%|███████▊  | 1058/1355 [01:08<00:19, 15.35it/s]Evaluating:  78%|███████▊  | 1060/1355 [01:08<00:19, 15.36it/s]Evaluating:  78%|███████▊  | 1062/1355 [01:09<00:19, 15.38it/s]Evaluating:  79%|███████▊  | 1064/1355 [01:09<00:18, 15.39it/s]Evaluating:  79%|███████▊  | 1066/1355 [01:09<00:18, 15.39it/s]Evaluating:  79%|███████▉  | 1068/1355 [01:09<00:18, 15.39it/s]Evaluating:  79%|███████▉  | 1070/1355 [01:09<00:18, 15.41it/s]Evaluating:  79%|███████▉  | 1072/1355 [01:09<00:18, 15.38it/s]Evaluating:  79%|███████▉  | 1074/1355 [01:09<00:19, 14.76it/s]Evaluating:  79%|███████▉  | 1076/1355 [01:09<00:18, 14.95it/s]Evaluating:  80%|███████▉  | 1078/1355 [01:10<00:18, 15.08it/s]Evaluating:  80%|███████▉  | 1080/1355 [01:10<00:18, 15.19it/s]Evaluating:  80%|███████▉  | 1082/1355 [01:10<00:17, 15.26it/s]Evaluating:  80%|████████  | 1084/1355 [01:10<00:17, 15.31it/s]Evaluating:  80%|████████  | 1086/1355 [01:10<00:17, 15.34it/s]Evaluating:  80%|████████  | 1088/1355 [01:10<00:17, 15.34it/s]Evaluating:  80%|████████  | 1090/1355 [01:10<00:17, 15.35it/s]Evaluating:  81%|████████  | 1092/1355 [01:10<00:17, 15.35it/s]Evaluating:  81%|████████  | 1094/1355 [01:11<00:17, 15.31it/s]Evaluating:  81%|████████  | 1096/1355 [01:11<00:16, 15.34it/s]Evaluating:  81%|████████  | 1098/1355 [01:11<00:16, 15.35it/s]Evaluating:  81%|████████  | 1100/1355 [01:11<00:16, 15.37it/s]Evaluating:  81%|████████▏ | 1102/1355 [01:11<00:16, 15.38it/s]Evaluating:  81%|████████▏ | 1104/1355 [01:11<00:16, 15.38it/s]Evaluating:  82%|████████▏ | 1106/1355 [01:11<00:16, 15.38it/s]Evaluating:  82%|████████▏ | 1108/1355 [01:12<00:16, 15.39it/s]Evaluating:  82%|████████▏ | 1110/1355 [01:12<00:15, 15.38it/s]Evaluating:  82%|████████▏ | 1112/1355 [01:12<00:15, 15.38it/s]Evaluating:  82%|████████▏ | 1114/1355 [01:12<00:15, 15.38it/s]Evaluating:  82%|████████▏ | 1116/1355 [01:12<00:15, 15.40it/s]Evaluating:  83%|████████▎ | 1118/1355 [01:12<00:15, 15.40it/s]Evaluating:  83%|████████▎ | 1120/1355 [01:12<00:15, 15.39it/s]Evaluating:  83%|████████▎ | 1122/1355 [01:12<00:15, 15.39it/s]Evaluating:  83%|████████▎ | 1124/1355 [01:13<00:15, 15.39it/s]Evaluating:  83%|████████▎ | 1126/1355 [01:13<00:14, 15.37it/s]Evaluating:  83%|████████▎ | 1128/1355 [01:13<00:14, 15.38it/s]Evaluating:  83%|████████▎ | 1130/1355 [01:13<00:14, 15.39it/s]Evaluating:  84%|████████▎ | 1132/1355 [01:13<00:14, 15.40it/s]Evaluating:  84%|████████▎ | 1134/1355 [01:13<00:14, 15.37it/s]Evaluating:  84%|████████▍ | 1136/1355 [01:13<00:14, 15.36it/s]Evaluating:  84%|████████▍ | 1138/1355 [01:13<00:14, 15.36it/s]Evaluating:  84%|████████▍ | 1140/1355 [01:14<00:13, 15.39it/s]Evaluating:  84%|████████▍ | 1142/1355 [01:14<00:13, 15.40it/s]Evaluating:  84%|████████▍ | 1144/1355 [01:14<00:13, 15.39it/s]Evaluating:  85%|████████▍ | 1146/1355 [01:14<00:13, 15.39it/s]Evaluating:  85%|████████▍ | 1148/1355 [01:14<00:13, 15.39it/s]Evaluating:  85%|████████▍ | 1150/1355 [01:14<00:13, 15.39it/s]Evaluating:  85%|████████▌ | 1152/1355 [01:14<00:13, 15.40it/s]Evaluating:  85%|████████▌ | 1154/1355 [01:15<00:13, 15.35it/s]Evaluating:  85%|████████▌ | 1156/1355 [01:15<00:12, 15.39it/s]Evaluating:  85%|████████▌ | 1158/1355 [01:15<00:12, 15.41it/s]Evaluating:  86%|████████▌ | 1160/1355 [01:15<00:12, 15.40it/s]Evaluating:  86%|████████▌ | 1162/1355 [01:15<00:12, 15.39it/s]Evaluating:  86%|████████▌ | 1164/1355 [01:15<00:12, 15.39it/s]Evaluating:  86%|████████▌ | 1166/1355 [01:15<00:12, 15.40it/s]Evaluating:  86%|████████▌ | 1168/1355 [01:15<00:12, 15.38it/s]Evaluating:  86%|████████▋ | 1170/1355 [01:16<00:12, 15.40it/s]Evaluating:  86%|████████▋ | 1172/1355 [01:16<00:11, 15.41it/s]Evaluating:  87%|████████▋ | 1174/1355 [01:16<00:11, 15.38it/s]Evaluating:  87%|████████▋ | 1176/1355 [01:16<00:11, 15.38it/s]Evaluating:  87%|████████▋ | 1178/1355 [01:16<00:11, 15.38it/s]Evaluating:  87%|████████▋ | 1180/1355 [01:16<00:11, 15.39it/s]Evaluating:  87%|████████▋ | 1182/1355 [01:16<00:11, 15.40it/s]Evaluating:  87%|████████▋ | 1184/1355 [01:16<00:11, 15.40it/s]Evaluating:  88%|████████▊ | 1186/1355 [01:17<00:10, 15.39it/s]Evaluating:  88%|████████▊ | 1188/1355 [01:17<00:10, 15.39it/s]Evaluating:  88%|████████▊ | 1190/1355 [01:17<00:10, 15.39it/s]Evaluating:  88%|████████▊ | 1192/1355 [01:17<00:10, 15.41it/s]Evaluating:  88%|████████▊ | 1194/1355 [01:17<00:10, 15.39it/s]Evaluating:  88%|████████▊ | 1196/1355 [01:17<00:10, 15.31it/s]Evaluating:  88%|████████▊ | 1198/1355 [01:17<00:10, 15.33it/s]Evaluating:  89%|████████▊ | 1200/1355 [01:18<00:10, 15.35it/s]Evaluating:  89%|████████▊ | 1202/1355 [01:18<00:09, 15.37it/s]Evaluating:  89%|████████▉ | 1204/1355 [01:18<00:09, 15.38it/s]Evaluating:  89%|████████▉ | 1206/1355 [01:18<00:09, 15.40it/s]Evaluating:  89%|████████▉ | 1208/1355 [01:18<00:09, 15.37it/s]Evaluating:  89%|████████▉ | 1210/1355 [01:18<00:09, 15.38it/s]Evaluating:  89%|████████▉ | 1212/1355 [01:18<00:09, 15.38it/s]Evaluating:  90%|████████▉ | 1214/1355 [01:18<00:09, 15.36it/s]Evaluating:  90%|████████▉ | 1216/1355 [01:19<00:09, 15.36it/s]Evaluating:  90%|████████▉ | 1218/1355 [01:19<00:08, 15.39it/s]Evaluating:  90%|█████████ | 1220/1355 [01:19<00:08, 15.40it/s]Evaluating:  90%|█████████ | 1222/1355 [01:19<00:08, 15.40it/s]Evaluating:  90%|█████████ | 1224/1355 [01:19<00:08, 15.40it/s]Evaluating:  90%|█████████ | 1226/1355 [01:19<00:08, 15.40it/s]Evaluating:  91%|█████████ | 1228/1355 [01:19<00:08, 15.38it/s]Evaluating:  91%|█████████ | 1230/1355 [01:19<00:08, 15.38it/s]Evaluating:  91%|█████████ | 1232/1355 [01:20<00:07, 15.39it/s]Evaluating:  91%|█████████ | 1234/1355 [01:20<00:07, 15.28it/s]Evaluating:  91%|█████████ | 1236/1355 [01:20<00:07, 15.32it/s]Evaluating:  91%|█████████▏| 1238/1355 [01:20<00:07, 15.36it/s]Evaluating:  92%|█████████▏| 1240/1355 [01:20<00:07, 15.37it/s]Evaluating:  92%|█████████▏| 1242/1355 [01:20<00:07, 15.38it/s]Evaluating:  92%|█████████▏| 1244/1355 [01:20<00:07, 15.37it/s]Evaluating:  92%|█████████▏| 1246/1355 [01:20<00:07, 15.39it/s]Evaluating:  92%|█████████▏| 1248/1355 [01:21<00:06, 15.40it/s]Evaluating:  92%|█████████▏| 1250/1355 [01:21<00:06, 15.39it/s]Evaluating:  92%|█████████▏| 1252/1355 [01:21<00:06, 15.40it/s]Evaluating:  93%|█████████▎| 1254/1355 [01:21<00:06, 15.37it/s]Evaluating:  93%|█████████▎| 1256/1355 [01:21<00:06, 15.39it/s]Evaluating:  93%|█████████▎| 1258/1355 [01:21<00:06, 15.39it/s]Evaluating:  93%|█████████▎| 1260/1355 [01:21<00:06, 15.40it/s]Evaluating:  93%|█████████▎| 1262/1355 [01:22<00:06, 15.41it/s]Evaluating:  93%|█████████▎| 1264/1355 [01:22<00:05, 15.39it/s]Evaluating:  93%|█████████▎| 1266/1355 [01:22<00:05, 15.39it/s]Evaluating:  94%|█████████▎| 1268/1355 [01:22<00:05, 15.41it/s]Evaluating:  94%|█████████▎| 1270/1355 [01:22<00:05, 15.40it/s]Evaluating:  94%|█████████▍| 1272/1355 [01:22<00:05, 15.39it/s]Evaluating:  94%|█████████▍| 1274/1355 [01:22<00:05, 15.38it/s]Evaluating:  94%|█████████▍| 1276/1355 [01:22<00:05, 15.39it/s]Evaluating:  94%|█████████▍| 1278/1355 [01:23<00:05, 15.39it/s]Evaluating:  94%|█████████▍| 1280/1355 [01:23<00:04, 15.39it/s]Evaluating:  95%|█████████▍| 1282/1355 [01:23<00:04, 15.40it/s]Evaluating:  95%|█████████▍| 1284/1355 [01:23<00:04, 15.39it/s]Evaluating:  95%|█████████▍| 1286/1355 [01:23<00:04, 15.40it/s]Evaluating:  95%|█████████▌| 1288/1355 [01:23<00:04, 15.39it/s]Evaluating:  95%|█████████▌| 1290/1355 [01:23<00:04, 15.40it/s]Evaluating:  95%|█████████▌| 1292/1355 [01:23<00:04, 15.40it/s]Evaluating:  95%|█████████▌| 1294/1355 [01:24<00:03, 15.37it/s]Evaluating:  96%|█████████▌| 1296/1355 [01:24<00:03, 15.38it/s]Evaluating:  96%|█████████▌| 1298/1355 [01:24<00:03, 15.40it/s]Evaluating:  96%|█████████▌| 1300/1355 [01:24<00:03, 15.40it/s]Evaluating:  96%|█████████▌| 1302/1355 [01:24<00:03, 15.41it/s]Evaluating:  96%|█████████▌| 1304/1355 [01:24<00:03, 15.40it/s]Evaluating:  96%|█████████▋| 1306/1355 [01:24<00:03, 15.39it/s]Evaluating:  97%|█████████▋| 1308/1355 [01:25<00:03, 15.40it/s]Evaluating:  97%|█████████▋| 1310/1355 [01:25<00:02, 15.42it/s]Evaluating:  97%|█████████▋| 1312/1355 [01:25<00:02, 15.41it/s]Evaluating:  97%|█████████▋| 1314/1355 [01:25<00:02, 14.83it/s]Evaluating:  97%|█████████▋| 1316/1355 [01:25<00:02, 14.99it/s]Evaluating:  97%|█████████▋| 1318/1355 [01:25<00:02, 15.13it/s]Evaluating:  97%|█████████▋| 1320/1355 [01:25<00:02, 15.21it/s]Evaluating:  98%|█████████▊| 1322/1355 [01:25<00:02, 15.26it/s]Evaluating:  98%|█████████▊| 1324/1355 [01:26<00:02, 15.31it/s]Evaluating:  98%|█████████▊| 1326/1355 [01:26<00:01, 15.33it/s]Evaluating:  98%|█████████▊| 1328/1355 [01:26<00:01, 15.35it/s]Evaluating:  98%|█████████▊| 1330/1355 [01:26<00:01, 15.35it/s]Evaluating:  98%|█████████▊| 1332/1355 [01:26<00:01, 15.37it/s]Evaluating:  98%|█████████▊| 1334/1355 [01:26<00:01, 15.34it/s]Evaluating:  99%|█████████▊| 1336/1355 [01:26<00:01, 15.36it/s]Evaluating:  99%|█████████▊| 1338/1355 [01:26<00:01, 15.37it/s]Evaluating:  99%|█████████▉| 1340/1355 [01:27<00:00, 15.38it/s]Evaluating:  99%|█████████▉| 1342/1355 [01:27<00:00, 15.39it/s]Evaluating:  99%|█████████▉| 1344/1355 [01:27<00:00, 15.39it/s]Evaluating:  99%|█████████▉| 1346/1355 [01:27<00:00, 15.38it/s]Evaluating:  99%|█████████▉| 1348/1355 [01:27<00:00, 15.38it/s]Evaluating: 100%|█████████▉| 1350/1355 [01:27<00:00, 15.40it/s]Evaluating: 100%|█████████▉| 1352/1355 [01:27<00:00, 15.41it/s]Evaluating: 100%|█████████▉| 1354/1355 [01:28<00:00, 15.39it/s]Evaluating: 100%|██████████| 1355/1355 [01:28<00:00, 15.39it/s]
+12/16/2019 13:36:28 - INFO - __main__ -     Evaluation done in total 88.044098 secs (0.008127 sec per example)
+12/16/2019 13:36:28 - INFO - transformers.data.metrics.squad_metrics -   Writing predictions to: output/squad_bert_base_uncased/predictions_.json
+12/16/2019 13:36:28 - INFO - transformers.data.metrics.squad_metrics -   Writing nbest to: output/squad_bert_base_uncased/nbest_predictions_.json
+12/16/2019 13:37:03 - INFO - __main__ -   Results: {'exact': 77.01986754966887, 'f1': 85.45649395392282, 'total': 10570, 'HasAns_exact': 77.01986754966887, 'HasAns_f1': 85.45649395392282, 'HasAns_total': 10570, 'best_exact': 77.01986754966887, 'best_exact_thresh': 0.0, 'best_f1': 85.45649395392282, 'best_f1_thresh': 0.0}
+*****************************************
+Setting OMP_NUM_THREADS environment variable for each process to be 1 in default, to avoid your system being overloaded, please further tune the variable for optimal performance in your application as needed. 
+*****************************************

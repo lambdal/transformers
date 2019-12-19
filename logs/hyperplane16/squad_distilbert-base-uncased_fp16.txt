@@ -1,0 +1,796 @@
+12/15/2019 22:02:25 - WARNING - __main__ -   Process rank: 2, device: cuda:2, n_gpu: 1, distributed training: True, 16-bits training: True
+12/15/2019 22:02:25 - WARNING - __main__ -   Process rank: 3, device: cuda:3, n_gpu: 1, distributed training: True, 16-bits training: True
+12/15/2019 22:02:25 - WARNING - __main__ -   Process rank: 1, device: cuda:1, n_gpu: 1, distributed training: True, 16-bits training: True
+12/15/2019 22:02:25 - WARNING - __main__ -   Process rank: 5, device: cuda:5, n_gpu: 1, distributed training: True, 16-bits training: True
+12/15/2019 22:02:25 - WARNING - __main__ -   Process rank: 4, device: cuda:4, n_gpu: 1, distributed training: True, 16-bits training: True
+12/15/2019 22:02:25 - WARNING - __main__ -   Process rank: 10, device: cuda:10, n_gpu: 1, distributed training: True, 16-bits training: True
+12/15/2019 22:02:25 - WARNING - __main__ -   Process rank: 14, device: cuda:14, n_gpu: 1, distributed training: True, 16-bits training: True
+12/15/2019 22:02:25 - WARNING - __main__ -   Process rank: 6, device: cuda:6, n_gpu: 1, distributed training: True, 16-bits training: True
+12/15/2019 22:02:25 - WARNING - __main__ -   Process rank: 8, device: cuda:8, n_gpu: 1, distributed training: True, 16-bits training: True
+12/15/2019 22:02:25 - WARNING - __main__ -   Process rank: 9, device: cuda:9, n_gpu: 1, distributed training: True, 16-bits training: True
+12/15/2019 22:02:25 - WARNING - __main__ -   Process rank: 12, device: cuda:12, n_gpu: 1, distributed training: True, 16-bits training: True
+12/15/2019 22:02:25 - WARNING - __main__ -   Process rank: 15, device: cuda:15, n_gpu: 1, distributed training: True, 16-bits training: True
+12/15/2019 22:02:25 - WARNING - __main__ -   Process rank: 11, device: cuda:11, n_gpu: 1, distributed training: True, 16-bits training: True
+12/15/2019 22:02:25 - WARNING - __main__ -   Process rank: 13, device: cuda:13, n_gpu: 1, distributed training: True, 16-bits training: True
+12/15/2019 22:02:26 - WARNING - __main__ -   Process rank: 7, device: cuda:7, n_gpu: 1, distributed training: True, 16-bits training: True
+12/15/2019 22:02:26 - WARNING - __main__ -   Process rank: 0, device: cuda:0, n_gpu: 1, distributed training: True, 16-bits training: True
+12/15/2019 22:02:26 - INFO - transformers.configuration_utils -   loading configuration file https://s3.amazonaws.com/models.huggingface.co/bert/distilbert-base-uncased-config.json from cache at /home/ubuntu/.cache/torch/transformers/a41e817d5c0743e29e86ff85edc8c257e61bc8d88e4271bb1b243b6e7614c633.1ccd1a11c9ff276830e114ea477ea2407100f4a3be7bdc45d37be9e37fa71c7e
+12/15/2019 22:02:26 - INFO - transformers.configuration_utils -   Model config {
+  "activation": "gelu",
+  "attention_dropout": 0.1,
+  "dim": 768,
+  "dropout": 0.1,
+  "finetuning_task": null,
+  "hidden_dim": 3072,
+  "initializer_range": 0.02,
+  "is_decoder": false,
+  "max_position_embeddings": 512,
+  "n_heads": 12,
+  "n_layers": 6,
+  "num_labels": 2,
+  "output_attentions": false,
+  "output_hidden_states": false,
+  "output_past": true,
+  "pruned_heads": {},
+  "qa_dropout": 0.1,
+  "seq_classif_dropout": 0.2,
+  "sinusoidal_pos_embds": false,
+  "tie_weights_": true,
+  "torchscript": false,
+  "use_bfloat16": false,
+  "vocab_size": 30522
+}
+
+12/15/2019 22:02:27 - INFO - transformers.tokenization_utils -   loading file https://s3.amazonaws.com/models.huggingface.co/bert/bert-base-uncased-vocab.txt from cache at /home/ubuntu/.cache/torch/transformers/26bc1ad6c0ac742e9b52263248f6d0f00068293b33709fae12320c0e35ccfbbb.542ce4285a40d23a559526243235df47c5f75c197f04f37d1a0c124c32c9a084
+12/15/2019 22:02:27 - INFO - transformers.modeling_utils -   loading weights file https://s3.amazonaws.com/models.huggingface.co/bert/distilbert-base-uncased-pytorch_model.bin from cache at /home/ubuntu/.cache/torch/transformers/7b8a8f0b21c4e7f6962451c9370a5d9af90372a5f64637a251f2de154d0fc72c.c2015533705b9dff680ae707e205a35e2860e8d148b45d35085419d74fe57ac5
+12/15/2019 22:02:29 - INFO - transformers.modeling_utils -   Weights of DistilBertForQuestionAnswering not initialized from pretrained model: ['qa_outputs.weight', 'qa_outputs.bias']
+12/15/2019 22:02:29 - INFO - transformers.modeling_utils -   Weights from pretrained model not used in DistilBertForQuestionAnswering: ['vocab_transform.weight', 'vocab_transform.bias', 'vocab_layer_norm.weight', 'vocab_layer_norm.bias', 'vocab_projector.weight', 'vocab_projector.bias']
+12/15/2019 22:02:41 - INFO - __main__ -   Training/evaluation parameters Namespace(adam_epsilon=1e-08, cache_dir='', config_name='', data_dir=None, device=device(type='cuda', index=0), do_eval=True, do_lower_case=True, do_train=True, doc_stride=128, eval_all_checkpoints=False, evaluate_during_training=False, fp16=True, fp16_opt_level='O1', gradient_accumulation_steps=1, learning_rate=3e-05, local_rank=0, logging_steps=50, max_answer_length=30, max_grad_norm=1.0, max_query_length=64, max_seq_length=384, max_steps=-1, model_name_or_path='distilbert-base-uncased', model_type='distilbert', n_best_size=20, n_gpu=1, no_cuda=False, null_score_diff_threshold=0.0, num_train_epochs=2.0, output_dir='output/squad_distilbert-base-uncased_fp16', overwrite_cache=False, overwrite_output_dir=False, per_gpu_eval_batch_size=8, per_gpu_train_batch_size=12, predict_file='/home/ubuntu/transformers/data//dev-v1.1.json', save_steps=50, seed=42, server_ip='', server_port='', tokenizer_name='', train_file='/home/ubuntu/transformers/data//train-v1.1.json', verbose_logging=False, version_2_with_negative=False, warmup_steps=0, weight_decay=0.0)
+12/15/2019 22:02:41 - INFO - __main__ -   Loading features from cached file ./cached_train_distilbert-base-uncased_384
+Selected optimization level O1:  Insert automatic casts around Pytorch functions and Tensor methods.
+
+Defaults for this optimization level are:
+enabled                : True
+opt_level              : O1
+cast_model_type        : None
+patch_torch_functions  : True
+keep_batchnorm_fp32    : None
+master_weights         : None
+loss_scale             : dynamic
+Processing user overrides (additional kwargs that are not None)...
+After processing overrides, optimization options are:
+enabled                : True
+opt_level              : O1
+cast_model_type        : None
+patch_torch_functions  : True
+keep_batchnorm_fp32    : None
+master_weights         : None
+loss_scale             : dynamic
+12/15/2019 22:02:52 - INFO - __main__ -   ***** Running training *****
+12/15/2019 22:02:52 - INFO - __main__ -     Num examples = 88641
+12/15/2019 22:02:52 - INFO - __main__ -     Num Epochs = 2
+12/15/2019 22:02:52 - INFO - __main__ -     Instantaneous batch size per GPU = 12
+12/15/2019 22:02:52 - INFO - __main__ -     Total train batch size (w. parallel, distributed & accumulation) = 192
+12/15/2019 22:02:52 - INFO - __main__ -     Gradient Accumulation steps = 1
+12/15/2019 22:02:52 - INFO - __main__ -     Total optimization steps = 924
+Epoch:   0%|          | 0/2 [00:00<?, ?it/s]
+Iteration:   0%|          | 0/462 [00:00<?, ?it/s][A/home/ubuntu/transformers/venv/lib/python3.6/site-packages/torch/optim/lr_scheduler.py:73: UserWarning: Seems like `optimizer.step()` has been overridden after learning rate scheduler initialization. Please, make sure to call `optimizer.step()` before `lr_scheduler.step()`. See more details at https://pytorch.org/docs/stable/optim.html#how-to-adjust-learning-rate
+  "https://pytorch.org/docs/stable/optim.html#how-to-adjust-learning-rate", UserWarning)
+/home/ubuntu/transformers/venv/lib/python3.6/site-packages/torch/optim/lr_scheduler.py:73: UserWarning: Seems like `optimizer.step()` has been overridden after learning rate scheduler initialization. Please, make sure to call `optimizer.step()` before `lr_scheduler.step()`. See more details at https://pytorch.org/docs/stable/optim.html#how-to-adjust-learning-rate
+  "https://pytorch.org/docs/stable/optim.html#how-to-adjust-learning-rate", UserWarning)
+/home/ubuntu/transformers/venv/lib/python3.6/site-packages/torch/optim/lr_scheduler.py:73: UserWarning: Seems like `optimizer.step()` has been overridden after learning rate scheduler initialization. Please, make sure to call `optimizer.step()` before `lr_scheduler.step()`. See more details at https://pytorch.org/docs/stable/optim.html#how-to-adjust-learning-rate
+  "https://pytorch.org/docs/stable/optim.html#how-to-adjust-learning-rate", UserWarning)
+/home/ubuntu/transformers/venv/lib/python3.6/site-packages/torch/optim/lr_scheduler.py:73: UserWarning: Seems like `optimizer.step()` has been overridden after learning rate scheduler initialization. Please, make sure to call `optimizer.step()` before `lr_scheduler.step()`. See more details at https://pytorch.org/docs/stable/optim.html#how-to-adjust-learning-rate
+  "https://pytorch.org/docs/stable/optim.html#how-to-adjust-learning-rate", UserWarning)
+/home/ubuntu/transformers/venv/lib/python3.6/site-packages/torch/optim/lr_scheduler.py:73: UserWarning: Seems like `optimizer.step()` has been overridden after learning rate scheduler initialization. Please, make sure to call `optimizer.step()` before `lr_scheduler.step()`. See more details at https://pytorch.org/docs/stable/optim.html#how-to-adjust-learning-rate
+  "https://pytorch.org/docs/stable/optim.html#how-to-adjust-learning-rate", UserWarning)
+
+Iteration:   0%|          | 1/462 [00:12<1:38:05, 12.77s/it][A/home/ubuntu/transformers/venv/lib/python3.6/site-packages/torch/optim/lr_scheduler.py:73: UserWarning: Seems like `optimizer.step()` has been overridden after learning rate scheduler initialization. Please, make sure to call `optimizer.step()` before `lr_scheduler.step()`. See more details at https://pytorch.org/docs/stable/optim.html#how-to-adjust-learning-rate
+  "https://pytorch.org/docs/stable/optim.html#how-to-adjust-learning-rate", UserWarning)
+/home/ubuntu/transformers/venv/lib/python3.6/site-packages/torch/optim/lr_scheduler.py:73: UserWarning: Seems like `optimizer.step()` has been overridden after learning rate scheduler initialization. Please, make sure to call `optimizer.step()` before `lr_scheduler.step()`. See more details at https://pytorch.org/docs/stable/optim.html#how-to-adjust-learning-rate
+  "https://pytorch.org/docs/stable/optim.html#how-to-adjust-learning-rate", UserWarning)
+/home/ubuntu/transformers/venv/lib/python3.6/site-packages/torch/optim/lr_scheduler.py:73: UserWarning: Seems like `optimizer.step()` has been overridden after learning rate scheduler initialization. Please, make sure to call `optimizer.step()` before `lr_scheduler.step()`. See more details at https://pytorch.org/docs/stable/optim.html#how-to-adjust-learning-rate
+  "https://pytorch.org/docs/stable/optim.html#how-to-adjust-learning-rate", UserWarning)
+/home/ubuntu/transformers/venv/lib/python3.6/site-packages/torch/optim/lr_scheduler.py:73: UserWarning: Seems like `optimizer.step()` has been overridden after learning rate scheduler initialization. Please, make sure to call `optimizer.step()` before `lr_scheduler.step()`. See more details at https://pytorch.org/docs/stable/optim.html#how-to-adjust-learning-rate
+  "https://pytorch.org/docs/stable/optim.html#how-to-adjust-learning-rate", UserWarning)
+/home/ubuntu/transformers/venv/lib/python3.6/site-packages/torch/optim/lr_scheduler.py:73: UserWarning: Seems like `optimizer.step()` has been overridden after learning rate scheduler initialization. Please, make sure to call `optimizer.step()` before `lr_scheduler.step()`. See more details at https://pytorch.org/docs/stable/optim.html#how-to-adjust-learning-rate
+  "https://pytorch.org/docs/stable/optim.html#how-to-adjust-learning-rate", UserWarning)
+/home/ubuntu/transformers/venv/lib/python3.6/site-packages/torch/optim/lr_scheduler.py:73: UserWarning: Seems like `optimizer.step()` has been overridden after learning rate scheduler initialization. Please, make sure to call `optimizer.step()` before `lr_scheduler.step()`. See more details at https://pytorch.org/docs/stable/optim.html#how-to-adjust-learning-rate
+  "https://pytorch.org/docs/stable/optim.html#how-to-adjust-learning-rate", UserWarning)
+/home/ubuntu/transformers/venv/lib/python3.6/site-packages/torch/optim/lr_scheduler.py:73: UserWarning: Seems like `optimizer.step()` has been overridden after learning rate scheduler initialization. Please, make sure to call `optimizer.step()` before `lr_scheduler.step()`. See more details at https://pytorch.org/docs/stable/optim.html#how-to-adjust-learning-rate
+  "https://pytorch.org/docs/stable/optim.html#how-to-adjust-learning-rate", UserWarning)
+/home/ubuntu/transformers/venv/lib/python3.6/site-packages/torch/optim/lr_scheduler.py:73: UserWarning: Seems like `optimizer.step()` has been overridden after learning rate scheduler initialization. Please, make sure to call `optimizer.step()` before `lr_scheduler.step()`. See more details at https://pytorch.org/docs/stable/optim.html#how-to-adjust-learning-rate
+  "https://pytorch.org/docs/stable/optim.html#how-to-adjust-learning-rate", UserWarning)
+/home/ubuntu/transformers/venv/lib/python3.6/site-packages/torch/optim/lr_scheduler.py:73: UserWarning: Seems like `optimizer.step()` has been overridden after learning rate scheduler initialization. Please, make sure to call `optimizer.step()` before `lr_scheduler.step()`. See more details at https://pytorch.org/docs/stable/optim.html#how-to-adjust-learning-rate
+  "https://pytorch.org/docs/stable/optim.html#how-to-adjust-learning-rate", UserWarning)
+/home/ubuntu/transformers/venv/lib/python3.6/site-packages/torch/optim/lr_scheduler.py:73: UserWarning: Seems like `optimizer.step()` has been overridden after learning rate scheduler initialization. Please, make sure to call `optimizer.step()` before `lr_scheduler.step()`. See more details at https://pytorch.org/docs/stable/optim.html#how-to-adjust-learning-rate
+  "https://pytorch.org/docs/stable/optim.html#how-to-adjust-learning-rate", UserWarning)
+/home/ubuntu/transformers/venv/lib/python3.6/site-packages/torch/optim/lr_scheduler.py:73: UserWarning: Seems like `optimizer.step()` has been overridden after learning rate scheduler initialization. Please, make sure to call `optimizer.step()` before `lr_scheduler.step()`. See more details at https://pytorch.org/docs/stable/optim.html#how-to-adjust-learning-rate
+  "https://pytorch.org/docs/stable/optim.html#how-to-adjust-learning-rate", UserWarning)
+
+Iteration:   0%|          | 2/462 [00:12<1:09:00,  9.00s/it][A
+Iteration:   1%|          | 3/462 [00:13<48:27,  6.33s/it]  [A
+Iteration:   1%|          | 4/462 [00:13<34:05,  4.47s/it][A
+Iteration:   1%|▏         | 6/462 [00:13<23:57,  3.15s/it][AGradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 32768.0
+Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 32768.0
+Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 32768.0
+Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 32768.0
+Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 32768.0
+Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 32768.0
+Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 32768.0
+Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 32768.0
+Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 32768.0
+Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 32768.0
+
+Iteration:   2%|▏         | 8/462 [00:13<16:53,  2.23s/it][AGradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 32768.0
+Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 32768.0
+Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 32768.0
+Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 32768.0
+Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 32768.0
+Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 32768.0
+
+Iteration:   2%|▏         | 10/462 [00:13<11:58,  1.59s/it][A
+Iteration:   3%|▎         | 12/462 [00:13<08:32,  1.14s/it][A
+Iteration:   3%|▎         | 14/462 [00:14<06:09,  1.21it/s][A
+Iteration:   3%|▎         | 16/462 [00:14<04:29,  1.65it/s][A
+Iteration:   4%|▍         | 18/462 [00:14<03:19,  2.23it/s][AGradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 16384.0
+Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 16384.0
+Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 16384.0
+Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 16384.0
+Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 16384.0
+Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 16384.0
+Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 16384.0
+Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 16384.0
+Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 16384.0
+Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 16384.0
+Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 16384.0
+Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 16384.0
+Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 16384.0
+Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 16384.0
+Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 16384.0
+Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 16384.0
+
+Iteration:   4%|▍         | 20/462 [00:14<02:30,  2.94it/s][A
+Iteration:   5%|▍         | 22/462 [00:14<01:56,  3.79it/s][A
+Iteration:   5%|▌         | 24/462 [00:14<01:33,  4.70it/s][A
+Iteration:   6%|▌         | 26/462 [00:15<01:17,  5.63it/s][A
+Iteration:   6%|▌         | 28/462 [00:15<01:05,  6.60it/s][A
+Iteration:   6%|▋         | 30/462 [00:15<00:57,  7.49it/s][A
+Iteration:   7%|▋         | 32/462 [00:15<00:51,  8.35it/s][A
+Iteration:   7%|▋         | 34/462 [00:15<00:47,  9.04it/s][A
+Iteration:   8%|▊         | 36/462 [00:16<00:44,  9.63it/s][A
+Iteration:   8%|▊         | 38/462 [00:16<00:41, 10.10it/s][A
+Iteration:   9%|▊         | 40/462 [00:16<00:40, 10.43it/s][A
+Iteration:   9%|▉         | 42/462 [00:16<00:39, 10.64it/s][A
+Iteration:  10%|▉         | 44/462 [00:16<00:38, 10.79it/s][A
+Iteration:  10%|▉         | 46/462 [00:16<00:38, 10.79it/s][A
+Iteration:  10%|█         | 48/462 [00:17<00:38, 10.75it/s][A12/15/2019 22:03:09 - INFO - transformers.configuration_utils -   Configuration saved in output/squad_distilbert-base-uncased_fp16/checkpoint-50/config.json
+12/15/2019 22:03:10 - INFO - transformers.modeling_utils -   Model weights saved in output/squad_distilbert-base-uncased_fp16/checkpoint-50/pytorch_model.bin
+12/15/2019 22:03:10 - INFO - __main__ -   Saving model checkpoint to output/squad_distilbert-base-uncased_fp16/checkpoint-50
+
+Iteration:  11%|█         | 50/462 [00:17<00:53,  7.72it/s][A
+Iteration:  11%|█▏        | 52/462 [00:17<00:48,  8.53it/s][A
+Iteration:  12%|█▏        | 54/462 [00:17<00:44,  9.15it/s][A
+Iteration:  12%|█▏        | 56/462 [00:18<00:41,  9.68it/s][AGradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 8192.0
+Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 8192.0
+Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 8192.0
+Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 8192.0
+Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 8192.0
+Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 8192.0
+Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 8192.0
+Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 8192.0
+Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 8192.0
+
+Iteration:  13%|█▎        | 58/462 [00:18<00:39, 10.22it/s][AGradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 8192.0
+Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 8192.0
+Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 8192.0
+Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 8192.0
+Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 8192.0
+Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 8192.0
+Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 8192.0
+
+Iteration:  13%|█▎        | 60/462 [00:18<00:38, 10.47it/s][A
+Iteration:  13%|█▎        | 62/462 [00:18<00:37, 10.59it/s][A
+Iteration:  14%|█▍        | 64/462 [00:18<00:37, 10.69it/s][A
+Iteration:  14%|█▍        | 66/462 [00:19<00:37, 10.65it/s][A
+Iteration:  15%|█▍        | 68/462 [00:19<00:36, 10.83it/s][A
+Iteration:  15%|█▌        | 70/462 [00:19<00:35, 10.90it/s][A
+Iteration:  16%|█▌        | 72/462 [00:19<00:35, 10.95it/s][A
+Iteration:  16%|█▌        | 74/462 [00:19<00:35, 11.02it/s][A
+Iteration:  16%|█▋        | 76/462 [00:19<00:35, 10.99it/s][A
+Iteration:  17%|█▋        | 78/462 [00:20<00:34, 10.99it/s][A
+Iteration:  17%|█▋        | 80/462 [00:20<00:34, 11.04it/s][A
+Iteration:  18%|█▊        | 82/462 [00:20<00:34, 11.08it/s][A
+Iteration:  18%|█▊        | 84/462 [00:20<00:34, 10.99it/s][A
+Iteration:  19%|█▊        | 86/462 [00:20<00:34, 10.91it/s][A
+Iteration:  19%|█▉        | 88/462 [00:21<00:33, 11.00it/s][A
+Iteration:  19%|█▉        | 90/462 [00:21<00:33, 11.03it/s][A
+Iteration:  20%|█▉        | 92/462 [00:21<00:33, 11.07it/s][A
+Iteration:  20%|██        | 94/462 [00:21<00:33, 11.14it/s][A
+Iteration:  21%|██        | 96/462 [00:21<00:32, 11.16it/s][A
+Iteration:  21%|██        | 98/462 [00:21<00:32, 11.10it/s][A12/15/2019 22:03:14 - INFO - transformers.configuration_utils -   Configuration saved in output/squad_distilbert-base-uncased_fp16/checkpoint-100/config.json
+12/15/2019 22:03:14 - INFO - transformers.modeling_utils -   Model weights saved in output/squad_distilbert-base-uncased_fp16/checkpoint-100/pytorch_model.bin
+12/15/2019 22:03:14 - INFO - __main__ -   Saving model checkpoint to output/squad_distilbert-base-uncased_fp16/checkpoint-100
+
+Iteration:  22%|██▏       | 100/462 [00:22<00:46,  7.77it/s][A
+Iteration:  22%|██▏       | 102/462 [00:22<00:41,  8.61it/s][A
+Iteration:  23%|██▎       | 104/462 [00:22<00:38,  9.23it/s][A
+Iteration:  23%|██▎       | 106/462 [00:22<00:36,  9.74it/s][A
+Iteration:  23%|██▎       | 108/462 [00:23<00:35, 10.06it/s][A
+Iteration:  24%|██▍       | 110/462 [00:23<00:34, 10.07it/s][A
+Iteration:  24%|██▍       | 112/462 [00:23<00:35,  9.97it/s][A
+Iteration:  25%|██▍       | 114/462 [00:23<00:34,  9.96it/s][A
+Iteration:  25%|██▌       | 116/462 [00:23<00:34,  9.91it/s][A
+Iteration:  26%|██▌       | 118/462 [00:24<00:34,  9.96it/s][A
+Iteration:  26%|██▌       | 120/462 [00:24<00:34,  9.93it/s][A
+Iteration:  26%|██▋       | 122/462 [00:24<00:34,  9.96it/s][A
+Iteration:  27%|██▋       | 124/462 [00:24<00:33,  9.95it/s][A
+Iteration:  27%|██▋       | 125/462 [00:24<00:33,  9.96it/s][A
+Iteration:  27%|██▋       | 127/462 [00:24<00:33,  9.97it/s][A
+Iteration:  28%|██▊       | 128/462 [00:25<00:33,  9.88it/s][A
+Iteration:  28%|██▊       | 129/462 [00:25<00:34,  9.69it/s][A
+Iteration:  28%|██▊       | 131/462 [00:25<00:33,  9.78it/s][A
+Iteration:  29%|██▉       | 133/462 [00:25<00:33,  9.84it/s][A
+Iteration:  29%|██▉       | 135/462 [00:25<00:33,  9.83it/s][A
+Iteration:  30%|██▉       | 137/462 [00:25<00:32,  9.88it/s][A
+Iteration:  30%|███       | 139/462 [00:26<00:32,  9.86it/s][A
+Iteration:  30%|███       | 140/462 [00:26<00:32,  9.89it/s][A
+Iteration:  31%|███       | 141/462 [00:26<00:32,  9.75it/s][A
+Iteration:  31%|███       | 142/462 [00:26<00:32,  9.82it/s][A
+Iteration:  31%|███       | 144/462 [00:26<00:31, 10.16it/s][A
+Iteration:  32%|███▏      | 146/462 [00:26<00:30, 10.37it/s][A
+Iteration:  32%|███▏      | 148/462 [00:27<00:29, 10.53it/s][A12/15/2019 22:03:19 - INFO - transformers.configuration_utils -   Configuration saved in output/squad_distilbert-base-uncased_fp16/checkpoint-150/config.json
+12/15/2019 22:03:20 - INFO - transformers.modeling_utils -   Model weights saved in output/squad_distilbert-base-uncased_fp16/checkpoint-150/pytorch_model.bin
+12/15/2019 22:03:20 - INFO - __main__ -   Saving model checkpoint to output/squad_distilbert-base-uncased_fp16/checkpoint-150
+
+Iteration:  32%|███▏      | 150/462 [00:27<00:40,  7.72it/s][A
+Iteration:  33%|███▎      | 152/462 [00:27<00:36,  8.57it/s][A
+Iteration:  33%|███▎      | 154/462 [00:27<00:33,  9.23it/s][A
+Iteration:  34%|███▍      | 156/462 [00:27<00:31,  9.77it/s][A
+Iteration:  34%|███▍      | 158/462 [00:28<00:29, 10.17it/s][A
+Iteration:  35%|███▍      | 160/462 [00:28<00:28, 10.48it/s][A
+Iteration:  35%|███▌      | 162/462 [00:28<00:27, 10.72it/s][A
+Iteration:  35%|███▌      | 164/462 [00:28<00:28, 10.63it/s][A
+Iteration:  36%|███▌      | 166/462 [00:28<00:27, 10.79it/s][A
+Iteration:  36%|███▋      | 168/462 [00:29<00:26, 10.92it/s][A
+Iteration:  37%|███▋      | 170/462 [00:29<00:26, 10.92it/s][A
+Iteration:  37%|███▋      | 172/462 [00:29<00:26, 10.94it/s][A
+Iteration:  38%|███▊      | 174/462 [00:29<00:26, 10.94it/s][A
+Iteration:  38%|███▊      | 176/462 [00:29<00:26, 10.96it/s][A
+Iteration:  39%|███▊      | 178/462 [00:29<00:26, 10.79it/s][A
+Iteration:  39%|███▉      | 180/462 [00:30<00:26, 10.61it/s][A
+Iteration:  39%|███▉      | 182/462 [00:30<00:26, 10.51it/s][A
+Iteration:  40%|███▉      | 184/462 [00:30<00:26, 10.47it/s][A
+Iteration:  40%|████      | 186/462 [00:30<00:26, 10.46it/s][A
+Iteration:  41%|████      | 188/462 [00:30<00:26, 10.46it/s][A
+Iteration:  41%|████      | 190/462 [00:31<00:26, 10.45it/s][A
+Iteration:  42%|████▏     | 192/462 [00:31<00:25, 10.45it/s][A
+Iteration:  42%|████▏     | 194/462 [00:31<00:25, 10.43it/s][A
+Iteration:  42%|████▏     | 196/462 [00:31<00:25, 10.40it/s][A
+Iteration:  43%|████▎     | 198/462 [00:31<00:25, 10.40it/s][A12/15/2019 22:03:24 - INFO - transformers.configuration_utils -   Configuration saved in output/squad_distilbert-base-uncased_fp16/checkpoint-200/config.json
+12/15/2019 22:03:24 - INFO - transformers.modeling_utils -   Model weights saved in output/squad_distilbert-base-uncased_fp16/checkpoint-200/pytorch_model.bin
+12/15/2019 22:03:24 - INFO - __main__ -   Saving model checkpoint to output/squad_distilbert-base-uncased_fp16/checkpoint-200
+
+Iteration:  43%|████▎     | 200/462 [00:32<00:34,  7.50it/s][A
+Iteration:  44%|████▎     | 202/462 [00:32<00:31,  8.34it/s][A
+Iteration:  44%|████▍     | 204/462 [00:32<00:28,  9.08it/s][A
+Iteration:  45%|████▍     | 206/462 [00:32<00:27,  9.43it/s][A
+Iteration:  45%|████▌     | 208/462 [00:33<00:26,  9.70it/s][A
+Iteration:  45%|████▌     | 210/462 [00:33<00:25, 10.04it/s][A
+Iteration:  46%|████▌     | 212/462 [00:33<00:24, 10.34it/s][A
+Iteration:  46%|████▋     | 214/462 [00:33<00:23, 10.55it/s][A
+Iteration:  47%|████▋     | 216/462 [00:33<00:23, 10.54it/s][A
+Iteration:  47%|████▋     | 218/462 [00:34<00:23, 10.53it/s][A
+Iteration:  48%|████▊     | 220/462 [00:34<00:23, 10.51it/s][A
+Iteration:  48%|████▊     | 222/462 [00:34<00:22, 10.61it/s][A
+Iteration:  48%|████▊     | 224/462 [00:34<00:22, 10.56it/s][A
+Iteration:  49%|████▉     | 226/462 [00:34<00:22, 10.52it/s][A
+Iteration:  49%|████▉     | 228/462 [00:34<00:22, 10.47it/s][A
+Iteration:  50%|████▉     | 230/462 [00:35<00:22, 10.47it/s][A
+Iteration:  50%|█████     | 232/462 [00:35<00:21, 10.48it/s][A
+Iteration:  51%|█████     | 234/462 [00:35<00:21, 10.49it/s][A
+Iteration:  51%|█████     | 236/462 [00:35<00:21, 10.46it/s][A
+Iteration:  52%|█████▏    | 238/462 [00:35<00:21, 10.45it/s][A
+Iteration:  52%|█████▏    | 240/462 [00:36<00:21, 10.41it/s][A
+Iteration:  52%|█████▏    | 242/462 [00:36<00:21, 10.41it/s][A
+Iteration:  53%|█████▎    | 244/462 [00:36<00:20, 10.39it/s][A
+Iteration:  53%|█████▎    | 246/462 [00:36<00:20, 10.62it/s][A
+Iteration:  54%|█████▎    | 248/462 [00:36<00:19, 10.72it/s][A12/15/2019 22:03:29 - INFO - transformers.configuration_utils -   Configuration saved in output/squad_distilbert-base-uncased_fp16/checkpoint-250/config.json
+12/15/2019 22:03:29 - INFO - transformers.modeling_utils -   Model weights saved in output/squad_distilbert-base-uncased_fp16/checkpoint-250/pytorch_model.bin
+12/15/2019 22:03:29 - INFO - __main__ -   Saving model checkpoint to output/squad_distilbert-base-uncased_fp16/checkpoint-250
+
+Iteration:  54%|█████▍    | 250/462 [00:37<00:27,  7.65it/s][A
+Iteration:  55%|█████▍    | 252/462 [00:37<00:24,  8.44it/s][A
+Iteration:  55%|█████▍    | 254/462 [00:37<00:22,  9.09it/s][A
+Iteration:  55%|█████▌    | 256/462 [00:37<00:21,  9.57it/s][A
+Iteration:  56%|█████▌    | 258/462 [00:38<00:20,  9.97it/s][A
+Iteration:  56%|█████▋    | 260/462 [00:38<00:19, 10.27it/s][A
+Iteration:  57%|█████▋    | 262/462 [00:38<00:18, 10.59it/s][A
+Iteration:  57%|█████▋    | 264/462 [00:38<00:18, 10.68it/s][A
+Iteration:  58%|█████▊    | 266/462 [00:38<00:18, 10.83it/s][A
+Iteration:  58%|█████▊    | 268/462 [00:38<00:17, 10.93it/s][A
+Iteration:  58%|█████▊    | 270/462 [00:39<00:17, 11.00it/s][A
+Iteration:  59%|█████▉    | 272/462 [00:39<00:17, 11.05it/s][A
+Iteration:  59%|█████▉    | 274/462 [00:39<00:16, 11.10it/s][A
+Iteration:  60%|█████▉    | 276/462 [00:39<00:16, 11.04it/s][A
+Iteration:  60%|██████    | 278/462 [00:39<00:16, 11.05it/s][A
+Iteration:  61%|██████    | 280/462 [00:40<00:16, 11.02it/s][A
+Iteration:  61%|██████    | 282/462 [00:40<00:16, 11.08it/s][A
+Iteration:  61%|██████▏   | 284/462 [00:40<00:16, 11.04it/s][A
+Iteration:  62%|██████▏   | 286/462 [00:40<00:16, 10.97it/s][A
+Iteration:  62%|██████▏   | 288/462 [00:40<00:15, 11.06it/s][A
+Iteration:  63%|██████▎   | 290/462 [00:40<00:15, 11.03it/s][A
+Iteration:  63%|██████▎   | 292/462 [00:41<00:15, 11.01it/s][A
+Iteration:  64%|██████▎   | 294/462 [00:41<00:15, 11.01it/s][A
+Iteration:  64%|██████▍   | 296/462 [00:41<00:15, 10.99it/s][A
+Iteration:  65%|██████▍   | 298/462 [00:41<00:14, 11.03it/s][A12/15/2019 22:03:34 - INFO - transformers.configuration_utils -   Configuration saved in output/squad_distilbert-base-uncased_fp16/checkpoint-300/config.json
+12/15/2019 22:03:34 - INFO - transformers.modeling_utils -   Model weights saved in output/squad_distilbert-base-uncased_fp16/checkpoint-300/pytorch_model.bin
+12/15/2019 22:03:34 - INFO - __main__ -   Saving model checkpoint to output/squad_distilbert-base-uncased_fp16/checkpoint-300
+
+Iteration:  65%|██████▍   | 300/462 [00:42<00:20,  7.84it/s][A
+Iteration:  65%|██████▌   | 302/462 [00:42<00:18,  8.66it/s][A
+Iteration:  66%|██████▌   | 304/462 [00:42<00:17,  9.26it/s][A
+Iteration:  66%|██████▌   | 306/462 [00:42<00:16,  9.72it/s][A
+Iteration:  67%|██████▋   | 308/462 [00:42<00:15, 10.06it/s][A
+Iteration:  67%|██████▋   | 310/462 [00:42<00:14, 10.30it/s][A
+Iteration:  68%|██████▊   | 312/462 [00:43<00:14, 10.52it/s][A
+Iteration:  68%|██████▊   | 314/462 [00:43<00:13, 10.58it/s][A
+Iteration:  68%|██████▊   | 316/462 [00:43<00:13, 10.66it/s][A
+Iteration:  69%|██████▉   | 318/462 [00:43<00:13, 10.77it/s][A
+Iteration:  69%|██████▉   | 320/462 [00:43<00:13, 10.87it/s][A
+Iteration:  70%|██████▉   | 322/462 [00:44<00:12, 10.92it/s][A
+Iteration:  70%|███████   | 324/462 [00:44<00:12, 10.94it/s][A
+Iteration:  71%|███████   | 326/462 [00:44<00:12, 10.95it/s][A
+Iteration:  71%|███████   | 328/462 [00:44<00:12, 10.97it/s][A
+Iteration:  71%|███████▏  | 330/462 [00:44<00:12, 10.99it/s][A
+Iteration:  72%|███████▏  | 332/462 [00:44<00:11, 11.02it/s][A
+Iteration:  72%|███████▏  | 334/462 [00:45<00:11, 11.00it/s][A
+Iteration:  73%|███████▎  | 336/462 [00:45<00:11, 10.99it/s][A
+Iteration:  73%|███████▎  | 338/462 [00:45<00:11, 10.98it/s][A
+Iteration:  74%|███████▎  | 340/462 [00:45<00:11, 11.02it/s][A
+Iteration:  74%|███████▍  | 342/462 [00:45<00:10, 11.04it/s][A
+Iteration:  74%|███████▍  | 344/462 [00:46<00:10, 11.02it/s][A
+Iteration:  75%|███████▍  | 346/462 [00:46<00:10, 11.01it/s][A
+Iteration:  75%|███████▌  | 348/462 [00:46<00:10, 11.02it/s][A12/15/2019 22:03:39 - INFO - transformers.configuration_utils -   Configuration saved in output/squad_distilbert-base-uncased_fp16/checkpoint-350/config.json
+12/15/2019 22:03:39 - INFO - transformers.modeling_utils -   Model weights saved in output/squad_distilbert-base-uncased_fp16/checkpoint-350/pytorch_model.bin
+12/15/2019 22:03:39 - INFO - __main__ -   Saving model checkpoint to output/squad_distilbert-base-uncased_fp16/checkpoint-350
+
+Iteration:  76%|███████▌  | 350/462 [00:46<00:14,  7.84it/s][A
+Iteration:  76%|███████▌  | 352/462 [00:47<00:12,  8.67it/s][A
+Iteration:  77%|███████▋  | 354/462 [00:47<00:11,  9.28it/s][A
+Iteration:  77%|███████▋  | 356/462 [00:47<00:10,  9.73it/s][A
+Iteration:  77%|███████▋  | 358/462 [00:47<00:10, 10.08it/s][A
+Iteration:  78%|███████▊  | 360/462 [00:47<00:09, 10.34it/s][AGradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 4096.0
+Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 4096.0
+Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 4096.0
+Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 4096.0
+Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 4096.0
+Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 4096.0
+Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 4096.0
+Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 4096.0
+Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 4096.0
+Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 4096.0
+Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 4096.0
+Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 4096.0
+Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 4096.0
+Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 4096.0
+Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 4096.0
+Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 4096.0
+
+Iteration:  78%|███████▊  | 362/462 [00:47<00:09, 10.70it/s][A
+Iteration:  79%|███████▉  | 364/462 [00:48<00:09, 10.80it/s][A
+Iteration:  79%|███████▉  | 366/462 [00:48<00:08, 10.85it/s][A
+Iteration:  80%|███████▉  | 368/462 [00:48<00:08, 10.91it/s][A
+Iteration:  80%|████████  | 370/462 [00:48<00:08, 10.92it/s][A
+Iteration:  81%|████████  | 372/462 [00:48<00:08, 10.96it/s][A
+Iteration:  81%|████████  | 374/462 [00:49<00:08, 10.90it/s][A
+Iteration:  81%|████████▏ | 376/462 [00:49<00:07, 10.93it/s][A
+Iteration:  82%|████████▏ | 378/462 [00:49<00:07, 10.90it/s][A
+Iteration:  82%|████████▏ | 380/462 [00:49<00:07, 10.86it/s][A
+Iteration:  83%|████████▎ | 382/462 [00:49<00:07, 10.80it/s][A
+Iteration:  83%|████████▎ | 384/462 [00:49<00:07, 10.81it/s][A
+Iteration:  84%|████████▎ | 386/462 [00:50<00:07, 10.83it/s][A
+Iteration:  84%|████████▍ | 388/462 [00:50<00:06, 10.74it/s][A
+Iteration:  84%|████████▍ | 390/462 [00:50<00:06, 10.64it/s][A
+Iteration:  85%|████████▍ | 392/462 [00:50<00:06, 10.57it/s][A
+Iteration:  85%|████████▌ | 394/462 [00:50<00:06, 10.65it/s][A
+Iteration:  86%|████████▌ | 396/462 [00:51<00:06, 10.70it/s][A
+Iteration:  86%|████████▌ | 398/462 [00:51<00:06, 10.61it/s][A12/15/2019 22:03:44 - INFO - transformers.configuration_utils -   Configuration saved in output/squad_distilbert-base-uncased_fp16/checkpoint-400/config.json
+12/15/2019 22:03:44 - INFO - transformers.modeling_utils -   Model weights saved in output/squad_distilbert-base-uncased_fp16/checkpoint-400/pytorch_model.bin
+12/15/2019 22:03:44 - INFO - __main__ -   Saving model checkpoint to output/squad_distilbert-base-uncased_fp16/checkpoint-400
+
+Iteration:  87%|████████▋ | 400/462 [00:51<00:08,  7.53it/s][A
+Iteration:  87%|████████▋ | 402/462 [00:51<00:07,  8.36it/s][A
+Iteration:  87%|████████▋ | 404/462 [00:52<00:06,  9.00it/s][A
+Iteration:  88%|████████▊ | 406/462 [00:52<00:05,  9.52it/s][A
+Iteration:  88%|████████▊ | 408/462 [00:52<00:05,  9.92it/s][A
+Iteration:  89%|████████▊ | 410/462 [00:52<00:05, 10.22it/s][A
+Iteration:  89%|████████▉ | 412/462 [00:52<00:04, 10.43it/s][A
+Iteration:  90%|████████▉ | 414/462 [00:52<00:04, 10.62it/s][A
+Iteration:  90%|█████████ | 416/462 [00:53<00:04, 10.73it/s][A
+Iteration:  90%|█████████ | 418/462 [00:53<00:04, 10.85it/s][A
+Iteration:  91%|█████████ | 420/462 [00:53<00:03, 10.89it/s][A
+Iteration:  91%|█████████▏| 422/462 [00:53<00:03, 10.93it/s][A
+Iteration:  92%|█████████▏| 424/462 [00:53<00:03, 10.93it/s][A
+Iteration:  92%|█████████▏| 426/462 [00:54<00:03, 10.97it/s][A
+Iteration:  93%|█████████▎| 428/462 [00:54<00:03, 10.97it/s][A
+Iteration:  93%|█████████▎| 430/462 [00:54<00:02, 11.00it/s][A
+Iteration:  94%|█████████▎| 432/462 [00:54<00:02, 10.97it/s][A
+Iteration:  94%|█████████▍| 434/462 [00:54<00:02, 10.99it/s][A
+Iteration:  94%|█████████▍| 436/462 [00:54<00:02, 10.94it/s][A
+Iteration:  95%|█████████▍| 438/462 [00:55<00:02, 10.97it/s][A
+Iteration:  95%|█████████▌| 440/462 [00:55<00:02, 10.97it/s][A
+Iteration:  96%|█████████▌| 442/462 [00:55<00:01, 10.97it/s][A
+Iteration:  96%|█████████▌| 444/462 [00:55<00:01, 10.99it/s][A
+Iteration:  97%|█████████▋| 446/462 [00:55<00:01, 11.00it/s][A
+Iteration:  97%|█████████▋| 448/462 [00:56<00:01, 10.99it/s][A12/15/2019 22:03:48 - INFO - transformers.configuration_utils -   Configuration saved in output/squad_distilbert-base-uncased_fp16/checkpoint-450/config.json
+12/15/2019 22:03:49 - INFO - transformers.modeling_utils -   Model weights saved in output/squad_distilbert-base-uncased_fp16/checkpoint-450/pytorch_model.bin
+12/15/2019 22:03:49 - INFO - __main__ -   Saving model checkpoint to output/squad_distilbert-base-uncased_fp16/checkpoint-450
+
+Iteration:  97%|█████████▋| 450/462 [00:56<00:01,  7.94it/s][A
+Iteration:  98%|█████████▊| 452/462 [00:56<00:01,  8.73it/s][A
+Iteration:  98%|█████████▊| 454/462 [00:56<00:00,  9.31it/s][A
+Iteration:  99%|█████████▊| 456/462 [00:57<00:00,  9.76it/s][A
+Iteration:  99%|█████████▉| 458/462 [00:57<00:00, 10.11it/s][A
+Iteration: 100%|█████████▉| 460/462 [00:57<00:00, 10.37it/s][A
+Iteration: 100%|██████████| 462/462 [00:57<00:00, 10.73it/s][AIteration: 100%|██████████| 462/462 [00:57<00:00,  8.03it/s]
+Epoch:  50%|█████     | 1/2 [00:57<00:57, 57.56s/it]
+Iteration:   0%|          | 0/462 [00:00<?, ?it/s][A
+Iteration:   0%|          | 2/462 [00:00<00:43, 10.67it/s][A
+Iteration:   1%|          | 4/462 [00:00<00:42, 10.76it/s][A
+Iteration:   1%|▏         | 6/462 [00:00<00:42, 10.83it/s][AGradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 2048.0
+Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 2048.0
+Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 2048.0
+Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 2048.0
+Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 2048.0
+Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 2048.0
+Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 2048.0
+Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 2048.0
+Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 2048.0
+Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 2048.0
+Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 2048.0
+Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 2048.0
+Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 2048.0
+Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 2048.0
+
+Iteration:   2%|▏         | 8/462 [00:00<00:41, 11.02it/s][AGradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 2048.0
+Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 2048.0
+
+Iteration:   2%|▏         | 10/462 [00:00<00:40, 11.06it/s][A
+Iteration:   3%|▎         | 12/462 [00:01<00:40, 11.04it/s][A
+Iteration:   3%|▎         | 14/462 [00:01<00:40, 11.03it/s][A
+Iteration:   3%|▎         | 16/462 [00:01<00:40, 11.05it/s][A
+Iteration:   4%|▍         | 18/462 [00:01<00:40, 11.09it/s][A
+Iteration:   4%|▍         | 20/462 [00:01<00:39, 11.08it/s][A
+Iteration:   5%|▍         | 22/462 [00:01<00:39, 11.05it/s][A
+Iteration:   5%|▌         | 24/462 [00:02<00:39, 11.05it/s][A
+Iteration:   6%|▌         | 26/462 [00:02<00:39, 11.04it/s][A
+Iteration:   6%|▌         | 28/462 [00:02<00:39, 11.03it/s][A
+Iteration:   6%|▋         | 30/462 [00:02<00:39, 11.04it/s][A
+Iteration:   7%|▋         | 32/462 [00:02<00:38, 11.05it/s][A
+Iteration:   7%|▋         | 34/462 [00:03<00:38, 11.04it/s][A
+Iteration:   8%|▊         | 36/462 [00:03<00:38, 11.05it/s][A12/15/2019 22:03:53 - INFO - transformers.configuration_utils -   Configuration saved in output/squad_distilbert-base-uncased_fp16/checkpoint-500/config.json
+12/15/2019 22:03:53 - INFO - transformers.modeling_utils -   Model weights saved in output/squad_distilbert-base-uncased_fp16/checkpoint-500/pytorch_model.bin
+12/15/2019 22:03:53 - INFO - __main__ -   Saving model checkpoint to output/squad_distilbert-base-uncased_fp16/checkpoint-500
+
+Iteration:   8%|▊         | 38/462 [00:03<00:54,  7.84it/s][A
+Iteration:   9%|▊         | 40/462 [00:03<00:53,  7.88it/s][A
+Iteration:   9%|▉         | 42/462 [00:04<00:48,  8.66it/s][A
+Iteration:  10%|▉         | 44/462 [00:04<00:45,  9.22it/s][A
+Iteration:  10%|▉         | 46/462 [00:04<00:42,  9.72it/s][A
+Iteration:  10%|█         | 48/462 [00:04<00:41, 10.07it/s][A
+Iteration:  11%|█         | 50/462 [00:04<00:39, 10.33it/s][A
+Iteration:  11%|█▏        | 52/462 [00:05<00:38, 10.52it/s][A
+Iteration:  12%|█▏        | 54/462 [00:05<00:38, 10.68it/s][A
+Iteration:  12%|█▏        | 56/462 [00:05<00:37, 10.78it/s][A
+Iteration:  13%|█▎        | 58/462 [00:05<00:37, 10.83it/s][A
+Iteration:  13%|█▎        | 60/462 [00:05<00:37, 10.86it/s][A
+Iteration:  13%|█▎        | 62/462 [00:05<00:36, 10.91it/s][A
+Iteration:  14%|█▍        | 64/462 [00:06<00:36, 10.94it/s][A
+Iteration:  14%|█▍        | 66/462 [00:06<00:36, 10.94it/s][A
+Iteration:  15%|█▍        | 68/462 [00:06<00:35, 10.96it/s][A
+Iteration:  15%|█▌        | 70/462 [00:06<00:35, 10.99it/s][A
+Iteration:  16%|█▌        | 72/462 [00:06<00:35, 11.02it/s][A
+Iteration:  16%|█▌        | 74/462 [00:07<00:35, 11.02it/s][A
+Iteration:  16%|█▋        | 76/462 [00:07<00:35, 11.00it/s][A
+Iteration:  17%|█▋        | 78/462 [00:07<00:34, 11.01it/s][A
+Iteration:  17%|█▋        | 80/462 [00:07<00:34, 11.00it/s][A
+Iteration:  18%|█▊        | 82/462 [00:07<00:34, 11.01it/s][A
+Iteration:  18%|█▊        | 84/462 [00:07<00:34, 11.00it/s][A
+Iteration:  19%|█▊        | 86/462 [00:08<00:34, 11.01it/s][A12/15/2019 22:03:58 - INFO - transformers.configuration_utils -   Configuration saved in output/squad_distilbert-base-uncased_fp16/checkpoint-550/config.json
+12/15/2019 22:03:58 - INFO - transformers.modeling_utils -   Model weights saved in output/squad_distilbert-base-uncased_fp16/checkpoint-550/pytorch_model.bin
+12/15/2019 22:03:58 - INFO - __main__ -   Saving model checkpoint to output/squad_distilbert-base-uncased_fp16/checkpoint-550
+
+Iteration:  19%|█▉        | 88/462 [00:08<00:48,  7.69it/s][A
+Iteration:  19%|█▉        | 90/462 [00:08<00:43,  8.55it/s][A
+Iteration:  20%|█▉        | 92/462 [00:08<00:40,  9.15it/s][A
+Iteration:  20%|██        | 94/462 [00:09<00:38,  9.63it/s][A
+Iteration:  21%|██        | 96/462 [00:09<00:36, 10.01it/s][A
+Iteration:  21%|██        | 98/462 [00:09<00:35, 10.25it/s][A
+Iteration:  22%|██▏       | 100/462 [00:09<00:34, 10.51it/s][A
+Iteration:  22%|██▏       | 102/462 [00:09<00:33, 10.66it/s][A
+Iteration:  23%|██▎       | 104/462 [00:10<00:33, 10.75it/s][A
+Iteration:  23%|██▎       | 106/462 [00:10<00:32, 10.82it/s][A
+Iteration:  23%|██▎       | 108/462 [00:10<00:32, 10.88it/s][A
+Iteration:  24%|██▍       | 110/462 [00:10<00:32, 10.92it/s][A
+Iteration:  24%|██▍       | 112/462 [00:10<00:31, 10.97it/s][A
+Iteration:  25%|██▍       | 114/462 [00:10<00:31, 10.99it/s][A
+Iteration:  25%|██▌       | 116/462 [00:11<00:31, 11.02it/s][A
+Iteration:  26%|██▌       | 118/462 [00:11<00:31, 11.02it/s][A
+Iteration:  26%|██▌       | 120/462 [00:11<00:30, 11.06it/s][A
+Iteration:  26%|██▋       | 122/462 [00:11<00:35,  9.45it/s][A
+Iteration:  27%|██▋       | 124/462 [00:11<00:34,  9.93it/s][A
+Iteration:  27%|██▋       | 126/462 [00:12<00:32, 10.34it/s][A
+Iteration:  28%|██▊       | 128/462 [00:12<00:31, 10.58it/s][A
+Iteration:  28%|██▊       | 130/462 [00:12<00:30, 10.80it/s][A
+Iteration:  29%|██▊       | 132/462 [00:12<00:30, 10.97it/s][A
+Iteration:  29%|██▉       | 134/462 [00:12<00:29, 11.05it/s][A
+Iteration:  29%|██▉       | 136/462 [00:12<00:29, 11.10it/s][A12/15/2019 22:04:03 - INFO - transformers.configuration_utils -   Configuration saved in output/squad_distilbert-base-uncased_fp16/checkpoint-600/config.json
+12/15/2019 22:04:03 - INFO - transformers.modeling_utils -   Model weights saved in output/squad_distilbert-base-uncased_fp16/checkpoint-600/pytorch_model.bin
+12/15/2019 22:04:03 - INFO - __main__ -   Saving model checkpoint to output/squad_distilbert-base-uncased_fp16/checkpoint-600
+
+Iteration:  30%|██▉       | 138/462 [00:13<00:40,  8.07it/s][A
+Iteration:  30%|███       | 140/462 [00:13<00:36,  8.88it/s][A
+Iteration:  31%|███       | 142/462 [00:13<00:33,  9.46it/s][A
+Iteration:  31%|███       | 144/462 [00:13<00:32,  9.90it/s][A
+Iteration:  32%|███▏      | 146/462 [00:14<00:30, 10.35it/s][A
+Iteration:  32%|███▏      | 148/462 [00:14<00:29, 10.66it/s][A
+Iteration:  32%|███▏      | 150/462 [00:14<00:28, 10.91it/s][A
+Iteration:  33%|███▎      | 152/462 [00:14<00:28, 11.06it/s][A
+Iteration:  33%|███▎      | 154/462 [00:14<00:27, 11.15it/s][A
+Iteration:  34%|███▍      | 156/462 [00:14<00:27, 11.09it/s][A
+Iteration:  34%|███▍      | 158/462 [00:15<00:27, 11.17it/s][A
+Iteration:  35%|███▍      | 160/462 [00:15<00:26, 11.27it/s][A
+Iteration:  35%|███▌      | 162/462 [00:15<00:26, 11.15it/s][A
+Iteration:  35%|███▌      | 164/462 [00:15<00:26, 11.18it/s][A
+Iteration:  36%|███▌      | 166/462 [00:15<00:26, 11.26it/s][A
+Iteration:  36%|███▋      | 168/462 [00:16<00:26, 11.28it/s][A
+Iteration:  37%|███▋      | 170/462 [00:16<00:25, 11.34it/s][A
+Iteration:  37%|███▋      | 172/462 [00:16<00:25, 11.33it/s][A
+Iteration:  38%|███▊      | 174/462 [00:16<00:25, 11.35it/s][A
+Iteration:  38%|███▊      | 176/462 [00:16<00:25, 11.35it/s][A
+Iteration:  39%|███▊      | 178/462 [00:16<00:25, 11.30it/s][A
+Iteration:  39%|███▉      | 180/462 [00:17<00:25, 11.23it/s][A
+Iteration:  39%|███▉      | 182/462 [00:17<00:24, 11.25it/s][A
+Iteration:  40%|███▉      | 184/462 [00:17<00:24, 11.34it/s][A
+Iteration:  40%|████      | 186/462 [00:17<00:24, 11.23it/s][A12/15/2019 22:04:07 - INFO - transformers.configuration_utils -   Configuration saved in output/squad_distilbert-base-uncased_fp16/checkpoint-650/config.json
+12/15/2019 22:04:08 - INFO - transformers.modeling_utils -   Model weights saved in output/squad_distilbert-base-uncased_fp16/checkpoint-650/pytorch_model.bin
+12/15/2019 22:04:08 - INFO - __main__ -   Saving model checkpoint to output/squad_distilbert-base-uncased_fp16/checkpoint-650
+
+Iteration:  41%|████      | 188/462 [00:18<00:34,  7.87it/s][A
+Iteration:  41%|████      | 190/462 [00:18<00:31,  8.69it/s][A
+Iteration:  42%|████▏     | 192/462 [00:18<00:29,  9.26it/s][A
+Iteration:  42%|████▏     | 194/462 [00:18<00:27,  9.59it/s][A
+Iteration:  42%|████▏     | 196/462 [00:18<00:26,  9.97it/s][A
+Iteration:  43%|████▎     | 198/462 [00:18<00:25, 10.30it/s][A
+Iteration:  43%|████▎     | 200/462 [00:19<00:24, 10.66it/s][A
+Iteration:  44%|████▎     | 202/462 [00:19<00:23, 10.89it/s][A
+Iteration:  44%|████▍     | 204/462 [00:19<00:23, 11.02it/s][A
+Iteration:  45%|████▍     | 206/462 [00:19<00:23, 11.07it/s][A
+Iteration:  45%|████▌     | 208/462 [00:19<00:22, 11.05it/s][A
+Iteration:  45%|████▌     | 210/462 [00:20<00:22, 11.15it/s][A
+Iteration:  46%|████▌     | 212/462 [00:20<00:22, 11.18it/s][A
+Iteration:  46%|████▋     | 214/462 [00:20<00:22, 11.18it/s][A
+Iteration:  47%|████▋     | 216/462 [00:20<00:21, 11.32it/s][A
+Iteration:  47%|████▋     | 218/462 [00:20<00:21, 11.38it/s][A
+Iteration:  48%|████▊     | 220/462 [00:20<00:21, 11.34it/s][A
+Iteration:  48%|████▊     | 222/462 [00:21<00:21, 11.34it/s][A
+Iteration:  48%|████▊     | 224/462 [00:21<00:20, 11.36it/s][A
+Iteration:  49%|████▉     | 226/462 [00:21<00:20, 11.44it/s][A
+Iteration:  49%|████▉     | 228/462 [00:21<00:20, 11.51it/s][A
+Iteration:  50%|████▉     | 230/462 [00:21<00:20, 11.55it/s][A
+Iteration:  50%|█████     | 232/462 [00:21<00:20, 11.47it/s][A
+Iteration:  51%|█████     | 234/462 [00:22<00:19, 11.47it/s][A
+Iteration:  51%|█████     | 236/462 [00:22<00:19, 11.47it/s][A12/15/2019 22:04:12 - INFO - transformers.configuration_utils -   Configuration saved in output/squad_distilbert-base-uncased_fp16/checkpoint-700/config.json
+12/15/2019 22:04:12 - INFO - transformers.modeling_utils -   Model weights saved in output/squad_distilbert-base-uncased_fp16/checkpoint-700/pytorch_model.bin
+12/15/2019 22:04:12 - INFO - __main__ -   Saving model checkpoint to output/squad_distilbert-base-uncased_fp16/checkpoint-700
+
+Iteration:  52%|█████▏    | 238/462 [00:22<00:27,  8.05it/s][A
+Iteration:  52%|█████▏    | 240/462 [00:22<00:24,  8.89it/s][A
+Iteration:  52%|█████▏    | 242/462 [00:23<00:23,  9.52it/s][A
+Iteration:  53%|█████▎    | 244/462 [00:23<00:21,  9.94it/s][A
+Iteration:  53%|█████▎    | 246/462 [00:23<00:20, 10.35it/s][A
+Iteration:  54%|█████▎    | 248/462 [00:23<00:20, 10.66it/s][A
+Iteration:  54%|█████▍    | 250/462 [00:23<00:19, 10.93it/s][A
+Iteration:  55%|█████▍    | 252/462 [00:23<00:18, 11.05it/s][A
+Iteration:  55%|█████▍    | 254/462 [00:24<00:18, 11.14it/s][A
+Iteration:  55%|█████▌    | 256/462 [00:24<00:18, 11.11it/s][A
+Iteration:  56%|█████▌    | 258/462 [00:24<00:18, 11.27it/s][A
+Iteration:  56%|█████▋    | 260/462 [00:24<00:17, 11.34it/s][A
+Iteration:  57%|█████▋    | 262/462 [00:24<00:17, 11.36it/s][A
+Iteration:  57%|█████▋    | 264/462 [00:24<00:17, 11.42it/s][A
+Iteration:  58%|█████▊    | 266/462 [00:25<00:17, 11.47it/s][A
+Iteration:  58%|█████▊    | 268/462 [00:25<00:16, 11.48it/s][A
+Iteration:  58%|█████▊    | 270/462 [00:25<00:16, 11.49it/s][A
+Iteration:  59%|█████▉    | 272/462 [00:25<00:16, 11.54it/s][A
+Iteration:  59%|█████▉    | 274/462 [00:25<00:16, 11.51it/s][A
+Iteration:  60%|█████▉    | 276/462 [00:26<00:16, 11.44it/s][A
+Iteration:  60%|██████    | 278/462 [00:26<00:16, 11.50it/s][A
+Iteration:  61%|██████    | 280/462 [00:26<00:15, 11.54it/s][A
+Iteration:  61%|██████    | 282/462 [00:26<00:15, 11.57it/s][A
+Iteration:  61%|██████▏   | 284/462 [00:26<00:15, 11.55it/s][A
+Iteration:  62%|██████▏   | 286/462 [00:26<00:15, 11.55it/s][A12/15/2019 22:04:17 - INFO - transformers.configuration_utils -   Configuration saved in output/squad_distilbert-base-uncased_fp16/checkpoint-750/config.json
+12/15/2019 22:04:17 - INFO - transformers.modeling_utils -   Model weights saved in output/squad_distilbert-base-uncased_fp16/checkpoint-750/pytorch_model.bin
+12/15/2019 22:04:17 - INFO - __main__ -   Saving model checkpoint to output/squad_distilbert-base-uncased_fp16/checkpoint-750
+
+Iteration:  62%|██████▏   | 288/462 [00:27<00:21,  7.98it/s][A
+Iteration:  63%|██████▎   | 290/462 [00:27<00:19,  8.77it/s][A
+Iteration:  63%|██████▎   | 292/462 [00:27<00:18,  9.28it/s][A
+Iteration:  64%|██████▎   | 294/462 [00:27<00:17,  9.70it/s][A
+Iteration:  64%|██████▍   | 296/462 [00:28<00:16, 10.03it/s][A
+Iteration:  65%|██████▍   | 298/462 [00:28<00:16, 10.23it/s][A
+Iteration:  65%|██████▍   | 300/462 [00:28<00:15, 10.33it/s][A
+Iteration:  65%|██████▌   | 302/462 [00:28<00:15, 10.49it/s][A
+Iteration:  66%|██████▌   | 304/462 [00:28<00:14, 10.62it/s][A
+Iteration:  66%|██████▌   | 306/462 [00:28<00:14, 10.61it/s][A
+Iteration:  67%|██████▋   | 308/462 [00:29<00:14, 10.78it/s][A
+Iteration:  67%|██████▋   | 310/462 [00:29<00:13, 10.92it/s][A
+Iteration:  68%|██████▊   | 312/462 [00:29<00:13, 10.92it/s][A
+Iteration:  68%|██████▊   | 314/462 [00:29<00:13, 10.92it/s][A
+Iteration:  68%|██████▊   | 316/462 [00:29<00:13, 10.93it/s][A
+Iteration:  69%|██████▉   | 318/462 [00:30<00:13, 10.91it/s][A
+Iteration:  69%|██████▉   | 320/462 [00:30<00:13, 10.82it/s][A
+Iteration:  70%|██████▉   | 322/462 [00:30<00:12, 10.85it/s][A
+Iteration:  70%|███████   | 324/462 [00:30<00:12, 10.87it/s][A
+Iteration:  71%|███████   | 326/462 [00:30<00:12, 10.78it/s][A
+Iteration:  71%|███████   | 328/462 [00:31<00:12, 10.83it/s][A
+Iteration:  71%|███████▏  | 330/462 [00:31<00:12, 10.87it/s][A
+Iteration:  72%|███████▏  | 332/462 [00:31<00:12, 10.83it/s][A
+Iteration:  72%|███████▏  | 334/462 [00:31<00:11, 10.86it/s][A
+Iteration:  73%|███████▎  | 336/462 [00:31<00:11, 10.80it/s][A12/15/2019 22:04:22 - INFO - transformers.configuration_utils -   Configuration saved in output/squad_distilbert-base-uncased_fp16/checkpoint-800/config.json
+12/15/2019 22:04:22 - INFO - transformers.modeling_utils -   Model weights saved in output/squad_distilbert-base-uncased_fp16/checkpoint-800/pytorch_model.bin
+12/15/2019 22:04:22 - INFO - __main__ -   Saving model checkpoint to output/squad_distilbert-base-uncased_fp16/checkpoint-800
+
+Iteration:  73%|███████▎  | 338/462 [00:32<00:16,  7.64it/s][A
+Iteration:  74%|███████▎  | 340/462 [00:32<00:14,  8.45it/s][A
+Iteration:  74%|███████▍  | 342/462 [00:32<00:13,  9.00it/s][A
+Iteration:  74%|███████▍  | 344/462 [00:32<00:12,  9.44it/s][A
+Iteration:  75%|███████▍  | 346/462 [00:32<00:11,  9.82it/s][A
+Iteration:  75%|███████▌  | 348/462 [00:33<00:11, 10.22it/s][A
+Iteration:  76%|███████▌  | 350/462 [00:33<00:10, 10.42it/s][A
+Iteration:  76%|███████▌  | 352/462 [00:33<00:10, 10.65it/s][A
+Iteration:  77%|███████▋  | 354/462 [00:33<00:10, 10.71it/s][A
+Iteration:  77%|███████▋  | 356/462 [00:33<00:09, 10.69it/s][A
+Iteration:  77%|███████▋  | 358/462 [00:34<00:09, 10.66it/s][A
+Iteration:  78%|███████▊  | 360/462 [00:34<00:09, 10.73it/s][A
+Iteration:  78%|███████▊  | 362/462 [00:34<00:09, 10.70it/s][A
+Iteration:  79%|███████▉  | 364/462 [00:34<00:09, 10.74it/s][A
+Iteration:  79%|███████▉  | 366/462 [00:34<00:08, 10.71it/s][A
+Iteration:  80%|███████▉  | 368/462 [00:34<00:08, 10.80it/s][A
+Iteration:  80%|████████  | 370/462 [00:35<00:08, 10.90it/s][A
+Iteration:  81%|████████  | 372/462 [00:35<00:08, 10.79it/s][A
+Iteration:  81%|████████  | 374/462 [00:35<00:08, 10.82it/s][A
+Iteration:  81%|████████▏ | 376/462 [00:35<00:07, 10.96it/s][A
+Iteration:  82%|████████▏ | 378/462 [00:35<00:07, 10.87it/s][A
+Iteration:  82%|████████▏ | 380/462 [00:36<00:07, 10.90it/s][A
+Iteration:  83%|████████▎ | 382/462 [00:36<00:07, 10.91it/s][A
+Iteration:  83%|████████▎ | 384/462 [00:36<00:07, 10.90it/s][A
+Iteration:  84%|████████▎ | 386/462 [00:36<00:06, 10.90it/s][A12/15/2019 22:04:26 - INFO - transformers.configuration_utils -   Configuration saved in output/squad_distilbert-base-uncased_fp16/checkpoint-850/config.json
+12/15/2019 22:04:27 - INFO - transformers.modeling_utils -   Model weights saved in output/squad_distilbert-base-uncased_fp16/checkpoint-850/pytorch_model.bin
+12/15/2019 22:04:27 - INFO - __main__ -   Saving model checkpoint to output/squad_distilbert-base-uncased_fp16/checkpoint-850
+
+Iteration:  84%|████████▍ | 388/462 [00:37<00:09,  7.90it/s][A
+Iteration:  84%|████████▍ | 390/462 [00:37<00:08,  8.59it/s][A
+Iteration:  85%|████████▍ | 392/462 [00:37<00:07,  9.21it/s][A
+Iteration:  85%|████████▌ | 394/462 [00:37<00:07,  9.71it/s][A
+Iteration:  86%|████████▌ | 396/462 [00:37<00:06, 10.02it/s][A
+Iteration:  86%|████████▌ | 398/462 [00:37<00:06, 10.35it/s][A
+Iteration:  87%|████████▋ | 400/462 [00:38<00:05, 10.58it/s][A
+Iteration:  87%|████████▋ | 402/462 [00:38<00:05, 10.60it/s][A
+Iteration:  87%|████████▋ | 404/462 [00:38<00:05, 10.77it/s][A
+Iteration:  88%|████████▊ | 406/462 [00:38<00:05, 10.78it/s][A
+Iteration:  88%|████████▊ | 408/462 [00:38<00:04, 10.81it/s][A
+Iteration:  89%|████████▊ | 410/462 [00:39<00:04, 10.87it/s][A
+Iteration:  89%|████████▉ | 412/462 [00:39<00:04, 10.90it/s][A
+Iteration:  90%|████████▉ | 414/462 [00:39<00:04, 10.93it/s][A
+Iteration:  90%|█████████ | 416/462 [00:39<00:04, 10.93it/s][A
+Iteration:  90%|█████████ | 418/462 [00:39<00:04, 10.99it/s][A
+Iteration:  91%|█████████ | 420/462 [00:39<00:03, 10.94it/s][A
+Iteration:  91%|█████████▏| 422/462 [00:40<00:03, 10.97it/s][A
+Iteration:  92%|█████████▏| 424/462 [00:40<00:03, 10.90it/s][A
+Iteration:  92%|█████████▏| 426/462 [00:40<00:03, 10.98it/s][A
+Iteration:  93%|█████████▎| 428/462 [00:40<00:03, 10.77it/s][A
+Iteration:  93%|█████████▎| 430/462 [00:40<00:02, 10.69it/s][A
+Iteration:  94%|█████████▎| 432/462 [00:41<00:02, 10.80it/s][A
+Iteration:  94%|█████████▍| 434/462 [00:41<00:02, 10.81it/s][A
+Iteration:  94%|█████████▍| 436/462 [00:41<00:02, 10.84it/s][A12/15/2019 22:04:31 - INFO - transformers.configuration_utils -   Configuration saved in output/squad_distilbert-base-uncased_fp16/checkpoint-900/config.json
+12/15/2019 22:04:31 - INFO - transformers.modeling_utils -   Model weights saved in output/squad_distilbert-base-uncased_fp16/checkpoint-900/pytorch_model.bin
+12/15/2019 22:04:31 - INFO - __main__ -   Saving model checkpoint to output/squad_distilbert-base-uncased_fp16/checkpoint-900
+
+Iteration:  95%|█████████▍| 438/462 [00:41<00:03,  7.85it/s][A
+Iteration:  95%|█████████▌| 440/462 [00:42<00:02,  8.65it/s][A
+Iteration:  96%|█████████▌| 442/462 [00:42<00:02,  9.33it/s][A
+Iteration:  96%|█████████▌| 444/462 [00:42<00:01,  9.67it/s][A
+Iteration:  97%|█████████▋| 446/462 [00:42<00:01, 10.07it/s][A
+Iteration:  97%|█████████▋| 448/462 [00:42<00:01, 10.40it/s][A
+Iteration:  97%|█████████▋| 450/462 [00:42<00:01, 10.49it/s][A
+Iteration:  98%|█████████▊| 452/462 [00:43<00:00, 10.51it/s][A
+Iteration:  98%|█████████▊| 454/462 [00:43<00:00, 10.48it/s][A
+Iteration:  99%|█████████▊| 456/462 [00:43<00:00, 10.69it/s][A
+Iteration:  99%|█████████▉| 458/462 [00:43<00:00, 10.76it/s][A
+Iteration: 100%|█████████▉| 460/462 [00:43<00:00, 10.72it/s][A
+Iteration: 100%|██████████| 462/462 [00:44<00:00, 10.95it/s][AIteration: 100%|██████████| 462/462 [00:44<00:00, 10.50it/s]
+Epoch: 100%|██████████| 2/2 [01:41<00:00, 53.50s/it]Epoch: 100%|██████████| 2/2 [01:41<00:00, 50.79s/it]
+12/15/2019 22:04:34 - INFO - __main__ -    Total training time = 101.60430505300064
+12/15/2019 22:04:34 - INFO - __main__ -    global_step = 925, average loss = 1.6699900790807363
+12/15/2019 22:04:34 - INFO - __main__ -   Saving model checkpoint to output/squad_distilbert-base-uncased_fp16
+12/15/2019 22:04:34 - INFO - transformers.configuration_utils -   Configuration saved in output/squad_distilbert-base-uncased_fp16/config.json
+12/15/2019 22:04:34 - INFO - transformers.modeling_utils -   Model weights saved in output/squad_distilbert-base-uncased_fp16/pytorch_model.bin
+12/15/2019 22:04:34 - INFO - transformers.configuration_utils -   loading configuration file output/squad_distilbert-base-uncased_fp16/config.json
+12/15/2019 22:04:34 - INFO - transformers.configuration_utils -   Model config {
+  "activation": "gelu",
+  "attention_dropout": 0.1,
+  "dim": 768,
+  "dropout": 0.1,
+  "finetuning_task": null,
+  "hidden_dim": 3072,
+  "initializer_range": 0.02,
+  "is_decoder": false,
+  "max_position_embeddings": 512,
+  "n_heads": 12,
+  "n_layers": 6,
+  "num_labels": 2,
+  "output_attentions": false,
+  "output_hidden_states": false,
+  "output_past": true,
+  "pruned_heads": {},
+  "qa_dropout": 0.1,
+  "seq_classif_dropout": 0.2,
+  "sinusoidal_pos_embds": false,
+  "tie_weights_": true,
+  "torchscript": false,
+  "use_bfloat16": false,
+  "vocab_size": 30522
+}
+
+12/15/2019 22:04:34 - INFO - transformers.modeling_utils -   loading weights file output/squad_distilbert-base-uncased_fp16/pytorch_model.bin
+12/15/2019 22:04:35 - INFO - transformers.tokenization_utils -   Model name 'output/squad_distilbert-base-uncased_fp16' not found in model shortcut name list (distilbert-base-uncased, distilbert-base-uncased-distilled-squad, distilbert-base-german-cased, distilbert-base-multilingual-cased). Assuming 'output/squad_distilbert-base-uncased_fp16' is a path or url to a directory containing tokenizer files.
+12/15/2019 22:04:35 - INFO - transformers.tokenization_utils -   loading file output/squad_distilbert-base-uncased_fp16/vocab.txt
+12/15/2019 22:04:35 - INFO - transformers.tokenization_utils -   loading file output/squad_distilbert-base-uncased_fp16/added_tokens.json
+12/15/2019 22:04:35 - INFO - transformers.tokenization_utils -   loading file output/squad_distilbert-base-uncased_fp16/special_tokens_map.json
+12/15/2019 22:04:35 - INFO - transformers.tokenization_utils -   loading file output/squad_distilbert-base-uncased_fp16/tokenizer_config.json
+12/15/2019 22:04:35 - INFO - __main__ -   Loading checkpoints saved during training for evaluation
+12/15/2019 22:04:35 - INFO - __main__ -   Evaluate the following checkpoints: ['output/squad_distilbert-base-uncased_fp16']
+12/15/2019 22:04:35 - INFO - transformers.configuration_utils -   loading configuration file output/squad_distilbert-base-uncased_fp16/config.json
+12/15/2019 22:04:35 - INFO - transformers.configuration_utils -   Model config {
+  "activation": "gelu",
+  "attention_dropout": 0.1,
+  "dim": 768,
+  "dropout": 0.1,
+  "finetuning_task": null,
+  "hidden_dim": 3072,
+  "initializer_range": 0.02,
+  "is_decoder": false,
+  "max_position_embeddings": 512,
+  "n_heads": 12,
+  "n_layers": 6,
+  "num_labels": 2,
+  "output_attentions": false,
+  "output_hidden_states": false,
+  "output_past": true,
+  "pruned_heads": {},
+  "qa_dropout": 0.1,
+  "seq_classif_dropout": 0.2,
+  "sinusoidal_pos_embds": false,
+  "tie_weights_": true,
+  "torchscript": false,
+  "use_bfloat16": false,
+  "vocab_size": 30522
+}
+
+12/15/2019 22:04:35 - INFO - transformers.modeling_utils -   loading weights file output/squad_distilbert-base-uncased_fp16/pytorch_model.bin
+12/15/2019 22:04:37 - INFO - __main__ -   Creating features from dataset file at .
+  0%|          | 0/48 [00:00<?, ?it/s]  2%|▏         | 1/48 [00:00<00:08,  5.87it/s]  8%|▊         | 4/48 [00:00<00:06,  7.26it/s] 15%|█▍        | 7/48 [00:00<00:04,  8.62it/s] 23%|██▎       | 11/48 [00:00<00:03, 10.96it/s] 27%|██▋       | 13/48 [00:00<00:02, 12.26it/s] 33%|███▎      | 16/48 [00:01<00:02, 12.70it/s] 40%|███▉      | 19/48 [00:01<00:01, 14.64it/s] 48%|████▊     | 23/48 [00:01<00:01, 16.97it/s] 54%|█████▍    | 26/48 [00:01<00:01, 11.80it/s] 60%|██████    | 29/48 [00:01<00:01, 13.52it/s] 69%|██████▉   | 33/48 [00:01<00:00, 16.68it/s] 75%|███████▌  | 36/48 [00:02<00:00, 15.72it/s] 81%|████████▏ | 39/48 [00:02<00:00, 16.85it/s] 88%|████████▊ | 42/48 [00:02<00:00, 17.36it/s] 94%|█████████▍| 45/48 [00:02<00:00, 18.26it/s]100%|██████████| 48/48 [00:02<00:00, 18.50it/s]100%|██████████| 48/48 [00:02<00:00, 17.04it/s]
+Converting examples to features:   0%|          | 0/10570 [00:00<?, ?it/s]Converting examples to features:   0%|          | 18/10570 [00:00<01:00, 173.27it/s]Converting examples to features:   0%|          | 36/10570 [00:00<01:00, 174.58it/s]Converting examples to features:   1%|          | 57/10570 [00:00<00:57, 183.85it/s]Converting examples to features:   1%|          | 90/10570 [00:00<00:49, 210.99it/s]Converting examples to features:   1%|▏         | 135/10570 [00:00<00:41, 250.17it/s]Converting examples to features:   2%|▏         | 162/10570 [00:00<00:43, 238.09it/s]Converting examples to features:   2%|▏         | 188/10570 [00:00<00:42, 242.07it/s]Converting examples to features:   2%|▏         | 213/10570 [00:00<00:50, 204.29it/s]Converting examples to features:   2%|▏         | 235/10570 [00:01<01:04, 160.42it/s]Converting examples to features:   2%|▏         | 254/10570 [00:01<01:17, 133.43it/s]Converting examples to features:   3%|▎         | 270/10570 [00:01<01:43, 99.25it/s] Converting examples to features:   3%|▎         | 284/10570 [00:01<01:34, 108.39it/s]Converting examples to features:   3%|▎         | 301/10570 [00:01<01:24, 121.25it/s]Converting examples to features:   3%|▎         | 330/10570 [00:01<01:09, 146.73it/s]Converting examples to features:   3%|▎         | 364/10570 [00:01<00:57, 176.12it/s]Converting examples to features:   4%|▎         | 391/10570 [00:02<00:52, 194.49it/s]Converting examples to features:   4%|▍         | 415/10570 [00:02<00:59, 169.96it/s]Converting examples to features:   4%|▍         | 443/10570 [00:02<00:52, 192.41it/s]Converting examples to features:   4%|▍         | 466/10570 [00:02<00:51, 194.31it/s]Converting examples to features:   5%|▍         | 491/10570 [00:02<00:48, 207.10it/s]Converting examples to features:   5%|▍         | 523/10570 [00:02<00:43, 231.57it/s]Converting examples to features:   5%|▌         | 549/10570 [00:02<00:42, 238.06it/s]Converting examples to features:   5%|▌         | 575/10570 [00:02<00:42, 237.48it/s]Converting examples to features:   6%|▌         | 600/10570 [00:03<00:44, 222.62it/s]Converting examples to features:   6%|▌         | 635/10570 [00:03<00:40, 248.33it/s]Converting examples to features:   6%|▋         | 662/10570 [00:03<00:41, 240.43it/s]Converting examples to features:   7%|▋         | 694/10570 [00:03<00:38, 259.22it/s]Converting examples to features:   7%|▋         | 722/10570 [00:03<00:44, 223.33it/s]Converting examples to features:   7%|▋         | 747/10570 [00:03<00:47, 208.37it/s]Converting examples to features:   7%|▋         | 770/10570 [00:03<00:49, 198.36it/s]Converting examples to features:   7%|▋         | 791/10570 [00:03<00:57, 170.64it/s]Converting examples to features:   8%|▊         | 810/10570 [00:04<01:09, 141.31it/s]Converting examples to features:   8%|▊         | 826/10570 [00:04<01:08, 142.49it/s]Converting examples to features:   8%|▊         | 847/10570 [00:04<01:01, 157.13it/s]Converting examples to features:   8%|▊         | 869/10570 [00:04<00:56, 171.30it/s]Converting examples to features:   8%|▊         | 893/10570 [00:04<00:51, 186.35it/s]Converting examples to features:   9%|▊         | 913/10570 [00:04<00:57, 167.10it/s]Converting examples to features:   9%|▉         | 932/10570 [00:04<00:56, 170.59it/s]Converting examples to features:   9%|▉         | 952/10570 [00:04<00:54, 176.39it/s]Converting examples to features:   9%|▉         | 971/10570 [00:05<00:54, 176.82it/s]Converting examples to features:   9%|▉         | 990/10570 [00:05<00:55, 172.47it/s]Converting examples to features:  10%|▉         | 1008/10570 [00:05<00:55, 172.25it/s]Converting examples to features:  10%|▉         | 1026/10570 [00:05<00:55, 172.12it/s]Converting examples to features:  10%|▉         | 1044/10570 [00:05<00:55, 170.51it/s]Converting examples to features:  10%|█         | 1064/10570 [00:05<00:54, 175.69it/s]Converting examples to features:  10%|█         | 1083/10570 [00:05<00:53, 177.65it/s]Converting examples to features:  10%|█         | 1101/10570 [00:05<00:54, 173.65it/s]Converting examples to features:  11%|█         | 1122/10570 [00:05<00:52, 179.86it/s]Converting examples to features:  11%|█         | 1145/10570 [00:05<00:49, 191.89it/s]Converting examples to features:  11%|█         | 1176/10570 [00:06<00:43, 215.73it/s]Converting examples to features:  11%|█▏        | 1199/10570 [00:06<00:43, 214.72it/s]Converting examples to features:  12%|█▏        | 1223/10570 [00:06<00:42, 220.87it/s]Converting examples to features:  12%|█▏        | 1251/10570 [00:06<00:40, 229.76it/s]Converting examples to features:  12%|█▏        | 1275/10570 [00:06<00:44, 207.93it/s]Converting examples to features:  12%|█▏        | 1304/10570 [00:06<00:40, 226.29it/s]Converting examples to features:  13%|█▎        | 1328/10570 [00:06<00:40, 226.58it/s]Converting examples to features:  13%|█▎        | 1352/10570 [00:06<00:42, 216.86it/s]Converting examples to features:  13%|█▎        | 1375/10570 [00:06<00:44, 206.58it/s]Converting examples to features:  13%|█▎        | 1397/10570 [00:07<00:50, 183.22it/s]Converting examples to features:  13%|█▎        | 1419/10570 [00:07<00:47, 192.60it/s]Converting examples to features:  14%|█▎        | 1439/10570 [00:07<00:47, 191.90it/s]Converting examples to features:  14%|█▍        | 1463/10570 [00:07<00:45, 201.57it/s]Converting examples to features:  14%|█▍        | 1484/10570 [00:07<00:45, 199.26it/s]Converting examples to features:  14%|█▍        | 1512/10570 [00:07<00:42, 215.09it/s]Converting examples to features:  15%|█▍        | 1536/10570 [00:07<00:40, 221.93it/s]Converting examples to features:  15%|█▍        | 1563/10570 [00:07<00:38, 231.78it/s]Converting examples to features:  15%|█▌        | 1587/10570 [00:07<00:39, 229.00it/s]Converting examples to features:  15%|█▌        | 1615/10570 [00:08<00:37, 241.33it/s]Converting examples to features:  16%|█▌        | 1640/10570 [00:08<00:39, 223.47it/s]Converting examples to features:  16%|█▌        | 1681/10570 [00:08<00:34, 258.26it/s]Converting examples to features:  16%|█▌        | 1710/10570 [00:08<00:36, 242.33it/s]Converting examples to features:  16%|█▋        | 1737/10570 [00:08<00:38, 231.67it/s]Converting examples to features:  17%|█▋        | 1762/10570 [00:08<00:37, 234.64it/s]Converting examples to features:  17%|█▋        | 1788/10570 [00:08<00:36, 239.67it/s]Converting examples to features:  17%|█▋        | 1813/10570 [00:08<00:36, 238.99it/s]Converting examples to features:  17%|█▋        | 1838/10570 [00:09<00:39, 222.72it/s]Converting examples to features:  18%|█▊        | 1862/10570 [00:09<00:38, 227.30it/s]Converting examples to features:  18%|█▊        | 1896/10570 [00:09<00:34, 252.19it/s]Converting examples to features:  18%|█▊        | 1927/10570 [00:09<00:32, 266.39it/s]Converting examples to features:  18%|█▊        | 1955/10570 [00:09<00:33, 255.98it/s]Converting examples to features:  19%|█▉        | 1984/10570 [00:09<00:32, 264.39it/s]Converting examples to features:  19%|█▉        | 2012/10570 [00:09<00:36, 235.04it/s]Converting examples to features:  19%|█▉        | 2037/10570 [00:09<00:37, 230.18it/s]Converting examples to features:  20%|█▉        | 2069/10570 [00:09<00:33, 251.33it/s]Converting examples to features:  20%|█▉        | 2101/10570 [00:10<00:31, 267.21it/s]Converting examples to features:  20%|██        | 2129/10570 [00:10<00:42, 197.73it/s]Converting examples to features:  20%|██        | 2153/10570 [00:10<00:41, 204.14it/s]Converting examples to features:  21%|██        | 2176/10570 [00:10<00:42, 196.21it/s]Converting examples to features:  21%|██        | 2202/10570 [00:10<00:40, 208.95it/s]Converting examples to features:  21%|██        | 2235/10570 [00:10<00:35, 231.96it/s]Converting examples to features:  21%|██▏       | 2261/10570 [00:10<00:39, 209.85it/s]Converting examples to features:  22%|██▏       | 2289/10570 [00:10<00:36, 225.98it/s]Converting examples to features:  22%|██▏       | 2314/10570 [00:11<00:37, 219.02it/s]Converting examples to features:  22%|██▏       | 2339/10570 [00:11<00:36, 226.71it/s]Converting examples to features:  22%|██▏       | 2363/10570 [00:11<00:35, 230.39it/s]Converting examples to features:  23%|██▎       | 2387/10570 [00:11<00:41, 195.23it/s]Converting examples to features:  23%|██▎       | 2408/10570 [00:11<00:42, 194.23it/s]Converting examples to features:  23%|██▎       | 2432/10570 [00:11<00:39, 205.77it/s]Converting examples to features:  23%|██▎       | 2454/10570 [00:11<00:42, 191.87it/s]Converting examples to features:  23%|██▎       | 2477/10570 [00:11<00:40, 201.63it/s]Converting examples to features:  24%|██▎       | 2498/10570 [00:12<00:43, 186.96it/s]Converting examples to features:  24%|██▍       | 2518/10570 [00:12<00:48, 167.70it/s]Converting examples to features:  24%|██▍       | 2536/10570 [00:12<00:47, 168.05it/s]Converting examples to features:  24%|██▍       | 2554/10570 [00:12<00:53, 151.20it/s]Converting examples to features:  24%|██▍       | 2570/10570 [00:12<00:56, 141.55it/s]Converting examples to features:  24%|██▍       | 2588/10570 [00:12<00:53, 150.15it/s]Converting examples to features:  25%|██▍       | 2613/10570 [00:12<00:46, 170.48it/s]Converting examples to features:  25%|██▍       | 2638/10570 [00:12<00:42, 187.11it/s]Converting examples to features:  25%|██▌       | 2663/10570 [00:12<00:39, 202.02it/s]Converting examples to features:  25%|██▌       | 2685/10570 [00:13<00:38, 205.11it/s]Converting examples to features:  26%|██▌       | 2707/10570 [00:13<00:39, 199.03it/s]Converting examples to features:  26%|██▌       | 2735/10570 [00:13<00:36, 217.48it/s]Converting examples to features:  26%|██▌       | 2770/10570 [00:13<00:32, 243.71it/s]Converting examples to features:  27%|██▋       | 2804/10570 [00:13<00:29, 265.49it/s]Converting examples to features:  27%|██▋       | 2833/10570 [00:13<00:31, 245.00it/s]Converting examples to features:  27%|██▋       | 2860/10570 [00:13<00:33, 227.33it/s]Converting examples to features:  27%|██▋       | 2885/10570 [00:13<00:37, 204.01it/s]Converting examples to features:  28%|██▊       | 2907/10570 [00:14<00:37, 202.49it/s]Converting examples to features:  28%|██▊       | 2929/10570 [00:14<00:37, 201.22it/s]Converting examples to features:  28%|██▊       | 2950/10570 [00:14<00:38, 198.99it/s]Converting examples to features:  28%|██▊       | 2971/10570 [00:14<00:37, 201.05it/s]Converting examples to features:  28%|██▊       | 2992/10570 [00:14<00:37, 203.26it/s]Converting examples to features:  29%|██▊       | 3013/10570 [00:14<00:37, 203.05it/s]Converting examples to features:  29%|██▊       | 3037/10570 [00:14<00:35, 211.25it/s]Converting examples to features:  29%|██▉       | 3059/10570 [00:14<00:37, 200.61it/s]Converting examples to features:  29%|██▉       | 3080/10570 [00:14<00:39, 191.42it/s]Converting examples to features:  29%|██▉       | 3103/10570 [00:14<00:37, 200.06it/s]Converting examples to features:  30%|██▉       | 3124/10570 [00:15<00:37, 196.53it/s]Converting examples to features:  30%|██▉       | 3144/10570 [00:15<00:39, 189.19it/s]Converting examples to features:  30%|██▉       | 3164/10570 [00:15<00:38, 192.29it/s]Converting examples to features:  30%|███       | 3184/10570 [00:15<00:42, 175.28it/s]Converting examples to features:  30%|███       | 3208/10570 [00:15<00:38, 188.95it/s]Converting examples to features:  31%|███       | 3228/10570 [00:15<00:42, 172.07it/s]Converting examples to features:  31%|███       | 3246/10570 [00:15<00:42, 173.16it/s]Converting examples to features:  31%|███       | 3265/10570 [00:15<00:41, 177.74it/s]Converting examples to features:  31%|███       | 3284/10570 [00:16<00:41, 174.69it/s]Converting examples to features:  31%|███▏      | 3304/10570 [00:16<00:40, 180.71it/s]Converting examples to features:  31%|███▏      | 3325/10570 [00:16<00:38, 186.95it/s]Converting examples to features:  32%|███▏      | 3348/10570 [00:16<00:36, 196.45it/s]Converting examples to features:  32%|███▏      | 3368/10570 [00:16<00:38, 188.38it/s]Converting examples to features:  32%|███▏      | 3389/10570 [00:16<00:37, 192.66it/s]Converting examples to features:  32%|███▏      | 3409/10570 [00:16<00:38, 186.40it/s]Converting examples to features:  32%|███▏      | 3428/10570 [00:16<00:40, 177.08it/s]Converting examples to features:  33%|███▎      | 3447/10570 [00:16<00:39, 178.47it/s]Converting examples to features:  33%|███▎      | 3466/10570 [00:16<00:39, 179.93it/s]Converting examples to features:  33%|███▎      | 3485/10570 [00:17<00:41, 172.01it/s]Converting examples to features:  33%|███▎      | 3504/10570 [00:17<00:40, 175.81it/s]Converting examples to features:  33%|███▎      | 3525/10570 [00:17<00:38, 183.88it/s]Converting examples to features:  34%|███▎      | 3548/10570 [00:17<00:36, 194.14it/s]Converting examples to features:  34%|███▍      | 3568/10570 [00:17<00:37, 185.04it/s]Converting examples to features:  34%|███▍      | 3587/10570 [00:17<00:38, 180.30it/s]Converting examples to features:  34%|███▍      | 3606/10570 [00:17<00:38, 179.14it/s]Converting examples to features:  34%|███▍      | 3626/10570 [00:17<00:37, 184.60it/s]Converting examples to features:  35%|███▍      | 3648/10570 [00:17<00:35, 193.59it/s]Converting examples to features:  35%|███▍      | 3668/10570 [00:18<00:36, 190.00it/s]Converting examples to features:  35%|███▍      | 3690/10570 [00:18<00:34, 196.95it/s]Converting examples to features:  35%|███▌      | 3710/10570 [00:18<00:34, 196.56it/s]Converting examples to features:  35%|███▌      | 3730/10570 [00:18<00:35, 191.04it/s]Converting examples to features:  35%|███▌      | 3750/10570 [00:18<00:36, 186.08it/s]Converting examples to features:  36%|███▌      | 3774/10570 [00:18<00:34, 198.85it/s]Converting examples to features:  36%|███▌      | 3795/10570 [00:18<00:37, 181.45it/s]Converting examples to features:  36%|███▌      | 3814/10570 [00:18<00:38, 175.80it/s]Converting examples to features:  36%|███▋      | 3835/10570 [00:18<00:36, 182.90it/s]Converting examples to features:  36%|███▋      | 3854/10570 [00:19<00:37, 178.18it/s]Converting examples to features:  37%|███▋      | 3874/10570 [00:19<00:36, 182.47it/s]Converting examples to features:  37%|███▋      | 3893/10570 [00:19<00:37, 177.82it/s]Converting examples to features:  37%|███▋      | 3912/10570 [00:19<00:36, 180.30it/s]Converting examples to features:  37%|███▋      | 3931/10570 [00:19<00:36, 179.51it/s]Converting examples to features:  37%|███▋      | 3951/10570 [00:19<00:36, 183.32it/s]Converting examples to features:  38%|███▊      | 3972/10570 [00:19<00:34, 190.46it/s]Converting examples to features:  38%|███▊      | 3992/10570 [00:19<00:34, 192.22it/s]Converting examples to features:  38%|███▊      | 4012/10570 [00:19<00:36, 178.32it/s]Converting examples to features:  38%|███▊      | 4031/10570 [00:20<00:37, 176.21it/s]Converting examples to features:  38%|███▊      | 4051/10570 [00:20<00:35, 182.53it/s]Converting examples to features:  39%|███▊      | 4074/10570 [00:20<00:33, 193.82it/s]Converting examples to features:  39%|███▊      | 4094/10570 [00:20<00:35, 181.85it/s]Converting examples to features:  39%|███▉      | 4113/10570 [00:20<00:46, 137.86it/s]Converting examples to features:  39%|███▉      | 4129/10570 [00:20<00:48, 132.99it/s]Converting examples to features:  39%|███▉      | 4144/10570 [00:20<00:57, 111.15it/s]Converting examples to features:  39%|███▉      | 4157/10570 [00:21<01:15, 84.48it/s] Converting examples to features:  39%|███▉      | 4168/10570 [00:21<01:14, 85.77it/s]Converting examples to features:  40%|███▉      | 4179/10570 [00:21<01:15, 84.73it/s]Converting examples to features:  40%|███▉      | 4189/10570 [00:21<01:27, 73.14it/s]Converting examples to features:  40%|███▉      | 4198/10570 [00:21<01:26, 73.91it/s]Converting examples to features:  40%|███▉      | 4207/10570 [00:21<01:26, 73.29it/s]Converting examples to features:  40%|███▉      | 4219/10570 [00:21<01:17, 82.26it/s]Converting examples to features:  40%|████      | 4233/10570 [00:22<01:07, 93.81it/s]Converting examples to features:  40%|████      | 4249/10570 [00:22<00:59, 105.67it/s]Converting examples to features:  40%|████      | 4261/10570 [00:22<01:08, 91.92it/s] Converting examples to features:  40%|████      | 4272/10570 [00:22<01:29, 70.42it/s]Converting examples to features:  41%|████      | 4281/10570 [00:22<01:36, 65.43it/s]Converting examples to features:  41%|████      | 4289/10570 [00:22<01:33, 67.26it/s]Converting examples to features:  41%|████      | 4298/10570 [00:22<01:32, 68.02it/s]Converting examples to features:  41%|████      | 4306/10570 [00:23<01:50, 56.57it/s]Converting examples to features:  41%|████      | 4320/10570 [00:23<01:31, 68.28it/s]Converting examples to features:  41%|████      | 4339/10570 [00:23<01:13, 84.49it/s]Converting examples to features:  41%|████      | 4358/10570 [00:23<01:01, 101.05it/s]Converting examples to features:  41%|████▏     | 4376/10570 [00:23<00:53, 115.48it/s]Converting examples to features:  42%|████▏     | 4393/10570 [00:23<00:48, 126.29it/s]Converting examples to features:  42%|████▏     | 4409/10570 [00:23<00:45, 134.36it/s]Converting examples to features:  42%|████▏     | 4431/10570 [00:23<00:40, 151.35it/s]Converting examples to features:  42%|████▏     | 4450/10570 [00:23<00:38, 160.52it/s]Converting examples to features:  42%|████▏     | 4475/10570 [00:24<00:34, 178.17it/s]Converting examples to features:  43%|████▎     | 4495/10570 [00:24<00:34, 175.94it/s]Converting examples to features:  43%|████▎     | 4514/10570 [00:24<00:38, 156.03it/s]Converting examples to features:  43%|████▎     | 4531/10570 [00:24<00:41, 146.86it/s]Converting examples to features:  43%|████▎     | 4547/10570 [00:24<00:43, 139.91it/s]Converting examples to features:  43%|████▎     | 4570/10570 [00:24<00:37, 158.42it/s]Converting examples to features:  43%|████▎     | 4588/10570 [00:24<00:39, 152.16it/s]Converting examples to features:  44%|████▎     | 4605/10570 [00:24<00:40, 146.50it/s]Converting examples to features:  44%|████▎     | 4622/10570 [00:25<00:39, 151.53it/s]Converting examples to features:  44%|████▍     | 4642/10570 [00:25<00:37, 159.71it/s]Converting examples to features:  44%|████▍     | 4659/10570 [00:25<00:42, 137.70it/s]Converting examples to features:  44%|████▍     | 4674/10570 [00:25<00:42, 138.68it/s]Converting examples to features:  44%|████▍     | 4699/10570 [00:25<00:36, 159.22it/s]Converting examples to features:  45%|████▍     | 4719/10570 [00:25<00:34, 168.96it/s]Converting examples to features:  45%|████▍     | 4738/10570 [00:25<00:34, 169.15it/s]Converting examples to features:  45%|████▍     | 4756/10570 [00:25<00:37, 155.59it/s]Converting examples to features:  45%|████▌     | 4773/10570 [00:26<00:40, 142.50it/s]Converting examples to features:  45%|████▌     | 4793/10570 [00:26<00:37, 155.82it/s]Converting examples to features:  46%|████▌     | 4814/10570 [00:26<00:34, 167.52it/s]Converting examples to features:  46%|████▌     | 4838/10570 [00:26<00:31, 183.52it/s]Converting examples to features:  46%|████▌     | 4858/10570 [00:26<00:38, 149.71it/s]Converting examples to features:  46%|████▌     | 4879/10570 [00:26<00:35, 162.54it/s]Converting examples to features:  46%|████▋     | 4900/10570 [00:26<00:32, 173.20it/s]Converting examples to features:  47%|████▋     | 4919/10570 [00:26<00:31, 177.55it/s]Converting examples to features:  47%|████▋     | 4938/10570 [00:26<00:31, 180.45it/s]Converting examples to features:  47%|████▋     | 4957/10570 [00:27<00:31, 179.48it/s]Converting examples to features:  47%|████▋     | 4976/10570 [00:27<00:32, 170.49it/s]Converting examples to features:  47%|████▋     | 4994/10570 [00:27<00:35, 158.79it/s]Converting examples to features:  47%|████▋     | 5011/10570 [00:27<00:37, 147.57it/s]Converting examples to features:  48%|████▊     | 5028/10570 [00:27<00:36, 152.93it/s]Converting examples to features:  48%|████▊     | 5044/10570 [00:27<00:36, 152.81it/s]Converting examples to features:  48%|████▊     | 5063/10570 [00:27<00:34, 161.78it/s]Converting examples to features:  48%|████▊     | 5080/10570 [00:27<00:35, 153.02it/s]Converting examples to features:  48%|████▊     | 5096/10570 [00:27<00:36, 151.51it/s]Converting examples to features:  48%|████▊     | 5117/10570 [00:28<00:33, 165.12it/s]Converting examples to features:  49%|████▊     | 5135/10570 [00:28<00:32, 167.54it/s]Converting examples to features:  49%|████▉     | 5153/10570 [00:28<00:32, 165.23it/s]Converting examples to features:  49%|████▉     | 5173/10570 [00:28<00:31, 173.59it/s]Converting examples to features:  49%|████▉     | 5191/10570 [00:28<00:31, 169.35it/s]Converting examples to features:  49%|████▉     | 5209/10570 [00:28<00:31, 172.04it/s]Converting examples to features:  49%|████▉     | 5227/10570 [00:28<00:31, 171.74it/s]Converting examples to features:  50%|████▉     | 5245/10570 [00:28<00:31, 171.21it/s]Converting examples to features:  50%|████▉     | 5266/10570 [00:28<00:29, 180.14it/s]Converting examples to features:  50%|█████     | 5287/10570 [00:29<00:28, 186.45it/s]Converting examples to features:  50%|█████     | 5311/10570 [00:29<00:26, 198.36it/s]Converting examples to features:  50%|█████     | 5332/10570 [00:29<00:27, 193.63it/s]Converting examples to features:  51%|█████     | 5352/10570 [00:29<00:29, 175.61it/s]Converting examples to features:  51%|█████     | 5371/10570 [00:29<00:29, 174.22it/s]Converting examples to features:  51%|█████     | 5392/10570 [00:29<00:28, 180.52it/s]Converting examples to features:  51%|█████     | 5411/10570 [00:29<00:29, 177.01it/s]Converting examples to features:  51%|█████▏    | 5429/10570 [00:29<00:31, 164.00it/s]Converting examples to features:  52%|█████▏    | 5446/10570 [00:29<00:33, 152.15it/s]Converting examples to features:  52%|█████▏    | 5462/10570 [00:30<00:39, 129.73it/s]Converting examples to features:  52%|█████▏    | 5476/10570 [00:30<00:38, 132.64it/s]Converting examples to features:  52%|█████▏    | 5490/10570 [00:30<00:41, 122.43it/s]Converting examples to features:  52%|█████▏    | 5506/10570 [00:30<00:38, 131.13it/s]Converting examples to features:  52%|█████▏    | 5520/10570 [00:30<00:39, 129.31it/s]Converting examples to features:  52%|█████▏    | 5537/10570 [00:30<00:36, 139.23it/s]Converting examples to features:  53%|█████▎    | 5552/10570 [00:30<00:35, 140.48it/s]Converting examples to features:  53%|█████▎    | 5568/10570 [00:30<00:34, 144.27it/s]Converting examples to features:  53%|█████▎    | 5584/10570 [00:30<00:33, 146.98it/s]Converting examples to features:  53%|█████▎    | 5604/10570 [00:31<00:31, 158.13it/s]Converting examples to features:  53%|█████▎    | 5621/10570 [00:31<00:34, 144.03it/s]Converting examples to features:  53%|█████▎    | 5637/10570 [00:31<00:33, 146.87it/s]Converting examples to features:  53%|█████▎    | 5654/10570 [00:31<00:32, 149.40it/s]Converting examples to features:  54%|█████▎    | 5671/10570 [00:31<00:31, 153.69it/s]Converting examples to features:  54%|█████▍    | 5693/10570 [00:31<00:28, 168.39it/s]Converting examples to features:  54%|█████▍    | 5712/10570 [00:31<00:27, 174.06it/s]Converting examples to features:  54%|█████▍    | 5730/10570 [00:31<00:28, 170.38it/s]Converting examples to features:  54%|█████▍    | 5748/10570 [00:31<00:29, 165.06it/s]Converting examples to features:  55%|█████▍    | 5765/10570 [00:32<00:29, 165.07it/s]Converting examples to features:  55%|█████▍    | 5782/10570 [00:32<00:30, 155.61it/s]Converting examples to features:  55%|█████▍    | 5798/10570 [00:32<00:32, 146.16it/s]Converting examples to features:  55%|█████▍    | 5813/10570 [00:32<00:32, 147.01it/s]Converting examples to features:  55%|█████▌    | 5833/10570 [00:32<00:29, 158.21it/s]Converting examples to features:  55%|█████▌    | 5850/10570 [00:32<00:31, 149.67it/s]Converting examples to features:  56%|█████▌    | 5867/10570 [00:32<00:30, 153.67it/s]Converting examples to features:  56%|█████▌    | 5887/10570 [00:32<00:28, 163.51it/s]Converting examples to features:  56%|█████▌    | 5904/10570 [00:32<00:29, 157.81it/s]Converting examples to features:  56%|█████▌    | 5921/10570 [00:33<00:31, 147.86it/s]Converting examples to features:  56%|█████▌    | 5938/10570 [00:33<00:30, 153.64it/s]Converting examples to features:  56%|█████▋    | 5957/10570 [00:33<00:28, 162.17it/s]Converting examples to features:  57%|█████▋    | 5976/10570 [00:33<00:27, 168.26it/s]Converting examples to features:  57%|█████▋    | 5994/10570 [00:33<00:27, 164.65it/s]Converting examples to features:  57%|█████▋    | 6011/10570 [00:33<00:29, 156.46it/s]Converting examples to features:  57%|█████▋    | 6030/10570 [00:33<00:27, 162.56it/s]Converting examples to features:  57%|█████▋    | 6047/10570 [00:33<00:29, 150.99it/s]Converting examples to features:  57%|█████▋    | 6063/10570 [00:34<00:33, 135.69it/s]Converting examples to features:  58%|█████▊    | 6080/10570 [00:34<00:31, 142.59it/s]Converting examples to features:  58%|█████▊    | 6095/10570 [00:34<00:31, 143.86it/s]Converting examples to features:  58%|█████▊    | 6114/10570 [00:34<00:28, 154.75it/s]Converting examples to features:  58%|█████▊    | 6137/10570 [00:34<00:25, 170.56it/s]Converting examples to features:  58%|█████▊    | 6155/10570 [00:34<00:25, 172.93it/s]Converting examples to features:  58%|█████▊    | 6176/10570 [00:34<00:24, 180.63it/s]Converting examples to features:  59%|█████▊    | 6195/10570 [00:34<00:24, 180.95it/s]Converting examples to features:  59%|█████▉    | 6214/10570 [00:34<00:25, 172.91it/s]Converting examples to features:  59%|█████▉    | 6232/10570 [00:35<00:28, 153.12it/s]Converting examples to features:  59%|█████▉    | 6250/10570 [00:35<00:27, 158.50it/s]Converting examples to features:  59%|█████▉    | 6267/10570 [00:35<00:27, 155.77it/s]Converting examples to features:  59%|█████▉    | 6288/10570 [00:35<00:25, 168.33it/s]Converting examples to features:  60%|█████▉    | 6308/10570 [00:35<00:24, 175.93it/s]Converting examples to features:  60%|█████▉    | 6327/10570 [00:35<00:25, 168.26it/s]Converting examples to features:  60%|██████    | 6349/10570 [00:35<00:23, 180.11it/s]Converting examples to features:  60%|██████    | 6369/10570 [00:35<00:22, 184.44it/s]Converting examples to features:  60%|██████    | 6388/10570 [00:35<00:25, 166.21it/s]Converting examples to features:  61%|██████    | 6409/10570 [00:36<00:23, 176.37it/s]Converting examples to features:  61%|██████    | 6430/10570 [00:36<00:22, 182.48it/s]Converting examples to features:  61%|██████    | 6452/10570 [00:36<00:21, 190.55it/s]Converting examples to features:  61%|██████    | 6472/10570 [00:36<00:21, 186.37it/s]Converting examples to features:  61%|██████▏   | 6493/10570 [00:36<00:21, 190.42it/s]Converting examples to features:  62%|██████▏   | 6513/10570 [00:36<00:22, 181.04it/s]Converting examples to features:  62%|██████▏   | 6532/10570 [00:36<00:22, 180.06it/s]Converting examples to features:  62%|██████▏   | 6551/10570 [00:36<00:22, 182.38it/s]Converting examples to features:  62%|██████▏   | 6570/10570 [00:36<00:21, 184.28it/s]Converting examples to features:  62%|██████▏   | 6589/10570 [00:37<00:23, 168.73it/s]Converting examples to features:  63%|██████▎   | 6607/10570 [00:37<00:24, 163.42it/s]Converting examples to features:  63%|██████▎   | 6628/10570 [00:37<00:22, 173.35it/s]Converting examples to features:  63%|██████▎   | 6648/10570 [00:37<00:21, 180.12it/s]Converting examples to features:  63%|██████▎   | 6667/10570 [00:37<00:21, 180.74it/s]Converting examples to features:  63%|██████▎   | 6686/10570 [00:37<00:21, 177.21it/s]Converting examples to features:  63%|██████▎   | 6704/10570 [00:37<00:23, 161.12it/s]Converting examples to features:  64%|██████▎   | 6721/10570 [00:37<00:25, 151.95it/s]Converting examples to features:  64%|██████▍   | 6742/10570 [00:37<00:23, 164.04it/s]Converting examples to features:  64%|██████▍   | 6767/10570 [00:38<00:20, 182.17it/s]Converting examples to features:  64%|██████▍   | 6787/10570 [00:38<00:22, 171.72it/s]Converting examples to features:  64%|██████▍   | 6806/10570 [00:38<00:22, 165.39it/s]Converting examples to features:  65%|██████▍   | 6824/10570 [00:38<00:24, 152.42it/s]Converting examples to features:  65%|██████▍   | 6840/10570 [00:38<00:25, 143.80it/s]Converting examples to features:  65%|██████▍   | 6860/10570 [00:38<00:23, 155.61it/s]Converting examples to features:  65%|██████▌   | 6877/10570 [00:38<00:25, 145.73it/s]Converting examples to features:  65%|██████▌   | 6895/10570 [00:38<00:23, 153.18it/s]Converting examples to features:  65%|██████▌   | 6911/10570 [00:39<00:24, 146.43it/s]Converting examples to features:  66%|██████▌   | 6936/10570 [00:39<00:21, 165.76it/s]Converting examples to features:  66%|██████▌   | 6954/10570 [00:39<00:21, 169.16it/s]Converting examples to features:  66%|██████▌   | 6973/10570 [00:39<00:20, 173.52it/s]Converting examples to features:  66%|██████▌   | 6994/10570 [00:39<00:19, 182.94it/s]Converting examples to features:  66%|██████▋   | 7015/10570 [00:39<00:18, 189.36it/s]Converting examples to features:  67%|██████▋   | 7035/10570 [00:39<00:18, 187.62it/s]Converting examples to features:  67%|██████▋   | 7055/10570 [00:39<00:19, 181.55it/s]Converting examples to features:  67%|██████▋   | 7074/10570 [00:39<00:19, 176.01it/s]Converting examples to features:  67%|██████▋   | 7094/10570 [00:39<00:19, 181.22it/s]Converting examples to features:  67%|██████▋   | 7114/10570 [00:40<00:18, 185.89it/s]Converting examples to features:  67%|██████▋   | 7134/10570 [00:40<00:18, 188.57it/s]Converting examples to features:  68%|██████▊   | 7155/10570 [00:40<00:17, 192.58it/s]Converting examples to features:  68%|██████▊   | 7175/10570 [00:40<00:17, 192.82it/s]Converting examples to features:  68%|██████▊   | 7195/10570 [00:40<00:18, 181.79it/s]Converting examples to features:  68%|██████▊   | 7214/10570 [00:40<00:19, 174.78it/s]Converting examples to features:  68%|██████▊   | 7232/10570 [00:40<00:20, 163.81it/s]Converting examples to features:  69%|██████▊   | 7250/10570 [00:40<00:19, 167.16it/s]Converting examples to features:  69%|██████▉   | 7267/10570 [00:40<00:21, 156.65it/s]Converting examples to features:  69%|██████▉   | 7284/10570 [00:41<00:20, 160.33it/s]Converting examples to features:  69%|██████▉   | 7303/10570 [00:41<00:19, 167.15it/s]Converting examples to features:  69%|██████▉   | 7321/10570 [00:41<00:19, 170.37it/s]Converting examples to features:  69%|██████▉   | 7339/10570 [00:41<00:23, 137.97it/s]Converting examples to features:  70%|██████▉   | 7360/10570 [00:41<00:21, 152.84it/s]Converting examples to features:  70%|██████▉   | 7377/10570 [00:41<00:20, 153.98it/s]Converting examples to features:  70%|██████▉   | 7394/10570 [00:41<00:21, 147.38it/s]Converting examples to features:  70%|███████   | 7414/10570 [00:41<00:19, 158.21it/s]Converting examples to features:  70%|███████   | 7433/10570 [00:42<00:18, 165.17it/s]Converting examples to features:  70%|███████   | 7451/10570 [00:42<00:18, 165.81it/s]Converting examples to features:  71%|███████   | 7468/10570 [00:42<00:20, 152.39it/s]Converting examples to features:  71%|███████   | 7487/10570 [00:42<00:19, 161.66it/s]Converting examples to features:  71%|███████   | 7504/10570 [00:42<00:19, 161.17it/s]Converting examples to features:  71%|███████   | 7525/10570 [00:42<00:17, 171.49it/s]Converting examples to features:  71%|███████▏  | 7543/10570 [00:42<00:18, 164.64it/s]Converting examples to features:  72%|███████▏  | 7562/10570 [00:42<00:17, 170.95it/s]Converting examples to features:  72%|███████▏  | 7581/10570 [00:42<00:17, 173.54it/s]Converting examples to features:  72%|███████▏  | 7599/10570 [00:42<00:17, 174.04it/s]Converting examples to features:  72%|███████▏  | 7617/10570 [00:43<00:17, 171.14it/s]Converting examples to features:  72%|███████▏  | 7636/10570 [00:43<00:16, 175.38it/s]Converting examples to features:  72%|███████▏  | 7654/10570 [00:43<00:17, 171.30it/s]Converting examples to features:  73%|███████▎  | 7672/10570 [00:43<00:17, 162.18it/s]Converting examples to features:  73%|███████▎  | 7693/10570 [00:43<00:16, 172.60it/s]Converting examples to features:  73%|███████▎  | 7711/10570 [00:43<00:16, 168.34it/s]Converting examples to features:  73%|███████▎  | 7730/10570 [00:43<00:16, 173.37it/s]Converting examples to features:  73%|███████▎  | 7748/10570 [00:43<00:17, 158.17it/s]Converting examples to features:  73%|███████▎  | 7765/10570 [00:44<00:18, 151.27it/s]Converting examples to features:  74%|███████▎  | 7781/10570 [00:44<00:36, 75.53it/s] Converting examples to features:  74%|███████▍  | 7799/10570 [00:44<00:30, 90.92it/s]Converting examples to features:  74%|███████▍  | 7814/10570 [00:44<00:26, 102.23it/s]Converting examples to features:  74%|███████▍  | 7830/10570 [00:44<00:24, 114.04it/s]Converting examples to features:  74%|███████▍  | 7846/10570 [00:44<00:21, 124.64it/s]Converting examples to features:  74%|███████▍  | 7867/10570 [00:45<00:19, 140.57it/s]Converting examples to features:  75%|███████▍  | 7884/10570 [00:45<00:18, 146.42it/s]Converting examples to features:  75%|███████▍  | 7903/10570 [00:45<00:17, 155.87it/s]Converting examples to features:  75%|███████▍  | 7924/10570 [00:45<00:15, 167.50it/s]Converting examples to features:  75%|███████▌  | 7942/10570 [00:45<00:15, 169.12it/s]Converting examples to features:  75%|███████▌  | 7961/10570 [00:45<00:15, 173.49it/s]Converting examples to features:  75%|███████▌  | 7979/10570 [00:45<00:16, 156.38it/s]Converting examples to features:  76%|███████▌  | 7996/10570 [00:45<00:16, 155.86it/s]Converting examples to features:  76%|███████▌  | 8013/10570 [00:45<00:16, 156.60it/s]Converting examples to features:  76%|███████▌  | 8030/10570 [00:45<00:15, 159.30it/s]Converting examples to features:  76%|███████▌  | 8047/10570 [00:46<00:17, 140.75it/s]Converting examples to features:  76%|███████▋  | 8064/10570 [00:46<00:17, 147.18it/s]Converting examples to features:  76%|███████▋  | 8086/10570 [00:46<00:15, 162.46it/s]Converting examples to features:  77%|███████▋  | 8108/10570 [00:46<00:13, 176.00it/s]Converting examples to features:  77%|███████▋  | 8128/10570 [00:46<00:13, 181.12it/s]Converting examples to features:  77%|███████▋  | 8147/10570 [00:46<00:14, 170.35it/s]Converting examples to features:  77%|███████▋  | 8165/10570 [00:46<00:14, 161.58it/s]Converting examples to features:  77%|███████▋  | 8182/10570 [00:46<00:15, 159.02it/s]Converting examples to features:  78%|███████▊  | 8199/10570 [00:47<00:15, 148.53it/s]Converting examples to features:  78%|███████▊  | 8215/10570 [00:47<00:15, 150.43it/s]Converting examples to features:  78%|███████▊  | 8231/10570 [00:47<00:15, 149.45it/s]Converting examples to features:  78%|███████▊  | 8247/10570 [00:47<00:15, 150.90it/s]Converting examples to features:  78%|███████▊  | 8263/10570 [00:47<00:17, 134.24it/s]Converting examples to features:  78%|███████▊  | 8277/10570 [00:47<00:17, 129.67it/s]Converting examples to features:  78%|███████▊  | 8291/10570 [00:47<00:17, 127.52it/s]Converting examples to features:  79%|███████▊  | 8311/10570 [00:47<00:15, 141.71it/s]Converting examples to features:  79%|███████▉  | 8326/10570 [00:47<00:16, 138.99it/s]Converting examples to features:  79%|███████▉  | 8344/10570 [00:48<00:15, 148.14it/s]Converting examples to features:  79%|███████▉  | 8363/10570 [00:48<00:13, 157.76it/s]Converting examples to features:  79%|███████▉  | 8383/10570 [00:48<00:13, 167.20it/s]Converting examples to features:  79%|███████▉  | 8403/10570 [00:48<00:12, 175.81it/s]Converting examples to features:  80%|███████▉  | 8424/10570 [00:48<00:11, 181.82it/s]Converting examples to features:  80%|███████▉  | 8445/10570 [00:48<00:11, 188.89it/s]Converting examples to features:  80%|████████  | 8468/10570 [00:48<00:10, 198.28it/s]Converting examples to features:  80%|████████  | 8489/10570 [00:48<00:11, 185.71it/s]Converting examples to features:  80%|████████  | 8508/10570 [00:48<00:11, 180.71it/s]Converting examples to features:  81%|████████  | 8528/10570 [00:49<00:11, 185.25it/s]Converting examples to features:  81%|████████  | 8549/10570 [00:49<00:10, 190.00it/s]Converting examples to features:  81%|████████  | 8569/10570 [00:49<00:11, 179.89it/s]Converting examples to features:  81%|████████  | 8588/10570 [00:49<00:11, 170.25it/s]Converting examples to features:  81%|████████▏ | 8611/10570 [00:49<00:10, 183.89it/s]Converting examples to features:  82%|████████▏ | 8630/10570 [00:49<00:10, 181.98it/s]Converting examples to features:  82%|████████▏ | 8649/10570 [00:49<00:10, 174.99it/s]Converting examples to features:  82%|████████▏ | 8667/10570 [00:49<00:11, 167.03it/s]Converting examples to features:  82%|████████▏ | 8686/10570 [00:49<00:10, 173.18it/s]Converting examples to features:  82%|████████▏ | 8708/10570 [00:50<00:10, 184.66it/s]Converting examples to features:  83%|████████▎ | 8727/10570 [00:50<00:10, 180.97it/s]Converting examples to features:  83%|████████▎ | 8749/10570 [00:50<00:09, 190.77it/s]Converting examples to features:  83%|████████▎ | 8769/10570 [00:50<00:09, 188.18it/s]Converting examples to features:  83%|████████▎ | 8789/10570 [00:50<00:09, 184.58it/s]Converting examples to features:  83%|████████▎ | 8808/10570 [00:50<00:09, 179.19it/s]Converting examples to features:  84%|████████▎ | 8828/10570 [00:50<00:09, 182.82it/s]Converting examples to features:  84%|████████▎ | 8849/10570 [00:50<00:09, 190.06it/s]Converting examples to features:  84%|████████▍ | 8871/10570 [00:50<00:08, 197.88it/s]Converting examples to features:  84%|████████▍ | 8892/10570 [00:50<00:08, 196.57it/s]Converting examples to features:  84%|████████▍ | 8912/10570 [00:51<00:08, 196.58it/s]Converting examples to features:  85%|████████▍ | 8934/10570 [00:51<00:08, 201.33it/s]Converting examples to features:  85%|████████▍ | 8955/10570 [00:51<00:07, 202.93it/s]Converting examples to features:  85%|████████▍ | 8977/10570 [00:51<00:07, 207.55it/s]Converting examples to features:  85%|████████▌ | 8998/10570 [00:51<00:07, 202.53it/s]Converting examples to features:  85%|████████▌ | 9019/10570 [00:51<00:08, 193.39it/s]Converting examples to features:  86%|████████▌ | 9039/10570 [00:51<00:08, 176.51it/s]Converting examples to features:  86%|████████▌ | 9058/10570 [00:51<00:08, 178.86it/s]Converting examples to features:  86%|████████▌ | 9077/10570 [00:51<00:08, 175.75it/s]Converting examples to features:  86%|████████▌ | 9097/10570 [00:52<00:08, 179.18it/s]Converting examples to features:  86%|████████▌ | 9116/10570 [00:52<00:08, 176.79it/s]Converting examples to features:  86%|████████▋ | 9138/10570 [00:52<00:07, 186.65it/s]Converting examples to features:  87%|████████▋ | 9157/10570 [00:52<00:07, 184.03it/s]Converting examples to features:  87%|████████▋ | 9178/10570 [00:52<00:07, 190.65it/s]Converting examples to features:  87%|████████▋ | 9201/10570 [00:52<00:06, 199.27it/s]Converting examples to features:  87%|████████▋ | 9222/10570 [00:52<00:07, 189.64it/s]Converting examples to features:  87%|████████▋ | 9244/10570 [00:52<00:06, 197.41it/s]Converting examples to features:  88%|████████▊ | 9265/10570 [00:52<00:06, 193.23it/s]Converting examples to features:  88%|████████▊ | 9285/10570 [00:53<00:06, 193.08it/s]Converting examples to features:  88%|████████▊ | 9306/10570 [00:53<00:06, 195.51it/s]Converting examples to features:  88%|████████▊ | 9326/10570 [00:53<00:06, 190.81it/s]Converting examples to features:  88%|████████▊ | 9346/10570 [00:53<00:06, 188.76it/s]Converting examples to features:  89%|████████▊ | 9369/10570 [00:53<00:06, 198.66it/s]Converting examples to features:  89%|████████▉ | 9390/10570 [00:53<00:06, 188.19it/s]Converting examples to features:  89%|████████▉ | 9410/10570 [00:53<00:06, 186.93it/s]Converting examples to features:  89%|████████▉ | 9429/10570 [00:53<00:06, 187.24it/s]Converting examples to features:  89%|████████▉ | 9448/10570 [00:53<00:05, 187.80it/s]Converting examples to features:  90%|████████▉ | 9468/10570 [00:53<00:05, 190.19it/s]Converting examples to features:  90%|████████▉ | 9488/10570 [00:54<00:06, 179.98it/s]Converting examples to features:  90%|████████▉ | 9507/10570 [00:54<00:06, 176.36it/s]Converting examples to features:  90%|█████████ | 9531/10570 [00:54<00:05, 190.32it/s]Converting examples to features:  90%|█████████ | 9551/10570 [00:54<00:05, 188.72it/s]Converting examples to features:  91%|█████████ | 9571/10570 [00:54<00:05, 175.41it/s]Converting examples to features:  91%|█████████ | 9589/10570 [00:54<00:06, 162.73it/s]Converting examples to features:  91%|█████████ | 9610/10570 [00:54<00:05, 174.01it/s]Converting examples to features:  91%|█████████ | 9628/10570 [00:54<00:05, 173.42it/s]Converting examples to features:  91%|█████████▏| 9649/10570 [00:55<00:05, 181.17it/s]Converting examples to features:  91%|█████████▏| 9670/10570 [00:55<00:04, 186.58it/s]Converting examples to features:  92%|█████████▏| 9693/10570 [00:55<00:04, 196.31it/s]Converting examples to features:  92%|█████████▏| 9716/10570 [00:55<00:04, 202.93it/s]Converting examples to features:  92%|█████████▏| 9739/10570 [00:55<00:03, 209.83it/s]Converting examples to features:  92%|█████████▏| 9761/10570 [00:55<00:03, 205.64it/s]Converting examples to features:  93%|█████████▎| 9782/10570 [00:55<00:03, 200.34it/s]Converting examples to features:  93%|█████████▎| 9803/10570 [00:55<00:03, 194.09it/s]Converting examples to features:  93%|█████████▎| 9824/10570 [00:55<00:03, 196.19it/s]Converting examples to features:  93%|█████████▎| 9844/10570 [00:56<00:04, 157.33it/s]Converting examples to features:  93%|█████████▎| 9864/10570 [00:56<00:04, 167.93it/s]Converting examples to features:  93%|█████████▎| 9882/10570 [00:56<00:04, 166.92it/s]Converting examples to features:  94%|█████████▎| 9902/10570 [00:56<00:03, 173.23it/s]Converting examples to features:  94%|█████████▍| 9920/10570 [00:56<00:03, 167.98it/s]Converting examples to features:  94%|█████████▍| 9942/10570 [00:56<00:03, 179.28it/s]Converting examples to features:  94%|█████████▍| 9961/10570 [00:56<00:03, 174.87it/s]Converting examples to features:  94%|█████████▍| 9979/10570 [00:56<00:03, 156.39it/s]Converting examples to features:  95%|█████████▍| 9996/10570 [00:56<00:03, 153.57it/s]Converting examples to features:  95%|█████████▍| 10017/10570 [00:57<00:03, 166.87it/s]Converting examples to features:  95%|█████████▍| 10038/10570 [00:57<00:02, 177.78it/s]Converting examples to features:  95%|█████████▌| 10057/10570 [00:57<00:02, 178.69it/s]Converting examples to features:  95%|█████████▌| 10076/10570 [00:57<00:02, 170.35it/s]Converting examples to features:  95%|█████████▌| 10094/10570 [00:57<00:02, 169.28it/s]Converting examples to features:  96%|█████████▌| 10114/10570 [00:57<00:02, 176.80it/s]Converting examples to features:  96%|█████████▌| 10133/10570 [00:57<00:02, 179.18it/s]Converting examples to features:  96%|█████████▌| 10152/10570 [00:57<00:02, 177.33it/s]Converting examples to features:  96%|█████████▌| 10170/10570 [00:57<00:02, 166.64it/s]Converting examples to features:  96%|█████████▋| 10188/10570 [00:58<00:02, 170.11it/s]Converting examples to features:  97%|█████████▋| 10206/10570 [00:58<00:02, 172.28it/s]Converting examples to features:  97%|█████████▋| 10226/10570 [00:58<00:01, 179.64it/s]Converting examples to features:  97%|█████████▋| 10245/10570 [00:58<00:01, 181.82it/s]Converting examples to features:  97%|█████████▋| 10264/10570 [00:58<00:01, 170.80it/s]Converting examples to features:  97%|█████████▋| 10284/10570 [00:58<00:01, 175.90it/s]Converting examples to features:  97%|█████████▋| 10303/10570 [00:58<00:01, 178.58it/s]Converting examples to features:  98%|█████████▊| 10322/10570 [00:58<00:01, 180.26it/s]Converting examples to features:  98%|█████████▊| 10341/10570 [00:58<00:01, 180.74it/s]Converting examples to features:  98%|█████████▊| 10360/10570 [00:59<00:01, 171.92it/s]Converting examples to features:  98%|█████████▊| 10378/10570 [00:59<00:01, 161.89it/s]Converting examples to features:  98%|█████████▊| 10395/10570 [00:59<00:01, 150.47it/s]Converting examples to features:  99%|█████████▊| 10414/10570 [00:59<00:00, 159.90it/s]Converting examples to features:  99%|█████████▊| 10431/10570 [00:59<00:00, 148.91it/s]Converting examples to features:  99%|█████████▉| 10447/10570 [00:59<00:00, 151.62it/s]Converting examples to features:  99%|█████████▉| 10463/10570 [00:59<00:00, 140.95it/s]Converting examples to features:  99%|█████████▉| 10478/10570 [00:59<00:00, 139.96it/s]Converting examples to features:  99%|█████████▉| 10496/10570 [00:59<00:00, 149.89it/s]Converting examples to features:  99%|█████████▉| 10516/10570 [01:00<00:00, 160.84it/s]Converting examples to features: 100%|█████████▉| 10534/10570 [01:00<00:00, 163.40it/s]Converting examples to features: 100%|█████████▉| 10555/10570 [01:00<00:00, 174.15it/s]Converting examples to features: 100%|██████████| 10570/10570 [01:00<00:00, 175.21it/s]
+12/15/2019 22:05:40 - INFO - __main__ -   Saving features into cached file ./cached_dev_distilbert-base-uncased_384
+12/15/2019 22:05:48 - INFO - __main__ -   ***** Running evaluation  *****
+12/15/2019 22:05:48 - INFO - __main__ -     Num examples = 10833
+12/15/2019 22:05:48 - INFO - __main__ -     Batch size = 8
+Evaluating:   0%|          | 0/1355 [00:00<?, ?it/s]Evaluating:   1%|          | 7/1355 [00:00<00:21, 62.57it/s]Evaluating:   1%|          | 14/1355 [00:00<00:21, 63.53it/s]Evaluating:   2%|▏         | 21/1355 [00:00<00:20, 64.42it/s]Evaluating:   2%|▏         | 28/1355 [00:00<00:20, 65.28it/s]Evaluating:   3%|▎         | 35/1355 [00:00<00:20, 65.52it/s]Evaluating:   3%|▎         | 42/1355 [00:00<00:19, 66.24it/s]Evaluating:   4%|▎         | 49/1355 [00:00<00:19, 66.68it/s]Evaluating:   4%|▍         | 56/1355 [00:00<00:19, 67.06it/s]Evaluating:   5%|▍         | 63/1355 [00:00<00:19, 67.32it/s]Evaluating:   5%|▌         | 70/1355 [00:01<00:19, 67.28it/s]Evaluating:   6%|▌         | 77/1355 [00:01<00:18, 67.34it/s]Evaluating:   6%|▌         | 84/1355 [00:01<00:18, 67.40it/s]Evaluating:   7%|▋         | 91/1355 [00:01<00:18, 67.52it/s]Evaluating:   7%|▋         | 98/1355 [00:01<00:18, 67.59it/s]Evaluating:   8%|▊         | 105/1355 [00:01<00:18, 67.47it/s]Evaluating:   8%|▊         | 112/1355 [00:01<00:18, 67.58it/s]Evaluating:   9%|▉         | 119/1355 [00:01<00:18, 67.69it/s]Evaluating:   9%|▉         | 126/1355 [00:01<00:18, 67.77it/s]Evaluating:  10%|▉         | 133/1355 [00:01<00:18, 67.74it/s]Evaluating:  10%|█         | 140/1355 [00:02<00:17, 67.57it/s]Evaluating:  11%|█         | 147/1355 [00:02<00:17, 67.64it/s]Evaluating:  11%|█▏        | 154/1355 [00:02<00:17, 67.64it/s]Evaluating:  12%|█▏        | 161/1355 [00:02<00:17, 67.68it/s]Evaluating:  12%|█▏        | 168/1355 [00:02<00:17, 67.67it/s]Evaluating:  13%|█▎        | 175/1355 [00:02<00:17, 67.40it/s]Evaluating:  13%|█▎        | 182/1355 [00:02<00:17, 67.47it/s]Evaluating:  14%|█▍        | 189/1355 [00:02<00:17, 67.59it/s]Evaluating:  14%|█▍        | 196/1355 [00:02<00:17, 67.66it/s]Evaluating:  15%|█▍        | 203/1355 [00:03<00:17, 67.76it/s]Evaluating:  15%|█▌        | 210/1355 [00:03<00:16, 67.81it/s]Evaluating:  16%|█▌        | 217/1355 [00:03<00:16, 67.59it/s]Evaluating:  17%|█▋        | 224/1355 [00:03<00:16, 67.68it/s]Evaluating:  17%|█▋        | 231/1355 [00:03<00:16, 67.81it/s]Evaluating:  18%|█▊        | 238/1355 [00:03<00:16, 67.80it/s]Evaluating:  18%|█▊        | 245/1355 [00:03<00:16, 67.88it/s]Evaluating:  19%|█▊        | 252/1355 [00:03<00:16, 67.93it/s]Evaluating:  19%|█▉        | 259/1355 [00:03<00:16, 67.94it/s]Evaluating:  20%|█▉        | 266/1355 [00:03<00:16, 67.51it/s]Evaluating:  20%|██        | 273/1355 [00:04<00:16, 67.62it/s]Evaluating:  21%|██        | 280/1355 [00:04<00:15, 67.74it/s]Evaluating:  21%|██        | 287/1355 [00:04<00:15, 67.81it/s]Evaluating:  22%|██▏       | 294/1355 [00:04<00:15, 67.87it/s]Evaluating:  22%|██▏       | 301/1355 [00:04<00:15, 67.95it/s]Evaluating:  23%|██▎       | 308/1355 [00:04<00:15, 67.92it/s]Evaluating:  23%|██▎       | 315/1355 [00:04<00:15, 67.96it/s]Evaluating:  24%|██▍       | 322/1355 [00:04<00:15, 67.99it/s]Evaluating:  24%|██▍       | 329/1355 [00:04<00:15, 67.94it/s]Evaluating:  25%|██▍       | 336/1355 [00:04<00:15, 67.85it/s]Evaluating:  25%|██▌       | 343/1355 [00:05<00:14, 67.78it/s]Evaluating:  26%|██▌       | 350/1355 [00:05<00:14, 67.78it/s]Evaluating:  26%|██▋       | 357/1355 [00:05<00:14, 67.81it/s]Evaluating:  27%|██▋       | 364/1355 [00:05<00:14, 67.83it/s]Evaluating:  27%|██▋       | 371/1355 [00:05<00:14, 67.86it/s]Evaluating:  28%|██▊       | 378/1355 [00:05<00:14, 67.85it/s]Evaluating:  28%|██▊       | 385/1355 [00:05<00:14, 67.88it/s]Evaluating:  29%|██▉       | 392/1355 [00:05<00:14, 67.97it/s]Evaluating:  29%|██▉       | 399/1355 [00:05<00:14, 67.95it/s]Evaluating:  30%|██▉       | 406/1355 [00:06<00:13, 67.94it/s]Evaluating:  30%|███       | 413/1355 [00:06<00:13, 67.91it/s]Evaluating:  31%|███       | 420/1355 [00:06<00:13, 67.96it/s]Evaluating:  32%|███▏      | 427/1355 [00:06<00:13, 67.94it/s]Evaluating:  32%|███▏      | 434/1355 [00:06<00:13, 67.51it/s]Evaluating:  33%|███▎      | 441/1355 [00:06<00:13, 67.69it/s]Evaluating:  33%|███▎      | 448/1355 [00:06<00:13, 67.76it/s]Evaluating:  34%|███▎      | 455/1355 [00:06<00:13, 67.83it/s]Evaluating:  34%|███▍      | 462/1355 [00:06<00:13, 67.89it/s]Evaluating:  35%|███▍      | 469/1355 [00:06<00:13, 67.82it/s]Evaluating:  35%|███▌      | 476/1355 [00:07<00:12, 67.77it/s]Evaluating:  36%|███▌      | 483/1355 [00:07<00:12, 67.74it/s]Evaluating:  36%|███▌      | 490/1355 [00:07<00:12, 67.71it/s]Evaluating:  37%|███▋      | 497/1355 [00:07<00:12, 67.71it/s]Evaluating:  37%|███▋      | 504/1355 [00:07<00:12, 67.70it/s]Evaluating:  38%|███▊      | 511/1355 [00:07<00:12, 67.74it/s]Evaluating:  38%|███▊      | 518/1355 [00:07<00:12, 67.71it/s]Evaluating:  39%|███▊      | 525/1355 [00:07<00:12, 67.69it/s]Evaluating:  39%|███▉      | 532/1355 [00:07<00:12, 67.72it/s]Evaluating:  40%|███▉      | 539/1355 [00:07<00:12, 67.69it/s]Evaluating:  40%|████      | 546/1355 [00:08<00:11, 67.66it/s]Evaluating:  41%|████      | 553/1355 [00:08<00:11, 67.76it/s]Evaluating:  41%|████▏     | 560/1355 [00:08<00:11, 67.85it/s]Evaluating:  42%|████▏     | 567/1355 [00:08<00:11, 67.89it/s]Evaluating:  42%|████▏     | 574/1355 [00:08<00:11, 67.92it/s]Evaluating:  43%|████▎     | 581/1355 [00:08<00:11, 67.94it/s]Evaluating:  43%|████▎     | 588/1355 [00:08<00:11, 67.96it/s]Evaluating:  44%|████▍     | 595/1355 [00:08<00:11, 67.95it/s]Evaluating:  44%|████▍     | 602/1355 [00:08<00:11, 67.99it/s]Evaluating:  45%|████▍     | 609/1355 [00:09<00:10, 67.98it/s]Evaluating:  45%|████▌     | 616/1355 [00:09<00:10, 67.97it/s]Evaluating:  46%|████▌     | 623/1355 [00:09<00:10, 67.97it/s]Evaluating:  46%|████▋     | 630/1355 [00:09<00:10, 67.98it/s]Evaluating:  47%|████▋     | 637/1355 [00:09<00:10, 67.97it/s]Evaluating:  48%|████▊     | 644/1355 [00:09<00:10, 67.94it/s]Evaluating:  48%|████▊     | 651/1355 [00:09<00:10, 67.95it/s]Evaluating:  49%|████▊     | 658/1355 [00:09<00:10, 67.96it/s]Evaluating:  49%|████▉     | 665/1355 [00:09<00:10, 67.96it/s]Evaluating:  50%|████▉     | 672/1355 [00:09<00:10, 67.99it/s]Evaluating:  50%|█████     | 679/1355 [00:10<00:09, 67.94it/s]Evaluating:  51%|█████     | 686/1355 [00:10<00:09, 67.90it/s]Evaluating:  51%|█████     | 693/1355 [00:10<00:09, 67.90it/s]Evaluating:  52%|█████▏    | 700/1355 [00:10<00:09, 67.94it/s]Evaluating:  52%|█████▏    | 707/1355 [00:10<00:09, 67.92it/s]Evaluating:  53%|█████▎    | 714/1355 [00:10<00:09, 67.93it/s]Evaluating:  53%|█████▎    | 721/1355 [00:10<00:09, 67.98it/s]Evaluating:  54%|█████▎    | 728/1355 [00:10<00:09, 67.95it/s]Evaluating:  54%|█████▍    | 735/1355 [00:10<00:09, 67.96it/s]Evaluating:  55%|█████▍    | 742/1355 [00:10<00:09, 67.97it/s]Evaluating:  55%|█████▌    | 749/1355 [00:11<00:08, 67.92it/s]Evaluating:  56%|█████▌    | 756/1355 [00:11<00:08, 67.91it/s]Evaluating:  56%|█████▋    | 763/1355 [00:11<00:08, 67.94it/s]Evaluating:  57%|█████▋    | 770/1355 [00:11<00:08, 67.91it/s]Evaluating:  57%|█████▋    | 777/1355 [00:11<00:08, 67.85it/s]Evaluating:  58%|█████▊    | 784/1355 [00:11<00:08, 67.88it/s]Evaluating:  58%|█████▊    | 791/1355 [00:11<00:08, 67.90it/s]Evaluating:  59%|█████▉    | 798/1355 [00:11<00:08, 67.83it/s]Evaluating:  59%|█████▉    | 805/1355 [00:11<00:08, 67.76it/s]Evaluating:  60%|█████▉    | 812/1355 [00:11<00:08, 67.77it/s]Evaluating:  60%|██████    | 819/1355 [00:12<00:07, 67.73it/s]Evaluating:  61%|██████    | 826/1355 [00:12<00:07, 67.75it/s]Evaluating:  61%|██████▏   | 833/1355 [00:12<00:07, 67.73it/s]Evaluating:  62%|██████▏   | 840/1355 [00:12<00:07, 67.73it/s]Evaluating:  63%|██████▎   | 847/1355 [00:12<00:07, 67.67it/s]Evaluating:  63%|██████▎   | 854/1355 [00:12<00:07, 67.66it/s]Evaluating:  64%|██████▎   | 861/1355 [00:12<00:07, 67.80it/s]Evaluating:  64%|██████▍   | 868/1355 [00:12<00:07, 67.82it/s]Evaluating:  65%|██████▍   | 875/1355 [00:12<00:07, 67.76it/s]Evaluating:  65%|██████▌   | 882/1355 [00:13<00:06, 67.79it/s]Evaluating:  66%|██████▌   | 889/1355 [00:13<00:06, 67.74it/s]Evaluating:  66%|██████▌   | 896/1355 [00:13<00:06, 67.73it/s]Evaluating:  67%|██████▋   | 903/1355 [00:13<00:06, 67.72it/s]Evaluating:  67%|██████▋   | 910/1355 [00:13<00:06, 67.78it/s]Evaluating:  68%|██████▊   | 917/1355 [00:13<00:06, 67.71it/s]Evaluating:  68%|██████▊   | 924/1355 [00:13<00:06, 67.66it/s]Evaluating:  69%|██████▊   | 931/1355 [00:13<00:06, 67.59it/s]Evaluating:  69%|██████▉   | 938/1355 [00:13<00:06, 67.50it/s]Evaluating:  70%|██████▉   | 945/1355 [00:13<00:06, 67.45it/s]Evaluating:  70%|███████   | 952/1355 [00:14<00:05, 67.51it/s]Evaluating:  71%|███████   | 959/1355 [00:14<00:05, 67.56it/s]Evaluating:  71%|███████▏  | 966/1355 [00:14<00:05, 67.65it/s]Evaluating:  72%|███████▏  | 973/1355 [00:14<00:05, 67.72it/s]Evaluating:  72%|███████▏  | 980/1355 [00:14<00:05, 67.82it/s]Evaluating:  73%|███████▎  | 987/1355 [00:14<00:05, 67.80it/s]Evaluating:  73%|███████▎  | 994/1355 [00:14<00:05, 67.83it/s]Evaluating:  74%|███████▍  | 1001/1355 [00:14<00:05, 67.83it/s]Evaluating:  74%|███████▍  | 1008/1355 [00:14<00:05, 67.78it/s]Evaluating:  75%|███████▍  | 1015/1355 [00:14<00:05, 67.73it/s]Evaluating:  75%|███████▌  | 1022/1355 [00:15<00:04, 67.75it/s]Evaluating:  76%|███████▌  | 1029/1355 [00:15<00:04, 67.69it/s]Evaluating:  76%|███████▋  | 1036/1355 [00:15<00:04, 67.63it/s]Evaluating:  77%|███████▋  | 1043/1355 [00:15<00:04, 67.61it/s]Evaluating:  77%|███████▋  | 1050/1355 [00:15<00:04, 67.65it/s]Evaluating:  78%|███████▊  | 1057/1355 [00:15<00:04, 67.63it/s]Evaluating:  79%|███████▊  | 1064/1355 [00:15<00:04, 67.64it/s]Evaluating:  79%|███████▉  | 1071/1355 [00:15<00:04, 67.68it/s]Evaluating:  80%|███████▉  | 1078/1355 [00:15<00:04, 67.68it/s]Evaluating:  80%|████████  | 1085/1355 [00:16<00:03, 67.66it/s]Evaluating:  81%|████████  | 1092/1355 [00:16<00:03, 67.66it/s]Evaluating:  81%|████████  | 1099/1355 [00:16<00:03, 67.65it/s]Evaluating:  82%|████████▏ | 1106/1355 [00:16<00:03, 67.62it/s]Evaluating:  82%|████████▏ | 1113/1355 [00:16<00:03, 67.59it/s]Evaluating:  83%|████████▎ | 1120/1355 [00:16<00:03, 67.63it/s]Evaluating:  83%|████████▎ | 1127/1355 [00:16<00:03, 67.64it/s]Evaluating:  84%|████████▎ | 1134/1355 [00:16<00:03, 67.61it/s]Evaluating:  84%|████████▍ | 1141/1355 [00:16<00:03, 67.62it/s]Evaluating:  85%|████████▍ | 1148/1355 [00:16<00:03, 67.60it/s]Evaluating:  85%|████████▌ | 1155/1355 [00:17<00:02, 67.69it/s]Evaluating:  86%|████████▌ | 1162/1355 [00:17<00:02, 67.81it/s]Evaluating:  86%|████████▋ | 1169/1355 [00:17<00:02, 67.79it/s]Evaluating:  87%|████████▋ | 1176/1355 [00:17<00:02, 67.79it/s]Evaluating:  87%|████████▋ | 1183/1355 [00:17<00:02, 67.83it/s]Evaluating:  88%|████████▊ | 1190/1355 [00:17<00:02, 67.91it/s]Evaluating:  88%|████████▊ | 1197/1355 [00:17<00:02, 67.90it/s]Evaluating:  89%|████████▉ | 1204/1355 [00:17<00:02, 67.92it/s]Evaluating:  89%|████████▉ | 1211/1355 [00:17<00:02, 67.88it/s]Evaluating:  90%|████████▉ | 1218/1355 [00:17<00:02, 67.80it/s]Evaluating:  90%|█████████ | 1225/1355 [00:18<00:01, 67.76it/s]Evaluating:  91%|█████████ | 1232/1355 [00:18<00:01, 67.74it/s]Evaluating:  91%|█████████▏| 1239/1355 [00:18<00:01, 67.72it/s]Evaluating:  92%|█████████▏| 1246/1355 [00:18<00:01, 67.68it/s]Evaluating:  92%|█████████▏| 1253/1355 [00:18<00:01, 67.67it/s]Evaluating:  93%|█████████▎| 1260/1355 [00:18<00:01, 67.68it/s]Evaluating:  94%|█████████▎| 1267/1355 [00:18<00:01, 67.66it/s]Evaluating:  94%|█████████▍| 1274/1355 [00:18<00:01, 67.67it/s]Evaluating:  95%|█████████▍| 1281/1355 [00:18<00:01, 67.70it/s]Evaluating:  95%|█████████▌| 1288/1355 [00:19<00:00, 67.68it/s]Evaluating:  96%|█████████▌| 1295/1355 [00:19<00:00, 67.66it/s]Evaluating:  96%|█████████▌| 1302/1355 [00:19<00:00, 67.67it/s]Evaluating:  97%|█████████▋| 1309/1355 [00:19<00:00, 67.62it/s]Evaluating:  97%|█████████▋| 1316/1355 [00:19<00:00, 67.59it/s]Evaluating:  98%|█████████▊| 1323/1355 [00:19<00:00, 67.63it/s]Evaluating:  98%|█████████▊| 1330/1355 [00:19<00:00, 67.67it/s]Evaluating:  99%|█████████▊| 1337/1355 [00:19<00:00, 67.69it/s]Evaluating:  99%|█████████▉| 1344/1355 [00:19<00:00, 67.67it/s]Evaluating: 100%|█████████▉| 1351/1355 [00:19<00:00, 67.70it/s]Evaluating: 100%|██████████| 1355/1355 [00:20<00:00, 67.73it/s]
+12/15/2019 22:06:08 - INFO - __main__ -     Evaluation done in total 20.007800 secs (0.001847 sec per example)
+12/15/2019 22:06:08 - INFO - transformers.data.metrics.squad_metrics -   Writing predictions to: output/squad_distilbert-base-uncased_fp16/predictions_.json
+12/15/2019 22:06:08 - INFO - transformers.data.metrics.squad_metrics -   Writing nbest to: output/squad_distilbert-base-uncased_fp16/nbest_predictions_.json
+12/15/2019 22:06:44 - INFO - __main__ -   Results: {'exact': 71.40018921475875, 'f1': 81.0445400472066, 'total': 10570, 'HasAns_exact': 71.40018921475875, 'HasAns_f1': 81.0445400472066, 'HasAns_total': 10570, 'best_exact': 71.40018921475875, 'best_exact_thresh': 0.0, 'best_f1': 81.0445400472066, 'best_f1_thresh': 0.0}
+*****************************************
+Setting OMP_NUM_THREADS environment variable for each process to be 1 in default, to avoid your system being overloaded, please further tune the variable for optimal performance in your application as needed. 
+*****************************************
