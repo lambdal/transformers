@@ -55,7 +55,7 @@ cd apex
 pip install -v --no-cache-dir --global-option="--cpp_ext" --global-option="--cuda_ext" ./
 
 # Verify installation
-cd transformers
+cd ~/transformers
 python -m unittest discover -s transformers/tests -p "*test.py" -t .
 
 ```
@@ -88,6 +88,44 @@ export LOG_DIR=~/transformers/logs/log_hyperplane16
 
 ./run_squad.sh 8 ~/transformers/data ~/transformers/logs/hyperplanebasic
 ./run_squad.sh 16 ~/transformers/data ~/transformers/logs/hyperplane16
+```
+
+
+### Results
+
+```
+FP32 Training Time in Seconds (2 Epochs)
+
+|   | bert_base_uncased (bs_per_GPU=12) | bert_large_uncased_whole_word_masking (bs_per_GPU=3) | distilbert-base-uncased (bs_per_GPU=12) | 
+|---|---|---|---|
+| Lambda Hyperplane 16 V100 32GB | 328.26 | 1350.84 | 170.47 |
+| Lambda Hyperplane Basic 8 V100 32GB | 651.14 | 2706.56 | 335.09 |
+| Lambda Blade 8 Quadro 8000 | 773.80 |  |  |
+
+FP32 Evaluation exact match/F1 Score
+
+|   | bert_base_uncased (bs_per_GPU=12) | bert_large_uncased_whole_word_masking (bs_per_GPU=3) | distilbert-base-uncased (bs_per_GPU=12) |
+|---|---|---|---|
+| Lambda Hyperplane 16 V100 32GB | 85.45 | 93.22 | 81.13 | 
+| Lambda Hyperplane Basic 8 V100 32GB | 86.9 | 93.04 | 82.59 |
+| Lambda Blade 8 Quadro 8000 | 86.77 |  |  |
+
+
+FP16 Training Time in Seconds (2 Epochs)
+
+|   | bert_base_uncased (bs_per_GPU=12) | bert_large_uncased_whole_word_masking (bs_per_GPU=3) | distilbert-base-uncased (bs_per_GPU=12) | 
+|---|---|---|---|
+| Lambda Hyperplane 16 V100 32 GB | 180.68 | 973.77 | 101.6 |
+| Lambda Hyperplane Basic 8 V100 32 GB | 345.64 | 1876.19 | 187.93 |
+| Lambda Blade 8 Quadro 8000 |  |  |  |
+
+FP16 Evaluation exact match/F1 Score
+
+|   | bert_base_uncased (bs_per_GPU=12) | bert_large_uncased_whole_word_masking (bs_per_GPU=3) | distilbert-base-uncased (bs_per_GPU=12) |
+|---|---|---|---|
+| Lambda Hyperplane 16 V100 32 GB | 85.4 | 93.34 | 81.04 | 
+| Lambda Hyperplane Basic 8 V100 32 GB | 86.95 | 93.13 | 82.64 |
+| Lambda Blade 8 Quadro 8000 |  |  |  |
 ```
 
 
